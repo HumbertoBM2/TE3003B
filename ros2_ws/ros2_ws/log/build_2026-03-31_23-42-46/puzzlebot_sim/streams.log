@@ -1,0 +1,25 @@
+[0.518s] Invoking command in '/home/humberto/ros2_ws/src/puzzlebot_sim': PYTHONPATH=/home/humberto/ros2_ws/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humberto/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../ros2_ws/build/puzzlebot_sim build --build-base /home/humberto/ros2_ws/build/puzzlebot_sim/build install --record /home/humberto/ros2_ws/build/puzzlebot_sim/install.log --single-version-externally-managed install_data
+[0.741s] running egg_info
+[0.741s] writing ../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/PKG-INFO
+[0.741s] writing dependency_links to ../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/dependency_links.txt
+[0.741s] writing entry points to ../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/entry_points.txt
+[0.742s] writing requirements to ../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/requires.txt
+[0.742s] writing top-level names to ../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/top_level.txt
+[0.743s] reading manifest file '../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[0.744s] writing manifest file '../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[0.744s] running build
+[0.744s] running build_py
+[0.744s] copying puzzlebot_sim/joint_state_publisher.py -> /home/humberto/ros2_ws/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[0.744s] running install
+[0.744s] running install_lib
+[0.745s] copying /home/humberto/ros2_ws/build/puzzlebot_sim/build/lib/puzzlebot_sim/joint_state_publisher.py -> /home/humberto/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[0.746s] byte-compiling /home/humberto/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/joint_state_publisher.py to joint_state_publisher.cpython-310.pyc
+[0.746s] running install_data
+[0.747s] copying urdf/puzzlebot.urdf -> /home/humberto/ros2_ws/install/puzzlebot_sim/share/puzzlebot_sim/urdf
+[0.747s] running install_egg_info
+[0.749s] removing '/home/humberto/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-1.0.0-py3.10.egg-info' (and everything under it)
+[0.749s] Copying ../ros2_ws/build/puzzlebot_sim/puzzlebot_sim.egg-info to /home/humberto/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-1.0.0-py3.10.egg-info
+[0.749s] running install_scripts
+[0.768s] Installing joint_state_publisher script to /home/humberto/ros2_ws/install/puzzlebot_sim/lib/puzzlebot_sim
+[0.768s] writing list of installed files to '/home/humberto/ros2_ws/build/puzzlebot_sim/install.log'
+[0.792s] Invoked command in '/home/humberto/ros2_ws/src/puzzlebot_sim' returned '0': PYTHONPATH=/home/humberto/ros2_ws/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humberto/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../ros2_ws/build/puzzlebot_sim build --build-base /home/humberto/ros2_ws/build/puzzlebot_sim/build install --record /home/humberto/ros2_ws/build/puzzlebot_sim/install.log --single-version-externally-managed install_data
