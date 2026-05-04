@@ -1,0 +1,46 @@
+running egg_info
+creating ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info
+writing ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/PKG-INFO
+writing dependency_links to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/dependency_links.txt
+writing entry points to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/entry_points.txt
+writing requirements to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/requires.txt
+writing top-level names to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/top_level.txt
+writing manifest file '../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/SOURCES.txt'
+reading manifest file '../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/SOURCES.txt'
+writing manifest file '../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/humberto/ros2_ws/build/mcl_puzzlebot/build
+creating /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib
+creating /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot
+copying mcl_puzzlebot/__init__.py -> /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot
+copying mcl_puzzlebot/mcl_node.py -> /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot
+running install
+running install_lib
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot
+copying /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot/__init__.py -> /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot
+copying /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot/mcl_node.py -> /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot
+byte-compiling /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot/mcl_node.py to mcl_node.cpython-310.pyc
+running install_data
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/ament_index
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/ament_index/resource_index
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/ament_index/resource_index/packages
+copying resource/mcl_puzzlebot -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/ament_index/resource_index/packages
+copying package.xml -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/launch
+copying launch/mcl_launch.py -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/launch
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/worlds
+copying worlds/mcl_room.world -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/worlds
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/urdf
+copying urdf/puzzlebot_gazebo.urdf -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/urdf
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/maps
+copying maps/room_map.yaml -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/maps
+copying maps/room_map.png -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/maps
+creating /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/rviz
+copying rviz/mcl_rviz.rviz -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/rviz
+running install_egg_info
+Copying ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info to /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot-1.0.0-py3.10.egg-info
+running install_scripts
+Installing mcl_node script to /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/mcl_puzzlebot
+writing list of installed files to '/home/humberto/ros2_ws/build/mcl_puzzlebot/install.log'

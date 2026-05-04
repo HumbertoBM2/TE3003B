@@ -1,0 +1,4 @@
+[console_scripts]
+client = lpc.ros2_client:main
+server = lpc.ros2_server:main
+
