@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!--
+    MCL Room World
+    ==============
+    Simple 5 m × 5 m rectangular room with four walls.
+
+    Room interior  : x ∈ [-2.5, +2.5]  y ∈ [-2.5, +2.5]
+    Wall thickness : 0.15 m
+    Wall height    : 1.0 m
+    Wall centres   : ±2.575 m (interior face at ±2.5 m)
+
+    This geometry exactly matches the occupancy map room_map.png:
+      origin  : (-3.0, -3.0)
+      resolution: 0.01 m/px  →  600×600 px = 6 m × 6 m
+      Black (wall) region starts at the map edge (±3.0 m) and the
+      interior white region starts at ±2.5 m (pixel 50/550).
+-->
+<sdf version="1.6">
+  <world name="mcl_room">
+
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Physics tuning for differential-drive robot -->
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <!-- =========================================================
+         NORTH WALL  (y = +2.575)
+         Size: 5.3 m (X) × 0.15 m (Y) × 1.0 m (Z)
+         ========================================================= -->
+    <model name="north_wall">
+      <static>true</static>
+      <pose>0 2.575 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5.3 0.15 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5.3 0.15 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- =========================================================
+         SOUTH WALL  (y = -2.575)
+         ========================================================= -->
+    <model name="south_wall">
+      <static>true</static>
+      <pose>0 -2.575 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5.3 0.15 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5.3 0.15 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- =========================================================
+         EAST WALL  (x = +2.575)
+         Size: 0.15 m (X) × 5.0 m (Y) × 1.0 m (Z)
+         ========================================================= -->
+    <model name="east_wall">
+      <static>true</static>
+      <pose>2.575 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.15 5.0 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.15 5.0 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- =========================================================
+         WEST WALL  (x = -2.575)
+         ========================================================= -->
+    <model name="west_wall">
+      <static>true</static>
+      <pose>-2.575 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.15 5.0 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.15 5.0 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

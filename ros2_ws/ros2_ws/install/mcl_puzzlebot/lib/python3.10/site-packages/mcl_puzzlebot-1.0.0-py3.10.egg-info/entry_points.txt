@@ -1,0 +1,3 @@
+[console_scripts]
+mcl_node = mcl_puzzlebot.mcl_node:main
+

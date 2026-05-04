@@ -1,0 +1,39 @@
+running egg_info
+creating ../../build/lpc/lpc.egg-info
+writing ../../build/lpc/lpc.egg-info/PKG-INFO
+writing dependency_links to ../../build/lpc/lpc.egg-info/dependency_links.txt
+writing entry points to ../../build/lpc/lpc.egg-info/entry_points.txt
+writing requirements to ../../build/lpc/lpc.egg-info/requires.txt
+writing top-level names to ../../build/lpc/lpc.egg-info/top_level.txt
+writing manifest file '../../build/lpc/lpc.egg-info/SOURCES.txt'
+reading manifest file '../../build/lpc/lpc.egg-info/SOURCES.txt'
+writing manifest file '../../build/lpc/lpc.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/humberto/ros2_ws/build/lpc/build
+creating /home/humberto/ros2_ws/build/lpc/build/lib
+creating /home/humberto/ros2_ws/build/lpc/build/lib/lpc
+copying lpc/ros2_client.py -> /home/humberto/ros2_ws/build/lpc/build/lib/lpc
+copying lpc/__init__.py -> /home/humberto/ros2_ws/build/lpc/build/lib/lpc
+copying lpc/ros2_server.py -> /home/humberto/ros2_ws/build/lpc/build/lib/lpc
+running install
+running install_lib
+creating /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc
+copying /home/humberto/ros2_ws/build/lpc/build/lib/lpc/ros2_client.py -> /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc
+copying /home/humberto/ros2_ws/build/lpc/build/lib/lpc/__init__.py -> /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc
+copying /home/humberto/ros2_ws/build/lpc/build/lib/lpc/ros2_server.py -> /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc
+byte-compiling /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc/ros2_client.py to ros2_client.cpython-310.pyc
+byte-compiling /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc/ros2_server.py to ros2_server.cpython-310.pyc
+running install_data
+creating /home/humberto/ros2_ws/install/lpc/share/ament_index
+creating /home/humberto/ros2_ws/install/lpc/share/ament_index/resource_index
+creating /home/humberto/ros2_ws/install/lpc/share/ament_index/resource_index/packages
+copying resource/lpc -> /home/humberto/ros2_ws/install/lpc/share/ament_index/resource_index/packages
+copying package.xml -> /home/humberto/ros2_ws/install/lpc/share/lpc
+running install_egg_info
+Copying ../../build/lpc/lpc.egg-info to /home/humberto/ros2_ws/install/lpc/lib/python3.10/site-packages/lpc-0.0.1-py3.10.egg-info
+running install_scripts
+Installing client script to /home/humberto/ros2_ws/install/lpc/lib/lpc
+Installing server script to /home/humberto/ros2_ws/install/lpc/lib/lpc
+writing list of installed files to '/home/humberto/ros2_ws/build/lpc/install.log'

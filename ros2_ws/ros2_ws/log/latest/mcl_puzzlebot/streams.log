@@ -1,0 +1,30 @@
+[0.577s] Invoking command in '/home/humberto/ros2_ws/src/mcl_puzzlebot': PYTHONPATH=/home/humberto/ros2_ws/build/mcl_puzzlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../ros2_ws/build/mcl_puzzlebot build --build-base /home/humberto/ros2_ws/build/mcl_puzzlebot/build install --record /home/humberto/ros2_ws/build/mcl_puzzlebot/install.log --single-version-externally-managed install_data
+[0.803s] running egg_info
+[0.804s] writing ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/PKG-INFO
+[0.804s] writing dependency_links to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/dependency_links.txt
+[0.804s] writing entry points to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/entry_points.txt
+[0.804s] writing requirements to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/requires.txt
+[0.805s] writing top-level names to ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/top_level.txt
+[0.806s] reading manifest file '../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/SOURCES.txt'
+[0.807s] writing manifest file '../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info/SOURCES.txt'
+[0.807s] running build
+[0.807s] running build_py
+[0.807s] copying mcl_puzzlebot/mcl_node.py -> /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot
+[0.807s] running install
+[0.807s] running install_lib
+[0.808s] copying /home/humberto/ros2_ws/build/mcl_puzzlebot/build/lib/mcl_puzzlebot/mcl_node.py -> /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot
+[0.808s] byte-compiling /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot/mcl_node.py to mcl_node.cpython-310.pyc
+[0.810s] running install_data
+[0.810s] copying package.xml -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot
+[0.810s] copying launch/mcl_launch.py -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/launch
+[0.810s] copying worlds/mcl_room.world -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/worlds
+[0.811s] copying urdf/puzzlebot_gazebo.urdf -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/urdf
+[0.811s] copying maps/room_map.yaml -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/maps
+[0.811s] copying rviz/mcl_rviz.rviz -> /home/humberto/ros2_ws/install/mcl_puzzlebot/share/mcl_puzzlebot/rviz
+[0.811s] running install_egg_info
+[0.812s] removing '/home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot-1.0.0-py3.10.egg-info' (and everything under it)
+[0.812s] Copying ../ros2_ws/build/mcl_puzzlebot/mcl_puzzlebot.egg-info to /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages/mcl_puzzlebot-1.0.0-py3.10.egg-info
+[0.813s] running install_scripts
+[0.831s] Installing mcl_node script to /home/humberto/ros2_ws/install/mcl_puzzlebot/lib/mcl_puzzlebot
+[0.831s] writing list of installed files to '/home/humberto/ros2_ws/build/mcl_puzzlebot/install.log'
+[0.852s] Invoked command in '/home/humberto/ros2_ws/src/mcl_puzzlebot' returned '0': PYTHONPATH=/home/humberto/ros2_ws/build/mcl_puzzlebot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humberto/ros2_ws/install/mcl_puzzlebot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../ros2_ws/build/mcl_puzzlebot build --build-base /home/humberto/ros2_ws/build/mcl_puzzlebot/build install --record /home/humberto/ros2_ws/build/mcl_puzzlebot/install.log --single-version-externally-managed install_data
