@@ -1,0 +1,28 @@
+name: Python Loop Demo
+
+on:
+  push:
+    branches:
+      - main
+      - development
+
+jobs:
+  run-loop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run script every second for 2 minutes
+        run: |
+          for i in {1..120}
+          do
+            python test.py
+            sleep 1
+          done
