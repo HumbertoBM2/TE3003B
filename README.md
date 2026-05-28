@@ -15,7 +15,7 @@ The platform is capable of autonomous navigation, object localization, pallet ma
 - Mauricio Zavala – (GitHub: [https://github.com/mzzzavalas])
 
 ---
-
+ 
 ## System Description
 
 The autonomous forklift operates by combining SLAM-based navigation, probabilistic localization, and computer vision techniques to locate, transport, and deliver pallets within a structured environment.
