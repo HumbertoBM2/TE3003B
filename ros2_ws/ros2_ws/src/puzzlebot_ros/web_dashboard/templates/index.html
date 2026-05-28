@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzlebot Dashboard</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #080c12;
+            color: #c5ccd8;
+        }
+
+        header {
+            background: #0b1018;
+            padding: 11px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-bottom: 1px solid #1a2235;
+        }
+
+        header h1 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #8aa8cc;
+            text-transform: uppercase;
+        }
+
+        header h1 strong {
+            color: #c5ccd8;
+            font-weight: 700;
+        }
+
+        #conn-badge {
+            padding: 2px 10px;
+            border-radius: 2px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: #141c28;
+            color: #3a4a60;
+            border: 1px solid #1a2235;
+        }
+
+        #conn-badge.connected {
+            background: #0c1c30;
+            color: #4d7fbc;
+            border-color: #1e3a5e;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 12px;
+            padding: 12px;
+            height: calc(100vh - 48px);
+        }
+
+        .panel {
+            background: #0b1018;
+            border: 1px solid #1a2235;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .panel-title {
+            padding: 6px 14px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #4d7fbc;
+            border-bottom: 1px solid #1a2235;
+            background: #070b10;
+        }
+
+        .panel-body {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Camera */
+        #camera-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        #camera-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2a3545;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* LiDAR */
+        #lidar-canvas { width: 100%; height: 100%; display: block; }
+
+        /* Telemetría */
+        .telem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 14px;
+        }
+
+        .telem-card {
+            background: #070b10;
+            border: 1px solid #1a2235;
+            border-radius: 3px;
+            padding: 11px 12px;
+        }
+
+        .telem-label {
+            font-size: 0.65rem;
+            color: #4a5a70;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .telem-value {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #c5ccd8;
+            margin-top: 3px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .telem-unit {
+            font-size: 0.72rem;
+            color: #2a3545;
+            margin-top: 1px;
+        }
+
+        #status-bar, #slam-status {
+            padding: 7px 14px;
+            font-size: 0.78rem;
+            border-top: 1px solid #1a2235;
+        }
+
+        #slam-status {
+            color: #4a6080;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.72rem;
+            line-height: 1.4;
+        }
+
+        .status-navigating { color: #c99030; }
+        .status-arrived    { color: #4d7fbc; }
+        .status-idle       { color: #2a3545; }
+
+        /* Goal */
+        .goal-section {
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-top: 1px solid #1a2235;
+        }
+
+        .goal-section-label {
+            font-size: 0.65rem;
+            color: #4a5a70;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .goal-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .goal-row label {
+            font-size: 0.75rem;
+            color: #4a5a70;
+            width: 20px;
+        }
+
+        .goal-row input {
+            flex: 1;
+            background: #070b10;
+            border: 1px solid #1a2235;
+            color: #c5ccd8;
+            padding: 5px 9px;
+            border-radius: 3px;
+            font-size: 0.88rem;
+            outline: none;
+        }
+
+        .goal-row input:focus { border-color: #2a4a70; }
+
+        #send-goal-btn {
+            background: #0c1c30;
+            color: #4d7fbc;
+            border: 1px solid #1e3a5e;
+            border-radius: 3px;
+            padding: 7px 14px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: background 0.15s;
+            text-align: center;
+        }
+
+        #send-goal-btn:hover { background: #112540; }
+
+        /* SLAM map */
+        #slam-canvas { width: 100%; height: 100%; display: block; }
+
+        /* Lift */
+        .lift-section {
+            padding: 12px 14px;
+            border-top: 1px solid #1a2235;
+        }
+
+        .lift-label {
+            font-size: 0.65rem;
+            color: #4a5a70;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 9px;
+        }
+
+        .lift-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .lift-btn {
+            flex: 1;
+            padding: 9px 6px;
+            border-radius: 3px;
+            border: 1px solid;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: filter 0.12s;
+        }
+
+        .lift-btn:hover  { filter: brightness(1.18); }
+        .lift-btn:active { filter: brightness(0.82); }
+
+        #btn-up   { background: #0c1c30; color: #4d7fbc; border-color: #1e3a5e; }
+        #btn-stop { background: #111520; color: #607080; border-color: #1a2235; }
+        #btn-down { background: #221500; color: #c99030; border-color: #4a3000; }
+
+        #lift-status {
+            margin-top: 7px;
+            font-size: 0.7rem;
+            color: #2a3545;
+            font-family: 'Consolas', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Puzzlebot &nbsp;<strong>Dashboard</strong></h1>
+        <span id="conn-badge">desconectado</span>
+    </header>
+
+    <div class="grid">
+
+        <!-- Panel 1: Camara -->
+        <div class="panel">
+            <div class="panel-title">Camara</div>
+            <div class="panel-body">
+                <div id="camera-placeholder">Sin señal de cámara</div>
+                <img id="camera-img" src="/video" alt="camera" style="display:none;">
+            </div>
+        </div>
+
+        <!-- Panel 2: LiDAR -->
+        <div class="panel">
+            <div class="panel-title">LiDAR</div>
+            <div class="panel-body">
+                <canvas id="lidar-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Panel 3: Telemetría + Goal + Lift -->
+        <div class="panel">
+            <div class="panel-title">Telemetría</div>
+            <div class="telem-grid">
+                <div class="telem-card">
+                    <div class="telem-label">Posición X</div>
+                    <div class="telem-value" id="val-x">—</div>
+                    <div class="telem-unit">metros</div>
+                </div>
+                <div class="telem-card">
+                    <div class="telem-label">Posición Y</div>
+                    <div class="telem-value" id="val-y">—</div>
+                    <div class="telem-unit">metros</div>
+                </div>
+                <div class="telem-card">
+                    <div class="telem-label">Orientación</div>
+                    <div class="telem-value" id="val-yaw">—</div>
+                    <div class="telem-unit">grados</div>
+                </div>
+                <div class="telem-card">
+                    <div class="telem-label">Landmarks</div>
+                    <div class="telem-value" id="val-lm">0</div>
+                    <div class="telem-unit">detectados</div>
+                </div>
+            </div>
+
+            <div id="status-bar" class="status-idle">Estado: esperando...</div>
+            <div id="slam-status">SLAM: esperando odometría...</div>
+
+            <div class="goal-section">
+                <div class="goal-section-label">Enviar Goal</div>
+                <div class="goal-row">
+                    <label>X</label>
+                    <input type="number" id="goal-x" value="0.5" step="0.1">
+                </div>
+                <div class="goal-row">
+                    <label>Y</label>
+                    <input type="number" id="goal-y" value="0.0" step="0.1">
+                </div>
+                <button id="send-goal-btn">Enviar Goal</button>
+            </div>
+
+            <div class="lift-section">
+                <div class="lift-label">Control Lift (montacargas)</div>
+                <div class="lift-buttons">
+                    <button class="lift-btn" id="btn-up">Subir</button>
+                    <button class="lift-btn" id="btn-stop">Stop</button>
+                    <button class="lift-btn" id="btn-down">Bajar</button>
+                </div>
+                <div id="lift-status">Lift: —</div>
+            </div>
+        </div>
+
+        <!-- Panel 4: Mapa SLAM -->
+        <div class="panel">
+            <div class="panel-title">Mapa SLAM</div>
+            <div class="panel-body">
+                <canvas id="slam-canvas"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const socket = io();
+        const badge = document.getElementById('conn-badge');
+
+        socket.on('connect',    () => { badge.textContent = 'conectado';    badge.className = 'connected'; });
+        socket.on('disconnect', () => { badge.textContent = 'desconectado'; badge.className = ''; });
+
+        // Odometria
+        socket.on('odom', d => {
+            document.getElementById('val-x').textContent = d.x.toFixed(3);
+            document.getElementById('val-y').textContent = d.y.toFixed(3);
+            document.getElementById('val-yaw').textContent = d.yaw.toFixed(1);
+            slamRobot = { x: d.x, y: d.y, yaw: d.yaw };
+            const last = slamTraj[slamTraj.length - 1];
+            if (!last || Math.hypot(d.x - last.x, d.y - last.y) > 0.04) {
+                slamTraj.push({ x: d.x, y: d.y });
+                if (slamTraj.length > 600) slamTraj.shift();
+            }
+            drawSlam();
+        });
+
+        socket.on('status', d => {
+            const bar = document.getElementById('status-bar');
+            bar.textContent = 'Estado: ' + d.text;
+            bar.className = d.text.includes('NAVIGATING') ? 'status-navigating'
+                : d.text.includes('ARRIVED') ? 'status-arrived'
+                : 'status-idle';
+        });
+
+        socket.on('slam_status', d => {
+            document.getElementById('slam-status').textContent = 'SLAM: ' + d.text;
+        });
+
+        // Camara MJPEG
+        (function () {
+            const img = document.getElementById('camera-img');
+            const ph  = document.getElementById('camera-placeholder');
+            img.onload  = () => { img.style.display = 'block'; ph.style.display = 'none'; };
+            img.onerror = () => { img.style.display = 'none';  ph.style.display = 'flex'; };
+        })();
+
+        // LiDAR canvas
+        const lidarCanvas = document.getElementById('lidar-canvas');
+        const ctx = lidarCanvas.getContext('2d');
+
+        function resizeLidar() {
+            const body = lidarCanvas.parentElement;
+            lidarCanvas.width  = body.clientWidth;
+            lidarCanvas.height = body.clientHeight;
+        }
+        window.addEventListener('resize', resizeLidar);
+        resizeLidar();
+
+        socket.on('scan', d => {
+            resizeLidar();
+            const W = lidarCanvas.width, H = lidarCanvas.height;
+            const cx = W / 2, cy = H / 2;
+            const scale = Math.min(W, H) / 2 / (d.max_range || 6);
+
+            ctx.fillStyle = '#080c12';
+            ctx.fillRect(0, 0, W, H);
+
+            // Circulos de referencia
+            ctx.strokeStyle = '#111a26';
+            ctx.lineWidth = 1;
+            for (let r = 1; r <= 6; r++) {
+                ctx.beginPath();
+                ctx.arc(cx, cy, r * scale, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Robot
+            ctx.fillStyle = '#4d7fbc';
+            ctx.beginPath();
+            ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Puntos LiDAR
+            ctx.fillStyle = '#c04040';
+            for (const [x, y] of d.points) {
+                const px = cx + y * scale;
+                const py = cy - x * scale;
+                ctx.fillRect(px - 2, py - 2, 4, 4);
+            }
+        });
+
+        // Landmarks
+        socket.on('landmarks', d => {
+            document.getElementById('val-lm').textContent = d.data.length;
+            slamLandmarks = d.data;
+            drawSlam();
+        });
+
+        // Mapa SLAM
+        const slamCanvas = document.getElementById('slam-canvas');
+        const slamCtx = slamCanvas.getContext('2d');
+        let slamRobot = { x: 0, y: 0, yaw: 0 };
+        let slamLandmarks = [];
+        const slamTraj = [];
+        let slamMap = null;
+
+        socket.on('map_grid', d => {
+            const img = new Image();
+            img.onload = () => {
+                slamMap = { img, ox: d.ox, oy: d.oy, res: d.res, w: d.w, h: d.h };
+                drawSlam();
+            };
+            img.src = 'data:image/jpeg;base64,' + d.img;
+        });
+
+        function resizeSlam() {
+            const b = slamCanvas.parentElement;
+            slamCanvas.width  = b.clientWidth;
+            slamCanvas.height = b.clientHeight;
+        }
+        window.addEventListener('resize', resizeSlam);
+        resizeSlam();
+
+        function drawSlam() {
+            resizeSlam();
+            const W = slamCanvas.width, H = slamCanvas.height;
+            if (!W || !H) return;
+
+            const allX = [slamRobot.x, ...slamLandmarks.map(l => l.x), ...slamTraj.map(p => p.x)];
+            const allY = [slamRobot.y, ...slamLandmarks.map(l => l.y), ...slamTraj.map(p => p.y)];
+            if (slamMap) {
+                allX.push(slamMap.ox, slamMap.ox + slamMap.w * slamMap.res);
+                allY.push(slamMap.oy, slamMap.oy + slamMap.h * slamMap.res);
+            }
+            let x0 = Math.min(...allX) - 0.5, x1 = Math.max(...allX) + 0.5;
+            let y0 = Math.min(...allY) - 0.5, y1 = Math.max(...allY) + 0.5;
+            if (x1 - x0 < 4) { const m = (x0 + x1) / 2; x0 = m - 2; x1 = m + 2; }
+            if (y1 - y0 < 4) { const m = (y0 + y1) / 2; y0 = m - 2; y1 = m + 2; }
+
+            const sc = Math.min(W / (x1 - x0), H / (y1 - y0)) * 0.94;
+            const canvOx = W / 2 - (x0 + x1) / 2 * sc;
+            const canvOy = H / 2 + (y0 + y1) / 2 * sc;
+            const toC = (wx, wy) => ({ x: wx * sc + canvOx, y: -wy * sc + canvOy });
+
+            slamCtx.fillStyle = '#070b10';
+            slamCtx.fillRect(0, 0, W, H);
+
+            if (slamMap) {
+                const m = slamMap;
+                const imgLeft = m.ox * sc + canvOx;
+                const imgTop  = -(m.oy + m.h * m.res) * sc + canvOy;
+                const imgW    = m.w * m.res * sc;
+                const imgH    = m.h * m.res * sc;
+                slamCtx.drawImage(m.img, imgLeft, imgTop, imgW, imgH);
+            }
+
+            // Grid 1m
+            const gridAlpha = slamMap ? 0.18 : 0.9;
+            slamCtx.lineWidth = 1;
+            for (let gx = Math.floor(x0); gx <= Math.ceil(x1); gx++) {
+                const a = toC(gx, y0), b = toC(gx, y1);
+                slamCtx.strokeStyle = gx === 0
+                    ? `rgba(40,65,100,${gridAlpha})`
+                    : `rgba(18,24,36,${gridAlpha})`;
+                slamCtx.beginPath(); slamCtx.moveTo(a.x, a.y); slamCtx.lineTo(b.x, b.y); slamCtx.stroke();
+            }
+            for (let gy = Math.floor(y0); gy <= Math.ceil(y1); gy++) {
+                const a = toC(x0, gy), b = toC(x1, gy);
+                slamCtx.strokeStyle = gy === 0
+                    ? `rgba(40,65,100,${gridAlpha})`
+                    : `rgba(18,24,36,${gridAlpha})`;
+                slamCtx.beginPath(); slamCtx.moveTo(a.x, a.y); slamCtx.lineTo(b.x, b.y); slamCtx.stroke();
+            }
+
+            // Trayectoria
+            if (slamTraj.length > 1) {
+                slamCtx.strokeStyle = '#1a3050';
+                slamCtx.lineWidth = 2;
+                slamCtx.beginPath();
+                let p = toC(slamTraj[0].x, slamTraj[0].y);
+                slamCtx.moveTo(p.x, p.y);
+                for (let i = 1; i < slamTraj.length; i++) {
+                    p = toC(slamTraj[i].x, slamTraj[i].y);
+                    slamCtx.lineTo(p.x, p.y);
+                }
+                slamCtx.stroke();
+            }
+
+            // Landmarks
+            for (const lm of slamLandmarks) {
+                const p = toC(lm.x, lm.y);
+                slamCtx.fillStyle = '#c99030';
+                slamCtx.beginPath(); slamCtx.arc(p.x, p.y, 9, 0, Math.PI * 2); slamCtx.fill();
+                slamCtx.fillStyle = '#070b10';
+                slamCtx.font = 'bold 9px monospace';
+                slamCtx.textAlign = 'center'; slamCtx.textBaseline = 'middle';
+                slamCtx.fillText(String(lm.id), p.x, p.y);
+            }
+
+            // Robot — triangulo
+            const rp  = toC(slamRobot.x, slamRobot.y);
+            const ang = -slamRobot.yaw * Math.PI / 180;
+            slamCtx.fillStyle = '#4d7fbc';
+            slamCtx.beginPath();
+            slamCtx.moveTo(rp.x + Math.cos(ang) * 12,        rp.y + Math.sin(ang) * 12);
+            slamCtx.lineTo(rp.x + Math.cos(ang + 2.45) * 7,  rp.y + Math.sin(ang + 2.45) * 7);
+            slamCtx.lineTo(rp.x + Math.cos(ang - 2.45) * 7,  rp.y + Math.sin(ang - 2.45) * 7);
+            slamCtx.closePath(); slamCtx.fill();
+        }
+        drawSlam();
+
+        // Enviar goal
+        document.getElementById('send-goal-btn').addEventListener('click', () => {
+            const x = parseFloat(document.getElementById('goal-x').value);
+            const y = parseFloat(document.getElementById('goal-y').value);
+            socket.emit('send_goal', { x, y });
+        });
+
+        // Lift
+        const liftStatus = document.getElementById('lift-status');
+        function sendLift(cmd) {
+            socket.emit('lift', { cmd }, () => { liftStatus.textContent = 'Lift: ' + cmd; });
+        }
+        document.getElementById('btn-up').addEventListener('click',   () => sendLift('UP'));
+        document.getElementById('btn-stop').addEventListener('click', () => sendLift('STOP'));
+        document.getElementById('btn-down').addEventListener('click', () => sendLift('DOWN'));
+    </script>
+</body>
+
+</html>
