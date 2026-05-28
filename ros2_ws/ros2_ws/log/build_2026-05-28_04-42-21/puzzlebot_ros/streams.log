@@ -1,0 +1,33 @@
+[7.451s] Invoking command in '/home/puzzlebot/ros2_ws/build/puzzlebot_ros': PYTHONPATH=/home/puzzlebot/ros2_ws/build/puzzlebot_ros/prefix_override:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/puzzlebot/ros2_ws/build/puzzlebot_ros/build --no-deps install_data
+[8.591s] running develop
+[9.379s] running egg_info
+[9.380s] writing puzzlebot_ros.egg-info/PKG-INFO
+[9.382s] writing dependency_links to puzzlebot_ros.egg-info/dependency_links.txt
+[9.383s] writing entry points to puzzlebot_ros.egg-info/entry_points.txt
+[9.384s] writing requirements to puzzlebot_ros.egg-info/requires.txt
+[9.384s] writing top-level names to puzzlebot_ros.egg-info/top_level.txt
+[9.535s] reading manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'
+[9.540s] writing manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'
+[9.742s] running build_ext
+[9.744s] Creating /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages/puzzlebot-ros.egg-link (link to .)
+[9.748s] Installing aruco_detector script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.749s] Installing camera_compress script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.750s] Installing camera_node script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.750s] Installing cmd_vel_to_wheels script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.751s] Installing distance_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.753s] Installing ekf_slam script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.755s] Installing goto_point script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.757s] Installing kalman script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.757s] Installing kalman_aruco script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.759s] Installing lidar_mapper script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.759s] Installing lift_controller script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.760s] Installing navigator script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.760s] Installing puzzlebot_teleop script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.761s] Installing pwm_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.762s] Installing scan_matcher script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.762s] Installing test_imu script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.763s] Installing velocity_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[9.763s] 
+[9.763s] Installed /home/puzzlebot/ros2_ws/build/puzzlebot_ros
+[9.764s] running install_data
+[9.893s] Invoked command in '/home/puzzlebot/ros2_ws/build/puzzlebot_ros' returned '0': PYTHONPATH=/home/puzzlebot/ros2_ws/build/puzzlebot_ros/prefix_override:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/puzzlebot/ros2_ws/build/puzzlebot_ros/build --no-deps install_data

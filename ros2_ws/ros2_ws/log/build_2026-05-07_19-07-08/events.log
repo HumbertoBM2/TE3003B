@@ -1,0 +1,41 @@
+[0.000000] (-) TimerEvent: {}
+[0.000377] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.000525] (puzzlebot_ros) JobQueued: {'identifier': 'puzzlebot_ros', 'dependencies': OrderedDict()}
+[0.002539] (puzzlebot_ros) JobStarted: {'identifier': 'puzzlebot_ros'}
+[0.099183] (-) TimerEvent: {}
+[0.200632] (-) TimerEvent: {}
+[0.301515] (-) TimerEvent: {}
+[0.402442] (-) TimerEvent: {}
+[0.503769] (-) TimerEvent: {}
+[0.607530] (-) TimerEvent: {}
+[0.708161] (-) TimerEvent: {}
+[0.811796] (-) TimerEvent: {}
+[0.915603] (-) TimerEvent: {}
+[1.016098] (-) TimerEvent: {}
+[1.116968] (-) TimerEvent: {}
+[1.221181] (-) TimerEvent: {}
+[1.322089] (-) TimerEvent: {}
+[1.422644] (-) TimerEvent: {}
+[1.523140] (-) TimerEvent: {}
+[1.623504] (-) TimerEvent: {}
+[1.723887] (-) TimerEvent: {}
+[1.824261] (-) TimerEvent: {}
+[1.924611] (-) TimerEvent: {}
+[2.025059] (-) TimerEvent: {}
+[2.125395] (-) TimerEvent: {}
+[2.225787] (-) TimerEvent: {}
+[2.326184] (-) TimerEvent: {}
+[2.426520] (-) TimerEvent: {}
+[2.526905] (-) TimerEvent: {}
+[2.627331] (-) TimerEvent: {}
+[2.756945] (-) TimerEvent: {}
+[2.857665] (-) TimerEvent: {}
+[2.958058] (-) TimerEvent: {}
+[3.059395] (-) TimerEvent: {}
+[3.160751] (-) TimerEvent: {}
+[3.261329] (-) TimerEvent: {}
+[3.362190] (-) TimerEvent: {}
+[3.464433] (-) TimerEvent: {}
+[3.569101] (-) TimerEvent: {}
+[3.592570] (puzzlebot_ros) JobEnded: {'identifier': 'puzzlebot_ros', 'rc': 0}
+[3.605652] (-) EventReactorShutdown: {}

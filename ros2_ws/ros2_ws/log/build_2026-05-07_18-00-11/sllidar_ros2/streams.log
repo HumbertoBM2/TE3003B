@@ -1,0 +1,586 @@
+[3.516s] Invoking command in '/home/puzzlebot/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake /home/puzzlebot/ros2_ws/src/sllidar_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/puzzlebot/ros2_ws/install/sllidar_ros2
+[4.592s] -- The C compiler identification is GNU 8.4.0
+[5.100s] -- The CXX compiler identification is GNU 8.4.0
+[5.137s] -- Check for working C compiler: /usr/bin/cc
+[5.688s] -- Check for working C compiler: /usr/bin/cc -- works
+[5.725s] -- Detecting C compiler ABI info
+[6.037s] -- Detecting C compiler ABI info - done
+[6.092s] -- Detecting C compile features
+[6.094s] -- Detecting C compile features - done
+[6.107s] -- Check for working CXX compiler: /usr/bin/c++
+[6.430s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[6.440s] -- Detecting CXX compiler ABI info
+[6.795s] -- Detecting CXX compiler ABI info - done
+[6.847s] -- Detecting CXX compile features
+[6.849s] -- Detecting CXX compile features - done
+[6.888s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[7.633s] -- Found Python3: /usr/bin/python3.8 (found version "3.8.10") found components: Interpreter 
+[7.923s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[8.119s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[8.444s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[8.482s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[8.544s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[8.663s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[8.804s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[9.301s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[9.322s] -- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[10.109s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[10.243s] -- Found FastRTPS: /opt/ros/humble/include  
+[10.491s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[10.556s] -- Looking for pthread.h
+[10.842s] -- Looking for pthread.h - found
+[10.843s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[11.111s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[11.112s] -- Looking for pthread_create in pthreads
+[11.334s] -- Looking for pthread_create in pthreads - not found
+[11.335s] -- Looking for pthread_create in pthread
+[11.588s] -- Looking for pthread_create in pthread - found
+[11.592s] -- Found Threads: TRUE  
+[12.678s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[13.479s] -- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)
+[13.929s] -- Configuring done
+[14.008s] -- Generating done
+[14.014s] -- Build files have been written to: /home/puzzlebot/ros2_ws/build/sllidar_ros2
+[14.047s] Invoked command in '/home/puzzlebot/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake /home/puzzlebot/ros2_ws/src/sllidar_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/puzzlebot/ros2_ws/install/sllidar_ros2
+[14.057s] Invoking command in '/home/puzzlebot/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/puzzlebot/ros2_ws/build/sllidar_ros2 -- -j4 -l4
+[14.214s] [35m[1mScanning dependencies of target sllidar_client[0m
+[14.215s] [35m[1mScanning dependencies of target sllidar_node[0m
+[14.697s] [  5%] [32mBuilding CXX object CMakeFiles/sllidar_client.dir/src/sllidar_client.cpp.o[0m
+[14.709s] [ 10%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/src/sllidar_node.cpp.o[0m
+[14.748s] [ 15%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/net_serial.cpp.o[0m
+[14.771s] [ 20%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/net_socket.cpp.o[0m
+[16.733s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:[m[K In member function ‘[01m[Kbool rp::arch::net::raw_serial::open(const char*, uint32_t, uint32_t)[m[K’:
+[16.735s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:97:74:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflags[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[16.736s]  bool raw_serial::open(const char * portname, uint32_t baudrate, [01;35m[Kuint32_t flags[m[K)
+[16.736s]                                                                  [01;35m[K~~~~~~~~~^~~~~[m[K
+[16.738s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:[m[K In member function ‘[01m[Kvirtual void rp::arch::net::raw_serial::flush(_u32)[m[K’:
+[16.738s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:281:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflags[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[16.739s]  void raw_serial::flush( [01;35m[K_u32 flags[m[K)
+[16.741s]                          [01;35m[K~~~~~^~~~~[m[K
+[16.742s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:[m[K In member function ‘[01m[Kvirtual int rp::arch::net::raw_serial::waitforsent(_u32, size_t*)[m[K’:
+[16.743s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:286:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[16.744s]  int raw_serial::waitforsent([01;35m[K_u32 timeout[m[K, size_t * returned_size)
+[16.745s]                              [01;35m[K~~~~~^~~~~~~[m[K
+[16.747s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:[m[K In member function ‘[01m[Kvirtual int rp::arch::net::raw_serial::waitforrecv(_u32, size_t*)[m[K’:
+[16.761s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:292:34:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[16.763s]  int raw_serial::waitforrecv([01;35m[K_u32 timeout[m[K, size_t * returned_size)
+[16.774s]                              [01;35m[K~~~~~^~~~~~~[m[K
+[16.775s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:[m[K In member function ‘[01m[Kvirtual void rp::arch::net::raw_serial::cancelOperation()[m[K’:
+[16.776s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:427:5:[m[K [01;35m[Kwarning: [m[Kvalue computed is not used [[01;35m[K-Wunused-value[m[K]
+[16.777s]      [01;35m[K(int)::write(_selfpipe[1], "x", 1)[m[K;
+[16.778s]      [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[16.842s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[16.843s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[16.844s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[16.846s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10[m[K:
+[16.847s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[16.848s]      sl_u8 data[0[01;35m[K][m[K;
+[16.849s]                  [01;35m[K^[m[K
+[16.855s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[16.856s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[16.858s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[16.859s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10[m[K:
+[16.860s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[16.861s]      sl_u8  payload[0[01;35m[K][m[K;
+[16.862s]                      [01;35m[K^[m[K
+[17.163s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/arch_linux.h:42[m[K,
+[17.164s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:41[m[K,
+[17.164s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10[m[K:
+[17.166s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:[m[K In member function ‘[01m[Kvirtual u_result rp::arch::net::DGramSocketImpl::sendTo(const rp::net::SocketAddress*, const void*, size_t)[m[K’:
+[17.167s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:733:24:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[17.167s]              assert([01;35m[Kans == len[m[K);
+[17.168s]                     [01;35m[K~~~~^~~~~~[m[K
+[18.897s] [ 25%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/timer.cpp.o[0m
+[18.943s] [ 30%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/dataunpacker.cpp.o[0m
+[35.369s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[35.483s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[35.484s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[35.484s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunnpacker_commondef.h:41[m[K,
+[35.485s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:39[m[K:
+[35.485s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[35.486s]      sl_u8 data[0[01;35m[K][m[K;
+[35.486s]                  [01;35m[K^[m[K
+[35.487s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[35.487s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[35.487s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[35.488s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunnpacker_commondef.h:41[m[K,
+[35.488s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:39[m[K:
+[35.489s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[35.490s]      sl_u8  payload[0[01;35m[K][m[K;
+[35.490s]                      [01;35m[K^[m[K
+[42.363s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:40[m[K:
+[42.365s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)[m[K’:
+[42.366s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.366s]   virtual void onCustomSampleDataDecoded([01;35m[K_u8 ansType[m[K, _u32 customCode, const void* data, size_t size) {}
+[42.367s]                                          [01;35m[K~~~~^~~~~~~[m[K
+[42.367s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KcustomCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.367s]   virtual void onCustomSampleDataDecoded(_u8 ansType, [01;35m[K_u32 customCode[m[K, const void* data, size_t size) {}
+[42.368s]                                                       [01;35m[K~~~~~^~~~~~~~~~[m[K
+[42.368s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:83:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdata[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.369s]   virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, [01;35m[Kconst void* data[m[K, size_t size) {}
+[42.370s]                                                                        [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[42.370s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:96:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.371s]   virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, [01;35m[Ksize_t size[m[K) {}
+[42.371s]                                                                                          [01;35m[K~~~~~~~^~~~[m[K
+[42.371s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)[m[K’:
+[42.372s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrMsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.372s]   virtual void onDecodingError([01;35m[Kint errMsg[m[K, _u8 ansType, const void* payload, size_t size) {}
+[42.373s]                                [01;35m[K~~~~^~~~~~[m[K
+[42.373s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.374s]   virtual void onDecodingError(int errMsg, [01;35m[K_u8 ansType[m[K, const void* payload, size_t size) {}
+[42.374s]                                            [01;35m[K~~~~^~~~~~~[m[K
+[42.377s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kpayload[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.377s]   virtual void onDecodingError(int errMsg, _u8 ansType, [01;35m[Kconst void* payload[m[K, size_t size) {}
+[42.378s]                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~[m[K
+[42.378s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[42.378s]   virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, [01;35m[Ksize_t size[m[K) {}
+[42.379s]                                                                              [01;35m[K~~~~~~~^~~~[m[K
+[52.623s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41[m[K,
+[52.624s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[52.624s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+[52.625s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[52.625s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[52.626s]      sl_u8 data[0[01;35m[K][m[K;
+[52.626s]                  [01;35m[K^[m[K
+[52.627s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[52.628s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar.h:36[m[K,
+[52.628s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/src/sllidar_node.cpp:38[m[K:
+[52.630s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[52.631s]      sl_u8  payload[0[01;35m[K][m[K;
+[52.631s]                      [01;35m[K^[m[K
+[85.796s] [ 35%] [32m[1mLinking CXX executable sllidar_client[0m
+[88.061s] [ 35%] Built target sllidar_client
+[93.339s] [ 40%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp.o[0m
+[94.982s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[94.984s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[94.985s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[94.985s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41[m[K,
+[94.986s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:39[m[K:
+[94.986s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[94.987s]      sl_u8 data[0[01;35m[K][m[K;
+[94.987s]                  [01;35m[K^[m[K
+[94.987s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[94.988s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[94.988s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[94.988s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41[m[K,
+[94.989s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:39[m[K:
+[94.989s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[94.990s]      sl_u8  payload[0[01;35m[K][m[K;
+[94.990s]                      [01;35m[K^[m[K
+[95.343s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:40[m[K:
+[95.344s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)[m[K’:
+[95.344s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.345s]   virtual void onCustomSampleDataDecoded([01;35m[K_u8 ansType[m[K, _u32 customCode, const void* data, size_t size) {}
+[95.345s]                                          [01;35m[K~~~~^~~~~~~[m[K
+[95.346s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KcustomCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.346s]   virtual void onCustomSampleDataDecoded(_u8 ansType, [01;35m[K_u32 customCode[m[K, const void* data, size_t size) {}
+[95.347s]                                                       [01;35m[K~~~~~^~~~~~~~~~[m[K
+[95.347s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:83:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdata[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.347s]  onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, [01;35m[Kconst void* data[m[K, size_t size) {}
+[95.348s]                                                          [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[95.348s] 
+[95.348s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:96:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.349s]  mpleDataDecoded(_u8 ansType, _u32 customCode, const void* data, [01;35m[Ksize_t size[m[K) {}
+[95.350s]                                                                  [01;35m[K~~~~~~~^~~~[m[K
+[95.350s] 
+[95.351s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)[m[K’:
+[95.351s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrMsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.352s]   virtual void onDecodingError([01;35m[Kint errMsg[m[K, _u8 ansType, const void* payload, size_t size) {}
+[95.352s]                                [01;35m[K~~~~^~~~~~[m[K
+[95.353s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.354s]   virtual void onDecodingError(int errMsg, [01;35m[K_u8 ansType[m[K, const void* payload, size_t size) {}
+[95.354s]                                            [01;35m[K~~~~^~~~~~~[m[K
+[95.355s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kpayload[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.355s]   virtual void onDecodingError(int errMsg, _u8 ansType, [01;35m[Kconst void* payload[m[K, size_t size) {}
+[95.355s]                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~[m[K
+[95.356s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[95.356s]  d onDecodingError(int errMsg, _u8 ansType, const void* payload, [01;35m[Ksize_t size[m[K) {}
+[95.357s]                                                                  [01;35m[K~~~~~~~^~~~[m[K
+[95.357s] 
+[95.801s] [ 45%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/hal/thread.cpp.o[0m
+[97.101s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[97.102s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[97.102s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[97.103s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:35[m[K:
+[97.103s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[97.103s]      sl_u8 data[0[01;35m[K][m[K;
+[97.104s]                  [01;35m[K^[m[K
+[97.105s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[97.105s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[97.106s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[97.106s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:35[m[K:
+[97.107s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[97.107s]      sl_u8  payload[0[01;35m[K][m[K;
+[97.107s]                      [01;35m[K^[m[K
+[97.291s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:43[m[K:
+[97.291s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:[m[K In static member function ‘[01m[Kstatic rp::hal::Thread rp::hal::Thread::create(thread_proc_t, void*)[m[K’:
+[97.292s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:52:77:[m[K [01;35m[Kwarning: [m[Kcast between incompatible function types from ‘[01m[Kthread_proc_t[m[K’ {aka ‘[01m[Klong unsigned int (*)(void*)[m[K’} to ‘[01m[Kvoid* (*)(void*)[m[K’ [[01;35m[K-Wcast-function-type[m[K]
+[97.292s]  ead_create((pthread_t *)&newborn._handle, NULL, (void * (*)(void *))[01;35m[Kproc[m[K, data);
+[97.293s]                                                                      [01;35m[K^~~~[m[K
+[97.293s] 
+[97.294s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:[m[K In member function ‘[01m[Ku_result rp::hal::Thread::join(long unsigned int)[m[K’:
+[97.294s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:176:37:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[97.295s]  u_result Thread::join([01;35m[Kunsigned long timeout[m[K)
+[97.295s]                        [01;35m[K~~~~~~~~~~~~~~^~~~~~~[m[K
+[97.609s] [ 50%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/rplidar_driver.cpp.o[0m
+[98.903s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[98.903s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[98.904s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[98.904s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:33[m[K:
+[98.905s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[98.905s]      sl_u8 data[0[01;35m[K][m[K;
+[98.906s]                  [01;35m[K^[m[K
+[98.907s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[98.908s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[98.909s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[98.909s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:33[m[K:
+[98.910s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[98.910s]      sl_u8  payload[0[01;35m[K][m[K;
+[98.911s]                      [01;35m[K^[m[K
+[99.152s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:[m[K In member function ‘[01m[Ku_result rp::standalone::rplidar::RPlidarDriver::connect(const char*, _u32, _u32)[m[K’:
+[99.152s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:67:77:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflag[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[99.153s]    u_result RPlidarDriver::connect(const char *path, _u32 portOrBaud, [01;35m[K_u32 flag[m[K)
+[99.153s]                                                                       [01;35m[K~~~~~^~~~[m[K
+[99.153s] 
+[99.154s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:[m[K In member function ‘[01m[Ku_result rp::standalone::rplidar::RPlidarDriver::reset(_u32)[m[K’:
+[99.155s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:101:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[99.155s]      u_result RPlidarDriver::reset([01;35m[K_u32 timeout[m[K)
+[99.156s]                                    [01;35m[K~~~~~^~~~~~~[m[K
+[99.156s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:[m[K In member function ‘[01m[Ku_result rp::standalone::rplidar::RPlidarDriver::getScanDataWithInterval(rplidar_response_measurement_node_t*, size_t&)[m[K’:
+[99.156s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:180:91:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knodebuffer[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[99.157s]  iver::getScanDataWithInterval([01;35m[Krplidar_response_measurement_node_t * nodebuffer[m[K, size_t & count)
+[99.157s]                                [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[99.158s] 
+[99.158s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:180:112:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kcount[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[99.159s]  aWithInterval(rplidar_response_measurement_node_t * nodebuffer, [01;35m[Ksize_t & count[m[K)
+[99.159s]                                                                  [01;35m[K~~~~~~~~~^~~~~[m[K
+[99.160s] 
+[99.582s] [ 55%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_async_transceiver.cpp.o[0m
+[100.890s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[100.891s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[100.891s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[100.891s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:35[m[K:
+[100.892s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[100.893s]      sl_u8 data[0[01;35m[K][m[K;
+[100.893s]                  [01;35m[K^[m[K
+[100.895s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[100.895s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[100.896s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[100.896s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:35[m[K:
+[100.897s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[100.897s]      sl_u8  payload[0[01;35m[K][m[K;
+[100.898s]                      [01;35m[K^[m[K
+[101.227s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:44[m[K:
+[101.227s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)[m[K’:
+[101.227s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[101.228s]   virtual void   onChannelError([01;35m[Ku_result errCode[m[K) {}
+[101.228s]                                 [01;35m[K~~~~~~~~~^~~~~~~[m[K
+[101.776s] [ 60%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_crc.cpp.o[0m
+[101.839s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41[m[K,
+[101.839s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_crc.h:36[m[K,
+[101.840s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_crc.cpp:33[m[K:
+[101.840s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[101.841s]      sl_u8 data[0[01;35m[K][m[K;
+[101.841s]                  [01;35m[K^[m[K
+[101.842s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_crc.h:36[m[K,
+[101.842s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_crc.cpp:33[m[K:
+[101.843s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[101.843s]      sl_u8  payload[0[01;35m[K][m[K;
+[101.843s]                      [01;35m[K^[m[K
+[101.924s] [ 65%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_lidar_driver.cpp.o[0m
+[102.961s] [ 70%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_lidarprotocol_codec.cpp.o[0m
+[103.296s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[103.296s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[103.297s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[103.297s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:33[m[K:
+[103.298s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[103.298s]      sl_u8 data[0[01;35m[K][m[K;
+[103.299s]                  [01;35m[K^[m[K
+[103.300s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[103.300s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[103.303s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[103.304s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:33[m[K:
+[103.305s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[103.306s]      sl_u8  payload[0[01;35m[K][m[K;
+[103.307s]                      [01;35m[K^[m[K
+[103.791s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:50[m[K:
+[103.792s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)[m[K’:
+[103.793s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.794s]   virtual void onCustomSampleDataDecoded([01;35m[K_u8 ansType[m[K, _u32 customCode, const void* data, size_t size) {}
+[103.794s]                                          [01;35m[K~~~~^~~~~~~[m[K
+[103.794s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KcustomCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.795s]   virtual void onCustomSampleDataDecoded(_u8 ansType, [01;35m[K_u32 customCode[m[K, const void* data, size_t size) {}
+[103.795s]                                                       [01;35m[K~~~~~^~~~~~~~~~[m[K
+[103.796s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:83:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdata[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.796s]  onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, [01;35m[Kconst void* data[m[K, size_t size) {}
+[103.797s]                                                          [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[103.797s] 
+[103.798s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:96:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.798s]  mpleDataDecoded(_u8 ansType, _u32 customCode, const void* data, [01;35m[Ksize_t size[m[K) {}
+[103.798s]                                                                  [01;35m[K~~~~~~~^~~~[m[K
+[103.799s] 
+[103.800s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)[m[K’:
+[103.800s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrMsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.801s]   virtual void onDecodingError([01;35m[Kint errMsg[m[K, _u8 ansType, const void* payload, size_t size) {}
+[103.801s]                                [01;35m[K~~~~^~~~~~[m[K
+[103.802s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.802s]   virtual void onDecodingError(int errMsg, [01;35m[K_u8 ansType[m[K, const void* payload, size_t size) {}
+[103.802s]                                            [01;35m[K~~~~^~~~~~~[m[K
+[103.803s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kpayload[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.804s]   virtual void onDecodingError(int errMsg, _u8 ansType, [01;35m[Kconst void* payload[m[K, size_t size) {}
+[103.805s]                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~[m[K
+[103.806s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.807s]  d onDecodingError(int errMsg, _u8 ansType, const void* payload, [01;35m[Ksize_t size[m[K) {}
+[103.808s]                                                                  [01;35m[K~~~~~~~^~~~[m[K
+[103.808s] 
+[103.829s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:51[m[K:
+[103.829s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)[m[K’:
+[103.830s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.830s]   virtual void   onChannelError([01;35m[Ku_result errCode[m[K) {}
+[103.831s]                                 [01;35m[K~~~~~~~~~^~~~~~~[m[K
+[103.931s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K In member function ‘[01m[Kvirtual sl_result sl::SlamtecLidarDriver::reset(sl_u32)[m[K’:
+[103.932s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:511:32:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KtimeoutInMs[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.933s]          sl_result reset([01;35m[Ksl_u32 timeoutInMs = DEFAULT_TIMEOUT[m[K)
+[103.933s]                          [01;35m[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[103.943s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K In member function ‘[01m[Kvirtual sl_result sl::SlamtecLidarDriver::startScan(bool, bool, sl_u32, sl::LidarScanMode*)[m[K’:
+[103.944s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:586:69:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Koptions[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.944s]          sl_result startScan(bool force, bool useTypicalScan, [01;35m[Ksl_u32 options = 0[m[K, LidarScanMode* outUsedScanMode = nullptr)
+[103.945s]                                                               [01;35m[K~~~~~~~^~~~~~~~~~~[m[K
+[103.951s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K In member function ‘[01m[Kvirtual sl_result sl::SlamtecLidarDriver::stop(sl_u32)[m[K’:
+[103.951s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:763:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimeout[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.952s]          sl_result stop([01;35m[Ksl_u32 timeout = DEFAULT_TIMEOUT[m[K)
+[103.952s]                         [01;35m[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[103.958s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K In member function ‘[01m[Kvirtual sl_result sl::SlamtecLidarDriver::getFrequency(const sl::LidarScanMode&, const sl_lidar_response_measurement_node_hq_t*, size_t, float&)[m[K’:
+[103.958s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:880:110:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knodes[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.959s]  rScanMode& scanMode, [01;35m[Kconst sl_lidar_response_measurement_node_hq_t* nodes[m[K, size_t count, float& frequency)
+[103.959s]                       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[103.960s] 
+[103.967s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K In member function ‘[01m[Kvirtual sl_result sl::SlamtecLidarDriver::getMotorInfo(sl::LidarMotorInfo&, sl_u32)[m[K’:
+[103.968s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1023:66:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KtimeoutInMs[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.968s]          sl_result getMotorInfo(LidarMotorInfo &motorInfo, [01;35m[Ksl_u32 timeoutInMs[m[K)
+[103.969s]                                                            [01;35m[K~~~~~~~^~~~~~~~~~~[m[K
+[103.972s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K In member function ‘[01m[Ku_result sl::SlamtecLidarDriver::getScanModeCount(sl_u16&, sl_u32)[m[K’:
+[103.974s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1199:61:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KtimeoutInMs[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[103.974s]          u_result getScanModeCount(sl_u16& modeCount, [01;35m[Ksl_u32 timeoutInMs = DEFAULT_TIMEOUT[m[K)
+[103.975s]                                                       [01;35m[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[104.002s] [ 75%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp.o[0m
+[104.108s] /home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp: In instantiation of ‘[01m[Kvoid sl::RawSampleNodeHolder<T>::pushNode(_u64, const T*) [with T = sl_lidar_response_measurement_node_hq_t; _u64 = long unsigned int][m[K’:
+[104.109s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1648:61:[m[K   required from here
+[104.109s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:202:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktimestamp_uS[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[104.110s]          void pushNode([01;35m[K_u64 timestamp_uS[m[K, const T* node)
+[104.110s]                        [01;35m[K~~~~~^~~~~~~~~~~~[m[K
+[104.367s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[104.367s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[104.368s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[104.368s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:35[m[K:
+[104.370s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[104.370s]      sl_u8 data[0[01;35m[K][m[K;
+[104.372s]                  [01;35m[K^[m[K
+[104.373s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[104.374s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[104.375s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49[m[K,
+[104.376s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:35[m[K:
+[104.377s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[104.378s]      sl_u8  payload[0[01;35m[K][m[K;
+[104.380s]                      [01;35m[K^[m[K
+[104.574s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:[m[K At global scope:
+[104.574s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:83:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid sl::convert(const sl_lidar_response_measurement_node_hq_t&, sl_lidar_response_measurement_node_t&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[104.575s]      static void [01;35m[Kconvert[m[K(const sl_lidar_response_measurement_node_hq_t& from, sl_lidar_response_measurement_node_t& to)
+[104.576s]                  [01;35m[K^~~~~~~[m[K
+[104.576s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:75:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid sl::convert(const sl_lidar_response_measurement_node_t&, sl_lidar_response_measurement_node_hq_t&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[104.577s]      static void [01;35m[Kconvert[m[K(const sl_lidar_response_measurement_node_t& from, sl_lidar_response_measurement_node_hq_t& to)
+[104.578s]                  [01;35m[K^~~~~~~[m[K
+[104.579s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:70:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid sl::printDeprecationWarn(const char*, const char*)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[104.579s]      static void [01;35m[KprintDeprecationWarn[m[K(const char* fn, const char* replacement)
+[104.580s]                  [01;35m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[104.823s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:49[m[K:
+[104.824s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)[m[K’:
+[104.826s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:41:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[104.827s]   virtual void   onChannelError([01;35m[Ku_result errCode[m[K) {}
+[104.828s]                                 [01;35m[K~~~~~~~~~^~~~~~~[m[K
+[105.056s] [ 80%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_capsules.cpp.o[0m
+[105.294s] [ 85%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_serial_channel.cpp.o[0m
+[105.610s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[105.611s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[105.613s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[105.613s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41[m[K,
+[105.614s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:39[m[K:
+[105.615s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[105.616s]      sl_u8 data[0[01;35m[K][m[K;
+[105.618s]                  [01;35m[K^[m[K
+[105.625s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[105.626s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[105.626s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[105.627s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41[m[K,
+[105.628s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:39[m[K:
+[105.628s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[105.629s]      sl_u8  payload[0[01;35m[K][m[K;
+[105.629s]                      [01;35m[K^[m[K
+[106.094s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:40[m[K:
+[106.096s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)[m[K’:
+[106.097s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.098s]   virtual void onCustomSampleDataDecoded([01;35m[K_u8 ansType[m[K, _u32 customCode, const void* data, size_t size) {}
+[106.099s]                                          [01;35m[K~~~~^~~~~~~[m[K
+[106.100s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KcustomCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.101s]   virtual void onCustomSampleDataDecoded(_u8 ansType, [01;35m[K_u32 customCode[m[K, const void* data, size_t size) {}
+[106.102s]                                                       [01;35m[K~~~~~^~~~~~~~~~[m[K
+[106.103s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:83:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdata[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.103s]   virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, [01;35m[Kconst void* data[m[K, size_t size) {}
+[106.104s]                                                                        [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[106.104s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:96:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.105s]   virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, [01;35m[Ksize_t size[m[K) {}
+[106.105s]                                                                                          [01;35m[K~~~~~~~^~~~[m[K
+[106.106s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)[m[K’:
+[106.107s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrMsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.107s]   virtual void onDecodingError([01;35m[Kint errMsg[m[K, _u8 ansType, const void* payload, size_t size) {}
+[106.108s]                                [01;35m[K~~~~^~~~~~[m[K
+[106.108s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.108s]   virtual void onDecodingError(int errMsg, [01;35m[K_u8 ansType[m[K, const void* payload, size_t size) {}
+[106.109s]                                            [01;35m[K~~~~^~~~~~~[m[K
+[106.110s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kpayload[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.110s]   virtual void onDecodingError(int errMsg, _u8 ansType, [01;35m[Kconst void* payload[m[K, size_t size) {}
+[106.111s]                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~[m[K
+[106.111s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[106.112s]   virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, [01;35m[Ksize_t size[m[K) {}
+[106.112s]                                                                              [01;35m[K~~~~~~~^~~~[m[K
+[106.391s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41[m[K,
+[106.392s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[106.392s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_serial_channel.cpp:33[m[K:
+[106.393s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[106.394s]      sl_u8 data[0[01;35m[K][m[K;
+[106.394s]                  [01;35m[K^[m[K
+[106.396s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[106.398s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_serial_channel.cpp:33[m[K:
+[106.400s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[106.402s]      sl_u8  payload[0[01;35m[K][m[K;
+[106.403s]                      [01;35m[K^[m[K
+[106.531s] [ 90%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_tcp_channel.cpp.o[0m
+[106.692s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36[m[K,
+[106.693s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39[m[K,
+[106.694s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[106.695s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41[m[K,
+[106.696s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:39[m[K:
+[106.697s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[106.699s]      sl_u8 data[0[01;35m[K][m[K;
+[106.700s]                  [01;35m[K^[m[K
+[106.706s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36[m[K,
+[106.707s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40[m[K,
+[106.708s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49[m[K,
+[106.710s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41[m[K,
+[106.711s] [ 95%] [32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_udp_channel.cpp.o[0m
+[106.712s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:39[m[K:
+[106.713s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[106.714s]      sl_u8  payload[0[01;35m[K][m[K;
+[106.715s]                      [01;35m[K^[m[K
+[107.110s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:40[m[K:
+[107.110s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)[m[K’:
+[107.111s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:45:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.111s]   virtual void onCustomSampleDataDecoded([01;35m[K_u8 ansType[m[K, _u32 customCode, const void* data, size_t size) {}
+[107.112s]                                          [01;35m[K~~~~^~~~~~~[m[K
+[107.112s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:59:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KcustomCode[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.114s]   virtual void onCustomSampleDataDecoded(_u8 ansType, [01;35m[K_u32 customCode[m[K, const void* data, size_t size) {}
+[107.116s]                                                       [01;35m[K~~~~~^~~~~~~~~~[m[K
+[107.117s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:83:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kdata[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.118s]   virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, [01;35m[Kconst void* data[m[K, size_t size) {}
+[107.119s]                                                                        [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[107.120s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:96:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.121s]   virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, [01;35m[Ksize_t size[m[K) {}
+[107.122s]                                                                                          [01;35m[K~~~~~~~^~~~[m[K
+[107.124s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:[m[K In member function ‘[01m[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)[m[K’:
+[107.125s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KerrMsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.127s]   virtual void onDecodingError([01;35m[Kint errMsg[m[K, _u8 ansType, const void* payload, size_t size) {}
+[107.141s]                                [01;35m[K~~~~^~~~~~[m[K
+[107.143s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KansType[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.144s]   virtual void onDecodingError(int errMsg, [01;35m[K_u8 ansType[m[K, const void* payload, size_t size) {}
+[107.145s]                                            [01;35m[K~~~~^~~~~~~[m[K
+[107.146s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kpayload[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.148s]   virtual void onDecodingError(int errMsg, _u8 ansType, [01;35m[Kconst void* payload[m[K, size_t size) {}
+[107.149s]                                                         [01;35m[K~~~~~~~~~~~~^~~~~~~[m[K
+[107.151s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:84:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.152s]   virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, [01;35m[Ksize_t size[m[K) {}
+[107.153s]                                                                              [01;35m[K~~~~~~~^~~~[m[K
+[107.154s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:[m[K In member function ‘[01m[Kvoid sl::internal::unpacker::UnpackerHandler_DenseCapsuleNode::_onScanNodeDenseCapsuleData(rplidar_response_dense_capsule_measurement_nodes_t&, sl::internal::LIDARSampleDataUnpackerInner*)[m[K’:
+[107.155s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:763:108:[m[K [01;35m[Kwarning: [m[Ktype qualifiers ignored on cast result type [[01;35m[K-Wignored-qualifiers[m[K]
+[107.156s]              const int dist = static_cast<const int>(_cached_previous_dense_capsuledata.cabins[pos].distance[01;35m[K)[m[K;
+[107.157s]                                                                                                             [01;35m[K^[m[K
+[107.545s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41[m[K,
+[107.548s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[107.549s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:33[m[K:
+[107.551s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[107.552s]      sl_u8 data[0[01;35m[K][m[K;
+[107.554s]                  [01;35m[K^[m[K
+[107.555s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[107.557s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:33[m[K:
+[107.558s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[107.559s]      sl_u8  payload[0[01;35m[K][m[K;
+[107.560s]                      [01;35m[K^[m[K
+[107.562s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:[m[K In member function ‘[01m[Kvoid sl::TcpChannel::setStatus(_u32)[m[K’:
+[107.563s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:109:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflag[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.564s]          void setStatus([01;35m[K_u32 flag[m[K){}
+[107.565s]                         [01;35m[K~~~~~^~~~[m[K
+[107.779s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41[m[K,
+[107.779s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[107.780s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:33[m[K:
+[107.780s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kdata[m[K’ [[01;35m[K-Wpedantic[m[K]
+[107.780s]      sl_u8 data[0[01;35m[K][m[K;
+[107.782s]                  [01;35m[K^[m[K
+[107.783s] In file included from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54[m[K,
+[107.784s]                  from [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:33[m[K:
+[107.785s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:[m[K [01;35m[Kwarning: [m[KISO C++ forbids zero-size array ‘[01m[Kpayload[m[K’ [[01;35m[K-Wpedantic[m[K]
+[107.787s]      sl_u8  payload[0[01;35m[K][m[K;
+[107.790s]                      [01;35m[K^[m[K
+[107.802s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:[m[K In member function ‘[01m[Kvoid sl::UdpChannel::setStatus(_u32)[m[K’:
+[107.803s] [01m[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:112:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflag[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[107.803s]          void setStatus([01;35m[K_u32 flag[m[K){}
+[107.804s]                         [01;35m[K~~~~~^~~~[m[K
+[108.088s] [100%] [32m[1mLinking CXX executable sllidar_node[0m
+[109.505s] [100%] Built target sllidar_node
+[109.567s] Invoked command in '/home/puzzlebot/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --build /home/puzzlebot/ros2_ws/build/sllidar_ros2 -- -j4 -l4
+[109.850s] Invoking command in '/home/puzzlebot/ros2_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/puzzlebot/ros2_ws/build/sllidar_ros2
+[109.879s] -- Install configuration: ""
+[109.882s] -- Execute custom install script
+[109.889s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py
+[109.921s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m12_launch .py
+[109.956s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m7_launch.py
+[109.986s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m8_launch.py
+[110.018s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py
+[110.051s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py
+[110.083s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py
+[110.115s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py
+[110.147s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py
+[110.180s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py
+[110.212s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s3_launch.py
+[110.244s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py
+[110.277s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py
+[110.308s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m12_launch.py
+[110.341s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m7_launch.py
+[110.374s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m8_launch.py
+[110.406s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py
+[110.438s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py
+[110.481s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py
+[110.513s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py
+[110.546s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py
+[110.578s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py
+[110.611s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s3_launch.py
+[110.643s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py
+[110.677s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz
+[110.711s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node
+[110.745s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client
+[110.782s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2
+[110.816s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2
+[110.854s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh
+[110.888s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv
+[110.924s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh
+[110.958s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv
+[110.992s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash
+[111.026s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh
+[111.060s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh
+[111.092s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv
+[111.125s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv
+[111.161s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2
+[111.194s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[111.228s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[111.263s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake
+[111.296s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake
+[111.329s] -- Symlinking: /home/puzzlebot/ros2_ws/install/sllidar_ros2/share/sllidar_ros2/package.xml
+[111.372s] Invoked command in '/home/puzzlebot/ros2_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:${CMAKE_PREFIX_PATH} /usr/bin/cmake --install /home/puzzlebot/ros2_ws/build/sllidar_ros2

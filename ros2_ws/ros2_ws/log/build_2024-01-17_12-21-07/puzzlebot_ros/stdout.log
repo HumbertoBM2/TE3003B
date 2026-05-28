@@ -1,0 +1,24 @@
+running develop
+running egg_info
+writing puzzlebot_ros.egg-info/PKG-INFO
+writing dependency_links to puzzlebot_ros.egg-info/dependency_links.txt
+writing entry points to puzzlebot_ros.egg-info/entry_points.txt
+writing requirements to puzzlebot_ros.egg-info/requires.txt
+writing top-level names to puzzlebot_ros.egg-info/top_level.txt
+reading manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'
+writing manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages/puzzlebot-ros.egg-link (link to .)
+Installing distance_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+Installing goto_point script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+Installing kalman script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+Installing kalman_aruco script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+Installing pwm_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+Installing test_imu script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+Installing velocity_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+
+Installed /home/puzzlebot/ros2_ws/build/puzzlebot_ros
+running install_data
+copying launch/camera_jetson.launch.py -> /home/puzzlebot/ros2_ws/install/puzzlebot_ros/share/puzzlebot_ros
+copying launch/marker_publisher.launch.py -> /home/puzzlebot/ros2_ws/install/puzzlebot_ros/share/puzzlebot_ros
+copying launch/aruco_jetson.launch.py -> /home/puzzlebot/ros2_ws/install/puzzlebot_ros/share/puzzlebot_ros

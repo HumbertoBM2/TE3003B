@@ -1,0 +1,19 @@
+[console_scripts]
+aruco_detector = puzzlebot_ros.aruco_detector:main
+camera_compress = puzzlebot_ros.camera_compress:main
+camera_node = puzzlebot_ros.camera_node:main
+cmd_vel_to_wheels = puzzlebot_ros.cmd_vel_to_wheels:main
+distance_control = puzzlebot_ros.distance_control:main
+ekf_slam = puzzlebot_ros.ekf_slam:main
+goto_point = puzzlebot_ros.goto_point:main
+kalman = puzzlebot_ros.kalman:main
+kalman_aruco = puzzlebot_ros.kalman_aruco:main
+lidar_mapper = puzzlebot_ros.lidar_mapper:main
+lift_controller = puzzlebot_ros.lift_controller:main
+navigator = puzzlebot_ros.navigator:main
+puzzlebot_teleop = puzzlebot_ros.puzzlebot_teleop:main
+pwm_control = puzzlebot_ros.pwm_control:main
+scan_matcher = puzzlebot_ros.scan_matcher:main
+test_imu = puzzlebot_ros.test_imu:main
+velocity_control = puzzlebot_ros.velocity_control:main
+

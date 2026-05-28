@@ -1,0 +1,24 @@
+[5.050s] Invoking command in '/home/puzzlebot/ros2_ws/build/puzzlebot_ros': PYTHONPATH=/home/puzzlebot/ros2_ws/build/puzzlebot_ros/prefix_override:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/puzzlebot/ros2_ws/build/puzzlebot_ros/build --no-deps install_data
+[6.107s] running develop
+[6.826s] running egg_info
+[6.827s] writing puzzlebot_ros.egg-info/PKG-INFO
+[6.829s] writing dependency_links to puzzlebot_ros.egg-info/dependency_links.txt
+[6.830s] writing entry points to puzzlebot_ros.egg-info/entry_points.txt
+[6.830s] writing requirements to puzzlebot_ros.egg-info/requires.txt
+[6.831s] writing top-level names to puzzlebot_ros.egg-info/top_level.txt
+[6.975s] reading manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'
+[6.979s] writing manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'
+[7.176s] running build_ext
+[7.177s] Creating /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages/puzzlebot-ros.egg-link (link to .)
+[7.181s] Installing distance_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.182s] Installing goto_point script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.182s] Installing kalman script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.182s] Installing kalman_aruco script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.183s] Installing pwm_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.183s] Installing test_imu script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.184s] Installing velocity_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros
+[7.184s] 
+[7.185s] Installed /home/puzzlebot/ros2_ws/build/puzzlebot_ros
+[7.185s] running install_data
+[7.185s] copying launch/camera_jetson.launch.py -> /home/puzzlebot/ros2_ws/install/puzzlebot_ros/share/puzzlebot_ros
+[7.310s] Invoked command in '/home/puzzlebot/ros2_ws/build/puzzlebot_ros' returned '0': PYTHONPATH=/home/puzzlebot/ros2_ws/build/puzzlebot_ros/prefix_override:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/puzzlebot/ros2_ws/build/puzzlebot_ros/build --no-deps install_data

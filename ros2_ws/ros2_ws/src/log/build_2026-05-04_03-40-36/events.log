@@ -1,0 +1,1226 @@
+[0.000000] (-) TimerEvent: {}
+[0.003706] (puzzlebot_ros) JobQueued: {'identifier': 'puzzlebot_ros', 'dependencies': OrderedDict()}
+[0.003856] (sllidar_ros2) JobQueued: {'identifier': 'sllidar_ros2', 'dependencies': OrderedDict()}
+[0.003967] (puzzlebot_ros) JobStarted: {'identifier': 'puzzlebot_ros'}
+[0.098452] (-) TimerEvent: {}
+[0.200153] (-) TimerEvent: {}
+[0.302713] (-) TimerEvent: {}
+[0.403850] (-) TimerEvent: {}
+[0.508992] (-) TimerEvent: {}
+[0.612955] (-) TimerEvent: {}
+[0.717096] (-) TimerEvent: {}
+[0.820917] (-) TimerEvent: {}
+[0.926757] (-) TimerEvent: {}
+[1.030934] (-) TimerEvent: {}
+[1.134331] (-) TimerEvent: {}
+[1.236076] (-) TimerEvent: {}
+[1.342537] (-) TimerEvent: {}
+[1.392279] (sllidar_ros2) JobStarted: {'identifier': 'sllidar_ros2'}
+[1.444180] (-) TimerEvent: {}
+[1.547398] (-) TimerEvent: {}
+[1.649352] (-) TimerEvent: {}
+[1.753010] (-) TimerEvent: {}
+[1.856329] (-) TimerEvent: {}
+[1.960692] (-) TimerEvent: {}
+[2.066133] (-) TimerEvent: {}
+[2.166819] (-) TimerEvent: {}
+[2.271062] (-) TimerEvent: {}
+[2.372781] (-) TimerEvent: {}
+[2.474248] (-) TimerEvent: {}
+[2.575126] (-) TimerEvent: {}
+[2.676071] (-) TimerEvent: {}
+[2.776806] (-) TimerEvent: {}
+[2.877509] (-) TimerEvent: {}
+[2.978272] (-) TimerEvent: {}
+[3.078887] (-) TimerEvent: {}
+[3.179560] (-) TimerEvent: {}
+[3.280238] (-) TimerEvent: {}
+[3.380854] (-) TimerEvent: {}
+[3.481492] (-) TimerEvent: {}
+[3.582204] (-) TimerEvent: {}
+[3.682846] (-) TimerEvent: {}
+[3.783526] (-) TimerEvent: {}
+[3.887145] (-) TimerEvent: {}
+[3.992315] (-) TimerEvent: {}
+[4.097683] (-) TimerEvent: {}
+[4.204278] (-) TimerEvent: {}
+[4.307472] (-) TimerEvent: {}
+[4.408220] (-) TimerEvent: {}
+[4.509646] (-) TimerEvent: {}
+[4.611884] (-) TimerEvent: {}
+[4.674763] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'cmake'}
+[4.675576] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '/home/puzzlebot/ros2_ws/src/sllidar_ros2', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/puzzlebot/ros2_ws/src/install/sllidar_ros2'], 'cwd': '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('GTK_CSD', '0'), ('USER', 'puzzlebot'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '4818'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent/lib:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/puzzlebot'), ('OLDPWD', '/home/puzzlebot/ros2_ws'), ('DESKTOP_SESSION', 'LXDE'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ux-LXDE.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install:/home/puzzlebot/ros2_packages_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'puzzlebot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ux-LXDE.default.path'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', 'c1'), ('ROS_LOCALHOST_ONLY', '0'), ('SAL_USE_VCLPLUGIN', 'gtk'), ('PATH', '/opt/ros/humble/bin:/home/puzzlebot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('GDM_LANG', 'en_GB'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'lxde-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0.0'), ('LD_PRELOAD', 'libgtk3-nocsd.so.0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'LXDE'), ('XDG_DATA_HOME', '/home/puzzlebot/.local/share'), ('XDG_CONFIG_HOME', '/home/puzzlebot/.config'), ('XDG_SESSION_DESKTOP', 'ux-LXDE'), ('XAUTHORITY', '/home/puzzlebot/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-QtClxIiSIl2g/agent.4675'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/puzzlebot'), ('AMENT_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ux-LXDE'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('_LXSESSION_PID', '4675'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('XDG_VTNR', '7'), ('PWD', '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ux-LXDE:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/usr/share/gdm:/var/lib/menu-xdg:/usr/local/share/:/usr/share/:/usr/share/gdm/:/var/lib/menu-xdg/'), ('PYTHONPATH', '/home/puzzlebot/ros2_ws/build/puzzlebot_ros:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/opt/ros/humble/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher')]), 'shell': False}
+[4.712098] (-) TimerEvent: {}
+[4.813017] (-) TimerEvent: {}
+[4.914100] (-) TimerEvent: {}
+[5.014832] (-) TimerEvent: {}
+[5.115601] (-) TimerEvent: {}
+[5.216279] (-) TimerEvent: {}
+[5.317035] (-) TimerEvent: {}
+[5.403394] (sllidar_ros2) StdoutLine: {'line': b'-- The C compiler identification is GNU 8.4.0\n'}
+[5.417239] (-) TimerEvent: {}
+[5.517989] (-) TimerEvent: {}
+[5.618656] (-) TimerEvent: {}
+[5.719338] (-) TimerEvent: {}
+[5.820076] (-) TimerEvent: {}
+[5.869421] (sllidar_ros2) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 8.4.0\n'}
+[5.901065] (sllidar_ros2) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[5.920242] (-) TimerEvent: {}
+[6.020965] (-) TimerEvent: {}
+[6.121920] (-) TimerEvent: {}
+[6.164244] (sllidar_ros2) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[6.170100] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[6.222076] (-) TimerEvent: {}
+[6.322807] (-) TimerEvent: {}
+[6.423539] (-) TimerEvent: {}
+[6.436539] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[6.486912] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[6.489164] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[6.503117] (sllidar_ros2) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[6.523749] (-) TimerEvent: {}
+[6.624576] (-) TimerEvent: {}
+[6.725278] (-) TimerEvent: {}
+[6.812687] (sllidar_ros2) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[6.816940] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[6.825527] (-) TimerEvent: {}
+[6.926402] (-) TimerEvent: {}
+[6.970179] (puzzlebot_ros) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/home/puzzlebot/ros2_ws/src/build/puzzlebot_ros/build', '--no-deps', 'install_data'], 'cwd': '/home/puzzlebot/ros2_ws/src/build/puzzlebot_ros', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_GB:en', 'GTK_CSD': '0', 'USER': 'puzzlebot', 'XDG_SEAT': 'seat0', 'SSH_AGENT_PID': '4818', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent/lib:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/puzzlebot', 'OLDPWD': '/home/puzzlebot/ros2_ws', 'DESKTOP_SESSION': 'LXDE', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'MANDATORY_PATH': '/usr/share/gconf/ux-LXDE.mandatory.path', 'COLCON_PREFIX_PATH': '/home/puzzlebot/ros2_ws/install:/home/puzzlebot/ros2_packages_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'puzzlebot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ux-LXDE.default.path', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': 'c1', 'ROS_LOCALHOST_ONLY': '0', 'SAL_USE_VCLPLUGIN': 'gtk', 'PATH': '/opt/ros/humble/bin:/home/puzzlebot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'GDM_LANG': 'en_GB', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'lxde-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LD_PRELOAD': 'libgtk3-nocsd.so.0', 'LANG': 'en_GB.UTF-8', 'XDG_CURRENT_DESKTOP': 'LXDE', 'XDG_DATA_HOME': '/home/puzzlebot/.local/share', 'XDG_CONFIG_HOME': '/home/puzzlebot/.config', 'XDG_SESSION_DESKTOP': 'ux-LXDE', 'XAUTHORITY': '/home/puzzlebot/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/tmp/ssh-QtClxIiSIl2g/agent.4675', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/puzzlebot', 'AMENT_PREFIX_PATH': '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ux-LXDE', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', '_LXSESSION_PID': '4675', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'XDG_VTNR': '7', 'PWD': '/home/puzzlebot/ros2_ws/src/build/puzzlebot_ros', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ux-LXDE:/etc/xdg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/usr/share/gdm:/var/lib/menu-xdg:/usr/local/share/:/usr/share/:/usr/share/gdm/:/var/lib/menu-xdg/', 'PYTHONPATH': '/home/puzzlebot/ros2_ws/src/build/puzzlebot_ros/prefix_override:/home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_ws/build/puzzlebot_ros:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/opt/ros/humble/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher'}, 'shell': False}
+[7.026662] (-) TimerEvent: {}
+[7.120519] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[7.126805] (-) TimerEvent: {}
+[7.173305] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.175425] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.193802] (sllidar_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[7.227012] (-) TimerEvent: {}
+[7.327754] (-) TimerEvent: {}
+[7.428604] (-) TimerEvent: {}
+[7.529382] (-) TimerEvent: {}
+[7.630153] (-) TimerEvent: {}
+[7.730791] (-) TimerEvent: {}
+[7.831473] (-) TimerEvent: {}
+[7.930403] (sllidar_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.8 (found version "3.8.10") found components: Interpreter \n'}
+[7.931595] (-) TimerEvent: {}
+[8.032224] (-) TimerEvent: {}
+[8.132931] (-) TimerEvent: {}
+[8.203573] (puzzlebot_ros) StdoutLine: {'line': b'running develop\n'}
+[8.222130] (sllidar_ros2) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[8.233080] (-) TimerEvent: {}
+[8.333725] (-) TimerEvent: {}
+[8.412284] (sllidar_ros2) StdoutLine: {'line': b'-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[8.433926] (-) TimerEvent: {}
+[8.534606] (-) TimerEvent: {}
+[8.635308] (-) TimerEvent: {}
+[8.724142] (sllidar_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[8.735447] (-) TimerEvent: {}
+[8.760834] (sllidar_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[8.821049] (sllidar_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[8.835605] (-) TimerEvent: {}
+[8.924382] (sllidar_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[8.935772] (-) TimerEvent: {}
+[9.024698] (puzzlebot_ros) StdoutLine: {'line': b'running egg_info\n'}
+[9.025363] (puzzlebot_ros) StdoutLine: {'line': b'creating puzzlebot_ros.egg-info\n'}
+[9.026013] (puzzlebot_ros) StdoutLine: {'line': b'writing puzzlebot_ros.egg-info/PKG-INFO\n'}
+[9.026684] (puzzlebot_ros) StdoutLine: {'line': b'writing dependency_links to puzzlebot_ros.egg-info/dependency_links.txt\n'}
+[9.027382] (puzzlebot_ros) StdoutLine: {'line': b'writing entry points to puzzlebot_ros.egg-info/entry_points.txt\n'}
+[9.028099] (puzzlebot_ros) StdoutLine: {'line': b'writing requirements to puzzlebot_ros.egg-info/requires.txt\n'}
+[9.028482] (puzzlebot_ros) StdoutLine: {'line': b'writing top-level names to puzzlebot_ros.egg-info/top_level.txt\n'}
+[9.028999] (puzzlebot_ros) StdoutLine: {'line': b"writing manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'\n"}
+[9.035917] (-) TimerEvent: {}
+[9.069945] (sllidar_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[9.136135] (-) TimerEvent: {}
+[9.187565] (puzzlebot_ros) StdoutLine: {'line': b"reading manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'\n"}
+[9.190748] (puzzlebot_ros) StdoutLine: {'line': b"writing manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'\n"}
+[9.236290] (-) TimerEvent: {}
+[9.337043] (-) TimerEvent: {}
+[9.400307] (puzzlebot_ros) StdoutLine: {'line': b'running build_ext\n'}
+[9.403375] (puzzlebot_ros) StdoutLine: {'line': b'Creating /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/python3.8/site-packages/site.py\n'}
+[9.411195] (puzzlebot_ros) StdoutLine: {'line': b'Creating /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/python3.8/site-packages/puzzlebot-ros.egg-link (link to .)\n'}
+[9.414585] (puzzlebot_ros) StdoutLine: {'line': b'Installing distance_control script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.415282] (puzzlebot_ros) StdoutLine: {'line': b'Installing goto_point script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.415935] (puzzlebot_ros) StdoutLine: {'line': b'Installing kalman script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.416391] (puzzlebot_ros) StdoutLine: {'line': b'Installing kalman_aruco script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.416817] (puzzlebot_ros) StdoutLine: {'line': b'Installing pwm_control script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.417269] (puzzlebot_ros) StdoutLine: {'line': b'Installing test_imu script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.417658] (puzzlebot_ros) StdoutLine: {'line': b'Installing velocity_control script to /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[9.418449] (puzzlebot_ros) StdoutLine: {'line': b'\n'}
+[9.419096] (puzzlebot_ros) StdoutLine: {'line': b'Installed /home/puzzlebot/ros2_ws/src/build/puzzlebot_ros\n'}
+[9.419474] (puzzlebot_ros) StdoutLine: {'line': b'running install_data\n'}
+[9.419934] (puzzlebot_ros) StdoutLine: {'line': b'creating /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/ament_index\n'}
+[9.420435] (puzzlebot_ros) StdoutLine: {'line': b'creating /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/ament_index/resource_index\n'}
+[9.420794] (puzzlebot_ros) StdoutLine: {'line': b'creating /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/ament_index/resource_index/packages\n'}
+[9.421296] (puzzlebot_ros) StdoutLine: {'line': b'copying resource/puzzlebot_ros -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/ament_index/resource_index/packages\n'}
+[9.421692] (puzzlebot_ros) StdoutLine: {'line': b'copying package.xml -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.422191] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/camera_jetson.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.422706] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/gazebo_aruco.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.423084] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/gazebo_empty.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.423507] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/micro_ros_agent.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.424147] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/goto_kalman.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.425041] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/marker_publisher.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.426052] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/gazebo_box.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.426904] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/aruco_jetson.launch.py -> /home/puzzlebot/ros2_ws/src/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[9.437215] (-) TimerEvent: {}
+[9.538044] (-) TimerEvent: {}
+[9.568502] (puzzlebot_ros) CommandEnded: {'returncode': 0}
+[9.608939] (sllidar_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[9.629255] (sllidar_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[9.639325] (-) TimerEvent: {}
+[9.741135] (-) TimerEvent: {}
+[9.845229] (-) TimerEvent: {}
+[9.949645] (-) TimerEvent: {}
+[10.050760] (-) TimerEvent: {}
+[10.152644] (-) TimerEvent: {}
+[10.256401] (-) TimerEvent: {}
+[10.276597] (sllidar_ros2) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[10.357530] (-) TimerEvent: {}
+[10.402652] (sllidar_ros2) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[10.458324] (-) TimerEvent: {}
+[10.562025] (-) TimerEvent: {}
+[10.582564] (puzzlebot_ros) JobEnded: {'identifier': 'puzzlebot_ros', 'rc': 0}
+[10.652224] (sllidar_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[10.662226] (-) TimerEvent: {}
+[10.716637] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[10.762408] (-) TimerEvent: {}
+[10.863079] (-) TimerEvent: {}
+[10.963842] (-) TimerEvent: {}
+[11.000401] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[11.001263] (sllidar_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[11.064066] (-) TimerEvent: {}
+[11.164789] (-) TimerEvent: {}
+[11.261844] (sllidar_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[11.262572] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[11.264965] (-) TimerEvent: {}
+[11.365533] (-) TimerEvent: {}
+[11.466301] (-) TimerEvent: {}
+[11.566945] (-) TimerEvent: {}
+[11.629175] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[11.630000] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[11.667112] (-) TimerEvent: {}
+[11.767790] (-) TimerEvent: {}
+[11.868539] (-) TimerEvent: {}
+[11.882463] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[11.886288] (sllidar_ros2) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[11.968733] (-) TimerEvent: {}
+[12.069413] (-) TimerEvent: {}
+[12.170139] (-) TimerEvent: {}
+[12.270797] (-) TimerEvent: {}
+[12.371475] (-) TimerEvent: {}
+[12.472261] (-) TimerEvent: {}
+[12.572893] (-) TimerEvent: {}
+[12.673648] (-) TimerEvent: {}
+[12.774321] (-) TimerEvent: {}
+[12.875007] (-) TimerEvent: {}
+[12.906659] (sllidar_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[12.975156] (-) TimerEvent: {}
+[13.075809] (-) TimerEvent: {}
+[13.176440] (-) TimerEvent: {}
+[13.277122] (-) TimerEvent: {}
+[13.377859] (-) TimerEvent: {}
+[13.478541] (-) TimerEvent: {}
+[13.579233] (-) TimerEvent: {}
+[13.679855] (-) TimerEvent: {}
+[13.696588] (sllidar_ros2) StdoutLine: {'line': b'-- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[13.780077] (-) TimerEvent: {}
+[13.880712] (-) TimerEvent: {}
+[13.981422] (-) TimerEvent: {}
+[14.082090] (-) TimerEvent: {}
+[14.129853] (sllidar_ros2) StdoutLine: {'line': b'-- Configuring done\n'}
+[14.182313] (-) TimerEvent: {}
+[14.224608] (sllidar_ros2) StdoutLine: {'line': b'-- Generating done\n'}
+[14.231173] (sllidar_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/puzzlebot/ros2_ws/src/build/sllidar_ros2\n'}
+[14.264031] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[14.266280] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'build'}
+[14.269403] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2', '--', '-j4', '-l4'], 'cwd': '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('GTK_CSD', '0'), ('USER', 'puzzlebot'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '4818'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent/lib:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/puzzlebot'), ('OLDPWD', '/home/puzzlebot/ros2_ws'), ('DESKTOP_SESSION', 'LXDE'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ux-LXDE.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install:/home/puzzlebot/ros2_packages_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'puzzlebot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ux-LXDE.default.path'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', 'c1'), ('ROS_LOCALHOST_ONLY', '0'), ('SAL_USE_VCLPLUGIN', 'gtk'), ('PATH', '/opt/ros/humble/bin:/home/puzzlebot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('GDM_LANG', 'en_GB'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'lxde-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0.0'), ('LD_PRELOAD', 'libgtk3-nocsd.so.0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'LXDE'), ('XDG_DATA_HOME', '/home/puzzlebot/.local/share'), ('XDG_CONFIG_HOME', '/home/puzzlebot/.config'), ('XDG_SESSION_DESKTOP', 'ux-LXDE'), ('XAUTHORITY', '/home/puzzlebot/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-QtClxIiSIl2g/agent.4675'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/puzzlebot'), ('AMENT_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ux-LXDE'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('_LXSESSION_PID', '4675'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('XDG_VTNR', '7'), ('PWD', '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ux-LXDE:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/usr/share/gdm:/var/lib/menu-xdg:/usr/local/share/:/usr/share/:/usr/share/gdm/:/var/lib/menu-xdg/'), ('PYTHONPATH', '/home/puzzlebot/ros2_ws/build/puzzlebot_ros:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/opt/ros/humble/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher')]), 'shell': False}
+[14.282557] (-) TimerEvent: {}
+[14.383298] (-) TimerEvent: {}
+[14.435246] (sllidar_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target sllidar_client\x1b[0m\n'}
+[14.437121] (sllidar_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target sllidar_node\x1b[0m\n'}
+[14.483502] (-) TimerEvent: {}
+[14.584188] (-) TimerEvent: {}
+[14.684833] (-) TimerEvent: {}
+[14.785470] (-) TimerEvent: {}
+[14.877414] (sllidar_ros2) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/src/sllidar_node.cpp.o\x1b[0m\n'}
+[14.885719] (-) TimerEvent: {}
+[14.886763] (sllidar_ros2) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/net_serial.cpp.o\x1b[0m\n'}
+[14.889022] (sllidar_ros2) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_client.dir/src/sllidar_client.cpp.o\x1b[0m\n'}
+[14.893346] (sllidar_ros2) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/net_socket.cpp.o\x1b[0m\n'}
+[14.986076] (-) TimerEvent: {}
+[15.087316] (-) TimerEvent: {}
+[15.188114] (-) TimerEvent: {}
+[15.288802] (-) TimerEvent: {}
+[15.389688] (-) TimerEvent: {}
+[15.490414] (-) TimerEvent: {}
+[15.591397] (-) TimerEvent: {}
+[15.692392] (-) TimerEvent: {}
+[15.793112] (-) TimerEvent: {}
+[15.894178] (-) TimerEvent: {}
+[15.995208] (-) TimerEvent: {}
+[16.096276] (-) TimerEvent: {}
+[16.197347] (-) TimerEvent: {}
+[16.298485] (-) TimerEvent: {}
+[16.399555] (-) TimerEvent: {}
+[16.462563] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool rp::arch::net::raw_serial::open(const char*, uint32_t, uint32_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.463926] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:97:74:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflags\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[16.464581] (sllidar_ros2) StderrLine: {'line': b' bool raw_serial::open(const char * portname, uint32_t baudrate, \x1b[01;35m\x1b[Kuint32_t flags\x1b[m\x1b[K)\n'}
+[16.465145] (sllidar_ros2) StderrLine: {'line': b'                                                                 \x1b[01;35m\x1b[K~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[16.466832] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void rp::arch::net::raw_serial::flush(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.467512] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:281:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflags\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[16.468049] (sllidar_ros2) StderrLine: {'line': b' void raw_serial::flush( \x1b[01;35m\x1b[K_u32 flags\x1b[m\x1b[K)\n'}
+[16.468532] (sllidar_ros2) StderrLine: {'line': b'                         \x1b[01;35m\x1b[K~~~~~^~~~~\x1b[m\x1b[K\n'}
+[16.469449] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual int rp::arch::net::raw_serial::waitforsent(_u32, size_t*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.470180] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:286:34:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[16.470753] (sllidar_ros2) StderrLine: {'line': b' int raw_serial::waitforsent(\x1b[01;35m\x1b[K_u32 timeout\x1b[m\x1b[K, size_t * returned_size)\n'}
+[16.471265] (sllidar_ros2) StderrLine: {'line': b'                             \x1b[01;35m\x1b[K~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[16.471765] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual int rp::arch::net::raw_serial::waitforrecv(_u32, size_t*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.472436] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:292:34:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[16.472965] (sllidar_ros2) StderrLine: {'line': b' int raw_serial::waitforrecv(\x1b[01;35m\x1b[K_u32 timeout\x1b[m\x1b[K, size_t * returned_size)\n'}
+[16.473457] (sllidar_ros2) StderrLine: {'line': b'                             \x1b[01;35m\x1b[K~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[16.482254] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void rp::arch::net::raw_serial::cancelOperation()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.482822] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:427:5:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvalue computed is not used [\x1b[01;35m\x1b[K-Wunused-value\x1b[m\x1b[K]\n'}
+[16.483273] (sllidar_ros2) StderrLine: {'line': b'     \x1b[01;35m\x1b[K(int)::write(_selfpipe[1], "x", 1)\x1b[m\x1b[K;\n'}
+[16.483704] (sllidar_ros2) StderrLine: {'line': b'     \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[16.499750] (-) TimerEvent: {}
+[16.577920] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[16.579012] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[16.579555] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[16.580029] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[16.580474] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[16.580919] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[16.581350] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[16.586877] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[16.587551] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[16.588078] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[16.588592] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[16.589072] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[16.589548] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[16.590063] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[16.599947] (-) TimerEvent: {}
+[16.701000] (-) TimerEvent: {}
+[16.801809] (-) TimerEvent: {}
+[16.874484] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/arch_linux.h:42\x1b[m\x1b[K,\n'}
+[16.875209] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:41\x1b[m\x1b[K,\n'}
+[16.875758] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[16.876390] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual u_result rp::arch::net::DGramSocketImpl::sendTo(const rp::net::SocketAddress*, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.876980] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:733:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K-Wsign-compare\x1b[m\x1b[K]\n'}
+[16.877530] (sllidar_ros2) StderrLine: {'line': b'             assert(\x1b[01;35m\x1b[Kans == len\x1b[m\x1b[K);\n'}
+[16.878112] (sllidar_ros2) StderrLine: {'line': b'                    \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[16.901999] (-) TimerEvent: {}
+[16.967125] (sllidar_ros2) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/timer.cpp.o\x1b[0m\n'}
+[17.002182] (-) TimerEvent: {}
+[17.103254] (-) TimerEvent: {}
+[17.203995] (-) TimerEvent: {}
+[17.304724] (-) TimerEvent: {}
+[17.405481] (-) TimerEvent: {}
+[17.506565] (-) TimerEvent: {}
+[17.604222] (sllidar_ros2) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/dataunpacker.cpp.o\x1b[0m\n'}
+[17.606759] (-) TimerEvent: {}
+[17.707465] (-) TimerEvent: {}
+[17.808519] (-) TimerEvent: {}
+[17.909264] (-) TimerEvent: {}
+[18.010322] (-) TimerEvent: {}
+[18.111375] (-) TimerEvent: {}
+[18.212122] (-) TimerEvent: {}
+[18.313168] (-) TimerEvent: {}
+[18.414252] (-) TimerEvent: {}
+[18.515313] (-) TimerEvent: {}
+[18.616336] (-) TimerEvent: {}
+[18.717524] (-) TimerEvent: {}
+[18.819167] (-) TimerEvent: {}
+[18.829548] (sllidar_ros2) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_capsules.cpp.o\x1b[0m\n'}
+[18.919358] (-) TimerEvent: {}
+[19.020427] (-) TimerEvent: {}
+[19.121494] (-) TimerEvent: {}
+[19.211612] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[19.222728] (-) TimerEvent: {}
+[19.223252] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[19.223794] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[19.224264] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[19.224736] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:39\x1b[m\x1b[K:\n'}
+[19.225214] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[19.225691] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[19.226246] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[19.226698] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[19.227117] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[19.227549] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[19.227975] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[19.228391] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:39\x1b[m\x1b[K:\n'}
+[19.229491] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[19.230702] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[19.231211] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[19.322924] (-) TimerEvent: {}
+[19.423710] (-) TimerEvent: {}
+[19.524759] (-) TimerEvent: {}
+[19.625902] (-) TimerEvent: {}
+[19.689365] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:40\x1b[m\x1b[K:\n'}
+[19.690121] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[19.690721] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.691250] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[19.691754] (sllidar_ros2) StderrLine: {'line': b'                                         \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[19.692539] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.693405] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[19.694385] (sllidar_ros2) StderrLine: {'line': b'                                                      \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[19.695277] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.696093] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[19.696884] (sllidar_ros2) StderrLine: {'line': b'                                                                       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[19.697733] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:96:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.698597] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[19.699381] (sllidar_ros2) StderrLine: {'line': b'                                                                                         \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[19.700393] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[19.701257] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:35:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.702628] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[19.703228] (sllidar_ros2) StderrLine: {'line': b'                               \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[19.703723] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.704248] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[19.717938] (sllidar_ros2) StderrLine: {'line': b'                                           \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[19.718629] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.719137] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[19.719610] (sllidar_ros2) StderrLine: {'line': b'                                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[19.720066] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:84:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[19.720523] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[19.721000] (sllidar_ros2) StderrLine: {'line': b'                                                                             \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[19.726073] (-) TimerEvent: {}
+[19.827297] (-) TimerEvent: {}
+[19.928091] (-) TimerEvent: {}
+[20.029461] (-) TimerEvent: {}
+[20.130563] (-) TimerEvent: {}
+[20.231320] (-) TimerEvent: {}
+[20.332423] (-) TimerEvent: {}
+[20.433272] (-) TimerEvent: {}
+[20.534429] (-) TimerEvent: {}
+[20.624193] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[20.625228] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[20.626049] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[20.626900] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[20.627721] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:39\x1b[m\x1b[K:\n'}
+[20.628580] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[20.629402] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[20.630197] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[20.634601] (-) TimerEvent: {}
+[20.635912] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[20.636815] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[20.637607] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[20.638520] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[20.639342] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:39\x1b[m\x1b[K:\n'}
+[20.640102] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[20.640929] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[20.641720] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[20.734836] (-) TimerEvent: {}
+[20.835896] (-) TimerEvent: {}
+[20.884593] (sllidar_ros2) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp.o\x1b[0m\n'}
+[20.936087] (-) TimerEvent: {}
+[21.036883] (-) TimerEvent: {}
+[21.084554] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:40\x1b[m\x1b[K:\n'}
+[21.085268] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[21.085848] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.086418] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[21.086953] (sllidar_ros2) StderrLine: {'line': b'                                         \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[21.088096] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.088695] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[21.089333] (sllidar_ros2) StderrLine: {'line': b'                                                      \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[21.090074] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.090639] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[21.091137] (sllidar_ros2) StderrLine: {'line': b'                                                                       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[21.091633] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:96:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.092143] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[21.092613] (sllidar_ros2) StderrLine: {'line': b'                                                                                         \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[21.093079] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[21.093727] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:35:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.094321] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[21.094842] (sllidar_ros2) StderrLine: {'line': b'                               \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[21.095334] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.099362] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[21.099897] (sllidar_ros2) StderrLine: {'line': b'                                           \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[21.100413] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.100934] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[21.101446] (sllidar_ros2) StderrLine: {'line': b'                                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[21.103807] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:84:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[21.104420] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[21.104908] (sllidar_ros2) StderrLine: {'line': b'                                                                             \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[21.123484] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::internal::unpacker::UnpackerHandler_DenseCapsuleNode::_onScanNodeDenseCapsuleData(rplidar_response_dense_capsule_measurement_nodes_t&, sl::internal::LIDARSampleDataUnpackerInner*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[21.124312] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:763:108:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Ktype qualifiers ignored on cast result type [\x1b[01;35m\x1b[K-Wignored-qualifiers\x1b[m\x1b[K]\n'}
+[21.124910] (sllidar_ros2) StderrLine: {'line': b'             const int dist = static_cast<const int>(_cached_previous_dense_capsuledata.cabins[pos].distance\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[21.125431] (sllidar_ros2) StderrLine: {'line': b'                                                                                                            \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[21.137071] (-) TimerEvent: {}
+[21.238187] (-) TimerEvent: {}
+[21.338919] (-) TimerEvent: {}
+[21.443545] (-) TimerEvent: {}
+[21.544425] (-) TimerEvent: {}
+[21.645265] (-) TimerEvent: {}
+[21.746456] (-) TimerEvent: {}
+[21.847616] (-) TimerEvent: {}
+[21.906767] (sllidar_ros2) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp.o\x1b[0m\n'}
+[21.947808] (-) TimerEvent: {}
+[22.048549] (-) TimerEvent: {}
+[22.149302] (-) TimerEvent: {}
+[22.250058] (-) TimerEvent: {}
+[22.351088] (-) TimerEvent: {}
+[22.452155] (-) TimerEvent: {}
+[22.553158] (-) TimerEvent: {}
+[22.658440] (-) TimerEvent: {}
+[22.690864] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[22.692031] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[22.692831] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[22.693936] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[22.694792] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:39\x1b[m\x1b[K:\n'}
+[22.695683] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[22.696913] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[22.697687] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[22.703636] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[22.704583] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[22.705443] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[22.706403] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[22.707475] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:39\x1b[m\x1b[K:\n'}
+[22.708311] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[22.709048] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[22.709828] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[22.758619] (-) TimerEvent: {}
+[22.859374] (-) TimerEvent: {}
+[22.960114] (-) TimerEvent: {}
+[23.060868] (-) TimerEvent: {}
+[23.161712] (-) TimerEvent: {}
+[23.206282] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:40\x1b[m\x1b[K:\n'}
+[23.206964] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[23.207526] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.208056] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[23.208750] (sllidar_ros2) StderrLine: {'line': b'                                         \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[23.209217] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.209666] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[23.210193] (sllidar_ros2) StderrLine: {'line': b'                                                      \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[23.210654] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.211090] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[23.211550] (sllidar_ros2) StderrLine: {'line': b'                                                                       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[23.211975] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:96:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.212434] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[23.212881] (sllidar_ros2) StderrLine: {'line': b'                                                                                         \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[23.213320] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[23.213822] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:35:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.214283] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[23.214757] (sllidar_ros2) StderrLine: {'line': b'                               \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[23.215191] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.215652] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[23.216130] (sllidar_ros2) StderrLine: {'line': b'                                           \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[23.216606] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.217052] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[23.217486] (sllidar_ros2) StderrLine: {'line': b'                                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[23.230313] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:84:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[23.230843] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[23.231296] (sllidar_ros2) StderrLine: {'line': b'                                                                             \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[23.273740] (-) TimerEvent: {}
+[23.374568] (-) TimerEvent: {}
+[23.475645] (-) TimerEvent: {}
+[23.576731] (-) TimerEvent: {}
+[23.677910] (-) TimerEvent: {}
+[23.780231] (-) TimerEvent: {}
+[23.881408] (-) TimerEvent: {}
+[23.916805] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[23.917456] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[23.917982] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[23.918421] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[23.918839] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:39\x1b[m\x1b[K:\n'}
+[23.919455] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[23.919979] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[23.920497] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[23.921864] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[23.922505] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[23.923032] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[23.923632] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[23.924214] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:39\x1b[m\x1b[K:\n'}
+[23.924672] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[23.925199] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[23.925680] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[23.953415] (sllidar_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/hal/thread.cpp.o\x1b[0m\n'}
+[23.981613] (-) TimerEvent: {}
+[24.082728] (-) TimerEvent: {}
+[24.183767] (-) TimerEvent: {}
+[24.284805] (-) TimerEvent: {}
+[24.377504] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:40\x1b[m\x1b[K:\n'}
+[24.378593] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[24.379430] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.380132] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[24.380872] (sllidar_ros2) StderrLine: {'line': b'                                         \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[24.381852] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.382697] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[24.383552] (sllidar_ros2) StderrLine: {'line': b'                                                      \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.384459] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.385113] (-) TimerEvent: {}
+[24.386280] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[24.387272] (sllidar_ros2) StderrLine: {'line': b'                                                                       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[24.388113] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:96:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.388841] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[24.389556] (sllidar_ros2) StderrLine: {'line': b'                                                                                         \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[24.390475] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[24.391296] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:35:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.395464] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[24.396803] (sllidar_ros2) StderrLine: {'line': b'                               \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[24.397361] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.397936] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[24.401951] (sllidar_ros2) StderrLine: {'line': b'                                           \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[24.402715] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.403373] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[24.403837] (sllidar_ros2) StderrLine: {'line': b'                                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[24.404277] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:84:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[24.404755] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[24.405244] (sllidar_ros2) StderrLine: {'line': b'                                                                             \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[24.485349] (-) TimerEvent: {}
+[24.589525] (-) TimerEvent: {}
+[24.707608] (-) TimerEvent: {}
+[24.808522] (-) TimerEvent: {}
+[24.909579] (-) TimerEvent: {}
+[24.940021] (sllidar_ros2) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/rplidar_driver.cpp.o\x1b[0m\n'}
+[25.009803] (-) TimerEvent: {}
+[25.110811] (-) TimerEvent: {}
+[25.211826] (-) TimerEvent: {}
+[25.312849] (-) TimerEvent: {}
+[25.413886] (-) TimerEvent: {}
+[25.514648] (-) TimerEvent: {}
+[25.615887] (-) TimerEvent: {}
+[25.716921] (-) TimerEvent: {}
+[25.817681] (-) TimerEvent: {}
+[25.843209] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[25.844177] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[25.845046] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[25.846074] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:35\x1b[m\x1b[K:\n'}
+[25.846961] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[25.847510] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[25.847946] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[25.862002] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[25.862688] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[25.863183] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[25.863634] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:35\x1b[m\x1b[K:\n'}
+[25.864072] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[25.864506] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[25.864926] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[25.917969] (-) TimerEvent: {}
+[26.018732] (-) TimerEvent: {}
+[26.105807] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:43\x1b[m\x1b[K:\n'}
+[26.106490] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:\x1b[m\x1b[K In static member function \xe2\x80\x98\x1b[01m\x1b[Kstatic rp::hal::Thread rp::hal::Thread::create(thread_proc_t, void*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.107010] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:52:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcast between incompatible function types from \xe2\x80\x98\x1b[01m\x1b[Kthread_proc_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int (*)(void*)\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kvoid* (*)(void*)\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wcast-function-type\x1b[m\x1b[K]\n'}
+[26.107519] (sllidar_ros2) StderrLine: {'line': b'     pthread_create((pthread_t *)&newborn._handle, NULL, (void * (*)(void *))\x1b[01;35m\x1b[Kproc\x1b[m\x1b[K, data);\n'}
+[26.107984] (sllidar_ros2) StderrLine: {'line': b'                                                                             \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[26.109032] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::hal::Thread::join(long unsigned int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.109626] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:176:37:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[26.110328] (sllidar_ros2) StderrLine: {'line': b' u_result Thread::join(\x1b[01;35m\x1b[Kunsigned long timeout\x1b[m\x1b[K)\n'}
+[26.110830] (sllidar_ros2) StderrLine: {'line': b'                       \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[26.118920] (-) TimerEvent: {}
+[26.222350] (-) TimerEvent: {}
+[26.329881] (-) TimerEvent: {}
+[26.430920] (-) TimerEvent: {}
+[26.531506] (sllidar_ros2) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_async_transceiver.cpp.o\x1b[0m\n'}
+[26.532233] (-) TimerEvent: {}
+[26.620695] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[26.621342] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[26.621865] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[26.622384] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[26.622855] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[26.623300] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[26.623741] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[26.625605] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[26.626265] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[26.626773] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[26.627208] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[26.627643] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[26.628124] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[26.628531] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[26.632424] (-) TimerEvent: {}
+[26.733142] (-) TimerEvent: {}
+[26.833910] (-) TimerEvent: {}
+[26.934319] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::standalone::rplidar::RPlidarDriver::connect(const char*, _u32, _u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.935000] (-) TimerEvent: {}
+[26.936076] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:67:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflag\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[26.936727] (sllidar_ros2) StderrLine: {'line': b'     u_result RPlidarDriver::connect(const char *path, _u32 portOrBaud, \x1b[01;35m\x1b[K_u32 flag\x1b[m\x1b[K)\n'}
+[26.937222] (sllidar_ros2) StderrLine: {'line': b'                                                                        \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[26.937943] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::standalone::rplidar::RPlidarDriver::reset(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.938457] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:101:40:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[26.938911] (sllidar_ros2) StderrLine: {'line': b'     u_result RPlidarDriver::reset(\x1b[01;35m\x1b[K_u32 timeout\x1b[m\x1b[K)\n'}
+[26.939343] (sllidar_ros2) StderrLine: {'line': b'                                   \x1b[01;35m\x1b[K~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[26.940572] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::standalone::rplidar::RPlidarDriver::getScanDataWithInterval(rplidar_response_measurement_node_t*, size_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.941581] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:180:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Knodebuffer\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[26.942326] (sllidar_ros2) StderrLine: {'line': b'     u_result RPlidarDriver::getScanDataWithInterval(\x1b[01;35m\x1b[Krplidar_response_measurement_node_t * nodebuffer\x1b[m\x1b[K, size_t & count)\n'}
+[26.942833] (sllidar_ros2) StderrLine: {'line': b'                                                     \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.943309] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:180:112:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kcount\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[26.943790] (sllidar_ros2) StderrLine: {'line': b'     u_result RPlidarDriver::getScanDataWithInterval(rplidar_response_measurement_node_t * nodebuffer, \x1b[01;35m\x1b[Ksize_t & count\x1b[m\x1b[K)\n'}
+[26.944239] (sllidar_ros2) StderrLine: {'line': b'                                                                                                       \x1b[01;35m\x1b[K~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[27.035202] (-) TimerEvent: {}
+[27.050148] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[27.051010] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[27.051799] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar.h:36\x1b[m\x1b[K,\n'}
+[27.052519] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/src/sllidar_node.cpp:38\x1b[m\x1b[K:\n'}
+[27.053279] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[27.054145] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[27.054898] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[27.057619] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[27.058610] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar.h:36\x1b[m\x1b[K,\n'}
+[27.059376] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/src/sllidar_node.cpp:38\x1b[m\x1b[K:\n'}
+[27.060140] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[27.060885] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[27.062976] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[27.135403] (-) TimerEvent: {}
+[27.236356] (-) TimerEvent: {}
+[27.337264] (-) TimerEvent: {}
+[27.438257] (-) TimerEvent: {}
+[27.538996] (-) TimerEvent: {}
+[27.565495] (sllidar_ros2) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_crc.cpp.o\x1b[0m\n'}
+[27.639327] (-) TimerEvent: {}
+[27.649243] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[27.649972] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_crc.h:36\x1b[m\x1b[K,\n'}
+[27.650520] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_crc.cpp:33\x1b[m\x1b[K:\n'}
+[27.651088] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[27.651736] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[27.652238] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[27.653017] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_crc.h:36\x1b[m\x1b[K,\n'}
+[27.653654] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_crc.cpp:33\x1b[m\x1b[K:\n'}
+[27.654209] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[27.654675] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[27.655146] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[27.739524] (-) TimerEvent: {}
+[27.761578] (sllidar_ros2) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_lidar_driver.cpp.o\x1b[0m\n'}
+[27.839722] (-) TimerEvent: {}
+[27.940570] (-) TimerEvent: {}
+[28.041312] (-) TimerEvent: {}
+[28.142515] (-) TimerEvent: {}
+[28.243234] (-) TimerEvent: {}
+[28.253351] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[28.254965] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[28.255818] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[28.256589] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:35\x1b[m\x1b[K:\n'}
+[28.257414] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[28.258064] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[28.258540] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[28.262264] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[28.263260] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[28.263801] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[28.264274] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:35\x1b[m\x1b[K:\n'}
+[28.264743] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[28.265171] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[28.265609] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[28.343433] (-) TimerEvent: {}
+[28.446005] (-) TimerEvent: {}
+[28.546975] (-) TimerEvent: {}
+[28.647796] (-) TimerEvent: {}
+[28.705117] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:44\x1b[m\x1b[K:\n'}
+[28.705944] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[28.706455] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:41:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[28.706901] (sllidar_ros2) StderrLine: {'line': b'  virtual void   onChannelError(\x1b[01;35m\x1b[Ku_result errCode\x1b[m\x1b[K) {}\n'}
+[28.707331] (sllidar_ros2) StderrLine: {'line': b'                                \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[28.747968] (-) TimerEvent: {}
+[28.848762] (-) TimerEvent: {}
+[28.949535] (-) TimerEvent: {}
+[29.050627] (-) TimerEvent: {}
+[29.151403] (-) TimerEvent: {}
+[29.252448] (-) TimerEvent: {}
+[29.353478] (-) TimerEvent: {}
+[29.430701] (sllidar_ros2) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_lidarprotocol_codec.cpp.o\x1b[0m\n'}
+[29.453676] (-) TimerEvent: {}
+[29.554499] (-) TimerEvent: {}
+[29.655599] (-) TimerEvent: {}
+[29.757358] (-) TimerEvent: {}
+[29.858700] (-) TimerEvent: {}
+[29.916343] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[29.917252] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[29.918177] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[29.918730] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[29.919178] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[29.919669] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[29.920178] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[29.951747] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[29.952652] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[29.953391] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[29.954103] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[29.954817] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[29.955580] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[29.956248] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[29.958850] (-) TimerEvent: {}
+[30.059879] (-) TimerEvent: {}
+[30.160863] (-) TimerEvent: {}
+[30.261990] (-) TimerEvent: {}
+[30.363088] (-) TimerEvent: {}
+[30.466064] (-) TimerEvent: {}
+[30.570285] (-) TimerEvent: {}
+[30.674408] (-) TimerEvent: {}
+[30.775268] (-) TimerEvent: {}
+[30.801049] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:50\x1b[m\x1b[K:\n'}
+[30.802064] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[30.802852] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:45:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.803549] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[30.804211] (sllidar_ros2) StderrLine: {'line': b'                                         \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[30.804942] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.805679] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[30.806517] (sllidar_ros2) StderrLine: {'line': b'                                                      \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[30.807408] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.808115] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[30.808776] (sllidar_ros2) StderrLine: {'line': b'                                                                       \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[30.809506] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:96:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.810258] (sllidar_ros2) StderrLine: {'line': b'  virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[30.810930] (sllidar_ros2) StderrLine: {'line': b'                                                                                         \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[30.811816] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[30.812637] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:35:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.813473] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[30.814370] (sllidar_ros2) StderrLine: {'line': b'                               \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[30.815844] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.816405] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[30.816834] (sllidar_ros2) StderrLine: {'line': b'                                           \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[30.817251] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.817693] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[30.818255] (sllidar_ros2) StderrLine: {'line': b'                                                        \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[30.828262] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:84:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.829019] (sllidar_ros2) StderrLine: {'line': b'  virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[30.829583] (sllidar_ros2) StderrLine: {'line': b'                                                                             \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[30.875487] (-) TimerEvent: {}
+[30.898226] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:51\x1b[m\x1b[K:\n'}
+[30.898968] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[30.899499] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:41:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[30.899980] (sllidar_ros2) StderrLine: {'line': b'  virtual void   onChannelError(\x1b[01;35m\x1b[Ku_result errCode\x1b[m\x1b[K) {}\n'}
+[30.900435] (sllidar_ros2) StderrLine: {'line': b'                                \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[30.975686] (-) TimerEvent: {}
+[31.076867] (-) TimerEvent: {}
+[31.140993] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::reset(sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.142028] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:511:32:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KtimeoutInMs\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.142898] (sllidar_ros2) StderrLine: {'line': b'         sl_result reset(\x1b[01;35m\x1b[Ksl_u32 timeoutInMs = DEFAULT_TIMEOUT\x1b[m\x1b[K)\n'}
+[31.143723] (sllidar_ros2) StderrLine: {'line': b'                         \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.157134] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::startScan(bool, bool, sl_u32, sl::LidarScanMode*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.158122] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:586:69:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Koptions\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.159043] (sllidar_ros2) StderrLine: {'line': b'         sl_result startScan(bool force, bool useTypicalScan, \x1b[01;35m\x1b[Ksl_u32 options = 0\x1b[m\x1b[K, LidarScanMode* outUsedScanMode = nullptr)\n'}
+[31.159845] (sllidar_ros2) StderrLine: {'line': b'                                                              \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.169190] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::stop(sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.170280] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:763:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.170892] (sllidar_ros2) StderrLine: {'line': b'         sl_result stop(\x1b[01;35m\x1b[Ksl_u32 timeout = DEFAULT_TIMEOUT\x1b[m\x1b[K)\n'}
+[31.171377] (sllidar_ros2) StderrLine: {'line': b'                        \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.177059] (-) TimerEvent: {}
+[31.179376] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::getFrequency(const sl::LidarScanMode&, const sl_lidar_response_measurement_node_hq_t*, size_t, float&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.180034] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:880:110:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Knodes\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.180546] (sllidar_ros2) StderrLine: {'line': b'         sl_result getFrequency(const LidarScanMode& scanMode, \x1b[01;35m\x1b[Kconst sl_lidar_response_measurement_node_hq_t* nodes\x1b[m\x1b[K, size_t count, float& frequency)\n'}
+[31.181035] (sllidar_ros2) StderrLine: {'line': b'                                                               \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[31.207942] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::getMotorInfo(sl::LidarMotorInfo&, sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.208631] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1023:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KtimeoutInMs\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.209130] (sllidar_ros2) StderrLine: {'line': b'         sl_result getMotorInfo(LidarMotorInfo &motorInfo, \x1b[01;35m\x1b[Ksl_u32 timeoutInMs\x1b[m\x1b[K)\n'}
+[31.209568] (sllidar_ros2) StderrLine: {'line': b'                                                           \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.210066] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result sl::SlamtecLidarDriver::getScanModeCount(sl_u16&, sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.210511] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1199:61:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KtimeoutInMs\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.211139] (sllidar_ros2) StderrLine: {'line': b'         u_result getScanModeCount(sl_u16& modeCount, \x1b[01;35m\x1b[Ksl_u32 timeoutInMs = DEFAULT_TIMEOUT\x1b[m\x1b[K)\n'}
+[31.211985] (sllidar_ros2) StderrLine: {'line': b'                                                      \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.277268] (-) TimerEvent: {}
+[31.345626] (sllidar_ros2) StderrLine: {'line': b'/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp: In instantiation of \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::RawSampleNodeHolder<T>::pushNode(_u64, const T*) [with T = sl_lidar_response_measurement_node_hq_t; _u64 = long unsigned int]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[31.346652] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1648:61:\x1b[m\x1b[K   required from here\n'}
+[31.347586] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:202:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimestamp_uS\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[31.348400] (sllidar_ros2) StderrLine: {'line': b'         void pushNode(\x1b[01;35m\x1b[K_u64 timestamp_uS\x1b[m\x1b[K, const T* node)\n'}
+[31.349191] (sllidar_ros2) StderrLine: {'line': b'                       \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[31.377455] (-) TimerEvent: {}
+[31.387334] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[31.388298] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[31.389136] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[31.389968] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:35\x1b[m\x1b[K:\n'}
+[31.390736] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[31.391567] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[31.392371] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[31.398270] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[31.398934] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[31.399430] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[31.399915] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:35\x1b[m\x1b[K:\n'}
+[31.400386] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[31.400846] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[31.401309] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[31.477670] (-) TimerEvent: {}
+[31.578937] (-) TimerEvent: {}
+[31.679838] (-) TimerEvent: {}
+[31.782022] (-) TimerEvent: {}
+[31.902103] (-) TimerEvent: {}
+[32.002943] (-) TimerEvent: {}
+[32.103839] (-) TimerEvent: {}
+[32.108300] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K At global scope:\n'}
+[32.109445] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:83:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid sl::convert(const sl_lidar_response_measurement_node_hq_t&, sl_lidar_response_measurement_node_t&)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K-Wunused-function\x1b[m\x1b[K]\n'}
+[32.110301] (sllidar_ros2) StderrLine: {'line': b'     static void \x1b[01;35m\x1b[Kconvert\x1b[m\x1b[K(const sl_lidar_response_measurement_node_hq_t& from, sl_lidar_response_measurement_node_t& to)\n'}
+[32.111106] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[32.111974] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:75:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid sl::convert(const sl_lidar_response_measurement_node_t&, sl_lidar_response_measurement_node_hq_t&)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K-Wunused-function\x1b[m\x1b[K]\n'}
+[32.112885] (sllidar_ros2) StderrLine: {'line': b'     static void \x1b[01;35m\x1b[Kconvert\x1b[m\x1b[K(const sl_lidar_response_measurement_node_t& from, sl_lidar_response_measurement_node_hq_t& to)\n'}
+[32.113664] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[32.114582] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:70:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid sl::printDeprecationWarn(const char*, const char*)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K-Wunused-function\x1b[m\x1b[K]\n'}
+[32.115446] (sllidar_ros2) StderrLine: {'line': b'     static void \x1b[01;35m\x1b[KprintDeprecationWarn\x1b[m\x1b[K(const char* fn, const char* replacement)\n'}
+[32.116304] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[32.204065] (-) TimerEvent: {}
+[32.305343] (-) TimerEvent: {}
+[32.387392] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:49\x1b[m\x1b[K:\n'}
+[32.388526] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[32.389269] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:41:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[32.390077] (sllidar_ros2) StderrLine: {'line': b'  virtual void   onChannelError(\x1b[01;35m\x1b[Ku_result errCode\x1b[m\x1b[K) {}\n'}
+[32.390683] (sllidar_ros2) StderrLine: {'line': b'                                \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[32.405470] (-) TimerEvent: {}
+[32.506762] (-) TimerEvent: {}
+[32.608076] (-) TimerEvent: {}
+[32.709191] (-) TimerEvent: {}
+[32.809995] (-) TimerEvent: {}
+[32.911600] (-) TimerEvent: {}
+[33.012864] (-) TimerEvent: {}
+[33.115616] (-) TimerEvent: {}
+[33.218812] (-) TimerEvent: {}
+[33.319790] (-) TimerEvent: {}
+[33.420870] (-) TimerEvent: {}
+[33.522068] (-) TimerEvent: {}
+[33.623140] (-) TimerEvent: {}
+[33.723884] (-) TimerEvent: {}
+[33.824958] (-) TimerEvent: {}
+[33.926102] (-) TimerEvent: {}
+[34.027161] (-) TimerEvent: {}
+[34.029969] (sllidar_ros2) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_serial_channel.cpp.o\x1b[0m\n'}
+[34.127439] (-) TimerEvent: {}
+[34.228687] (-) TimerEvent: {}
+[34.329967] (-) TimerEvent: {}
+[34.430962] (-) TimerEvent: {}
+[34.534609] (-) TimerEvent: {}
+[34.542129] (sllidar_ros2) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_tcp_channel.cpp.o\x1b[0m\n'}
+[34.634784] (-) TimerEvent: {}
+[34.735806] (-) TimerEvent: {}
+[34.836940] (-) TimerEvent: {}
+[34.937693] (-) TimerEvent: {}
+[35.038640] (-) TimerEvent: {}
+[35.139693] (-) TimerEvent: {}
+[35.240733] (-) TimerEvent: {}
+[35.341849] (-) TimerEvent: {}
+[35.442902] (-) TimerEvent: {}
+[35.543741] (-) TimerEvent: {}
+[35.645029] (-) TimerEvent: {}
+[35.676245] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[35.676978] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[35.677389] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_serial_channel.cpp:33\x1b[m\x1b[K:\n'}
+[35.678051] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[35.678577] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[35.679209] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[35.682398] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[35.683033] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_serial_channel.cpp:33\x1b[m\x1b[K:\n'}
+[35.683720] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[35.684229] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[35.684696] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[35.725681] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[35.726681] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[35.727555] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[35.728451] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[35.729312] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[35.730166] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[35.733195] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[35.734239] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[35.735130] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[35.735999] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[35.736828] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[35.745211] (-) TimerEvent: {}
+[35.759238] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::TcpChannel::setStatus(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[35.760280] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:109:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflag\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[35.761128] (sllidar_ros2) StderrLine: {'line': b'         void setStatus(\x1b[01;35m\x1b[K_u32 flag\x1b[m\x1b[K){}\n'}
+[35.762111] (sllidar_ros2) StderrLine: {'line': b'                        \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[35.845411] (-) TimerEvent: {}
+[35.946216] (-) TimerEvent: {}
+[36.047229] (-) TimerEvent: {}
+[36.142242] (sllidar_ros2) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_udp_channel.cpp.o\x1b[0m\n'}
+[36.148885] (-) TimerEvent: {}
+[36.250087] (-) TimerEvent: {}
+[36.351081] (-) TimerEvent: {}
+[36.451829] (-) TimerEvent: {}
+[36.552852] (-) TimerEvent: {}
+[36.653980] (-) TimerEvent: {}
+[36.755013] (-) TimerEvent: {}
+[36.856041] (-) TimerEvent: {}
+[36.957056] (-) TimerEvent: {}
+[37.058248] (-) TimerEvent: {}
+[37.164891] (-) TimerEvent: {}
+[37.277958] (-) TimerEvent: {}
+[37.386089] (-) TimerEvent: {}
+[37.403589] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[37.404364] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[37.404942] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[37.405568] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[37.406168] (sllidar_ros2) StderrLine: {'line': b'     sl_u8 data[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[37.406708] (sllidar_ros2) StderrLine: {'line': b'                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[37.407546] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[37.408160] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[37.408767] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[37.409350] (sllidar_ros2) StderrLine: {'line': b'     sl_u8  payload[0\x1b[01;35m\x1b[K]\x1b[m\x1b[K;\n'}
+[37.410665] (sllidar_ros2) StderrLine: {'line': b'                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[37.431045] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::UdpChannel::setStatus(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[37.431743] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/puzzlebot/ros2_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:112:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflag\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[37.432298] (sllidar_ros2) StderrLine: {'line': b'         void setStatus(\x1b[01;35m\x1b[K_u32 flag\x1b[m\x1b[K){}\n'}
+[37.432818] (sllidar_ros2) StderrLine: {'line': b'                        \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[37.486264] (-) TimerEvent: {}
+[37.587339] (-) TimerEvent: {}
+[37.688458] (-) TimerEvent: {}
+[37.789231] (-) TimerEvent: {}
+[37.890336] (-) TimerEvent: {}
+[37.991069] (-) TimerEvent: {}
+[38.091886] (-) TimerEvent: {}
+[38.192572] (-) TimerEvent: {}
+[38.293331] (-) TimerEvent: {}
+[38.394102] (-) TimerEvent: {}
+[38.494910] (-) TimerEvent: {}
+[38.595695] (-) TimerEvent: {}
+[38.696484] (-) TimerEvent: {}
+[38.797172] (-) TimerEvent: {}
+[38.898001] (-) TimerEvent: {}
+[38.998728] (-) TimerEvent: {}
+[39.099447] (-) TimerEvent: {}
+[39.200180] (-) TimerEvent: {}
+[39.301018] (-) TimerEvent: {}
+[39.401985] (-) TimerEvent: {}
+[39.503081] (-) TimerEvent: {}
+[39.603838] (-) TimerEvent: {}
+[39.704828] (-) TimerEvent: {}
+[39.805747] (-) TimerEvent: {}
+[39.906781] (-) TimerEvent: {}
+[40.007523] (-) TimerEvent: {}
+[40.108653] (-) TimerEvent: {}
+[40.209675] (-) TimerEvent: {}
+[40.310531] (-) TimerEvent: {}
+[40.418030] (-) TimerEvent: {}
+[40.521972] (-) TimerEvent: {}
+[40.622726] (-) TimerEvent: {}
+[40.726129] (-) TimerEvent: {}
+[40.827454] (-) TimerEvent: {}
+[40.929252] (-) TimerEvent: {}
+[41.030167] (-) TimerEvent: {}
+[41.130879] (-) TimerEvent: {}
+[41.231595] (-) TimerEvent: {}
+[41.332343] (-) TimerEvent: {}
+[41.433040] (-) TimerEvent: {}
+[41.533709] (-) TimerEvent: {}
+[41.634614] (-) TimerEvent: {}
+[41.735742] (-) TimerEvent: {}
+[41.836773] (-) TimerEvent: {}
+[41.937431] (-) TimerEvent: {}
+[42.038233] (-) TimerEvent: {}
+[42.139451] (-) TimerEvent: {}
+[42.240191] (-) TimerEvent: {}
+[42.340862] (-) TimerEvent: {}
+[42.441749] (-) TimerEvent: {}
+[42.543010] (-) TimerEvent: {}
+[42.643708] (-) TimerEvent: {}
+[42.744951] (-) TimerEvent: {}
+[42.848909] (-) TimerEvent: {}
+[42.949914] (-) TimerEvent: {}
+[43.050666] (-) TimerEvent: {}
+[43.151364] (-) TimerEvent: {}
+[43.252059] (-) TimerEvent: {}
+[43.352770] (-) TimerEvent: {}
+[43.435233] (sllidar_ros2) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX executable sllidar_node\x1b[0m\n'}
+[43.453046] (-) TimerEvent: {}
+[43.554203] (-) TimerEvent: {}
+[43.654844] (-) TimerEvent: {}
+[43.755831] (-) TimerEvent: {}
+[43.856940] (-) TimerEvent: {}
+[43.958258] (-) TimerEvent: {}
+[44.059477] (-) TimerEvent: {}
+[44.160615] (-) TimerEvent: {}
+[44.261913] (-) TimerEvent: {}
+[44.362773] (-) TimerEvent: {}
+[44.464029] (-) TimerEvent: {}
+[44.565233] (-) TimerEvent: {}
+[44.666592] (-) TimerEvent: {}
+[44.767398] (-) TimerEvent: {}
+[44.868226] (-) TimerEvent: {}
+[44.969049] (-) TimerEvent: {}
+[45.070057] (-) TimerEvent: {}
+[45.170812] (-) TimerEvent: {}
+[45.271887] (-) TimerEvent: {}
+[45.357094] (sllidar_ros2) StdoutLine: {'line': b'[ 95%] Built target sllidar_node\n'}
+[45.372142] (-) TimerEvent: {}
+[45.472885] (-) TimerEvent: {}
+[45.573647] (-) TimerEvent: {}
+[45.674397] (-) TimerEvent: {}
+[45.775041] (-) TimerEvent: {}
+[45.875774] (-) TimerEvent: {}
+[45.976485] (-) TimerEvent: {}
+[46.077232] (-) TimerEvent: {}
+[46.177944] (-) TimerEvent: {}
+[46.278615] (-) TimerEvent: {}
+[46.379246] (-) TimerEvent: {}
+[46.479886] (-) TimerEvent: {}
+[46.580605] (-) TimerEvent: {}
+[46.681247] (-) TimerEvent: {}
+[46.782010] (-) TimerEvent: {}
+[46.882754] (-) TimerEvent: {}
+[46.983497] (-) TimerEvent: {}
+[47.084232] (-) TimerEvent: {}
+[47.184982] (-) TimerEvent: {}
+[47.285673] (-) TimerEvent: {}
+[47.386467] (-) TimerEvent: {}
+[47.487089] (-) TimerEvent: {}
+[47.587841] (-) TimerEvent: {}
+[47.688538] (-) TimerEvent: {}
+[47.789193] (-) TimerEvent: {}
+[47.889923] (-) TimerEvent: {}
+[47.990581] (-) TimerEvent: {}
+[48.091276] (-) TimerEvent: {}
+[48.192017] (-) TimerEvent: {}
+[48.292678] (-) TimerEvent: {}
+[48.393403] (-) TimerEvent: {}
+[48.494062] (-) TimerEvent: {}
+[48.594715] (-) TimerEvent: {}
+[48.695383] (-) TimerEvent: {}
+[48.796053] (-) TimerEvent: {}
+[48.896728] (-) TimerEvent: {}
+[48.997426] (-) TimerEvent: {}
+[49.098154] (-) TimerEvent: {}
+[49.198819] (-) TimerEvent: {}
+[49.299455] (-) TimerEvent: {}
+[49.400178] (-) TimerEvent: {}
+[49.500897] (-) TimerEvent: {}
+[49.601616] (-) TimerEvent: {}
+[49.702286] (-) TimerEvent: {}
+[49.803030] (-) TimerEvent: {}
+[49.903662] (-) TimerEvent: {}
+[50.004390] (-) TimerEvent: {}
+[50.105093] (-) TimerEvent: {}
+[50.205869] (-) TimerEvent: {}
+[50.306612] (-) TimerEvent: {}
+[50.407371] (-) TimerEvent: {}
+[50.508081] (-) TimerEvent: {}
+[50.608810] (-) TimerEvent: {}
+[50.709546] (-) TimerEvent: {}
+[50.810318] (-) TimerEvent: {}
+[50.910986] (-) TimerEvent: {}
+[51.011700] (-) TimerEvent: {}
+[51.112373] (-) TimerEvent: {}
+[51.213126] (-) TimerEvent: {}
+[51.313883] (-) TimerEvent: {}
+[51.414500] (-) TimerEvent: {}
+[51.515097] (-) TimerEvent: {}
+[51.615792] (-) TimerEvent: {}
+[51.716518] (-) TimerEvent: {}
+[51.817236] (-) TimerEvent: {}
+[51.917961] (-) TimerEvent: {}
+[52.018608] (-) TimerEvent: {}
+[52.119249] (-) TimerEvent: {}
+[52.219949] (-) TimerEvent: {}
+[52.320630] (-) TimerEvent: {}
+[52.421250] (-) TimerEvent: {}
+[52.521991] (-) TimerEvent: {}
+[52.622594] (-) TimerEvent: {}
+[52.723273] (-) TimerEvent: {}
+[52.823892] (-) TimerEvent: {}
+[52.924550] (-) TimerEvent: {}
+[53.025198] (-) TimerEvent: {}
+[53.125952] (-) TimerEvent: {}
+[53.226639] (-) TimerEvent: {}
+[53.327377] (-) TimerEvent: {}
+[53.428078] (-) TimerEvent: {}
+[53.528762] (-) TimerEvent: {}
+[53.629455] (-) TimerEvent: {}
+[53.730159] (-) TimerEvent: {}
+[53.830895] (-) TimerEvent: {}
+[53.931641] (-) TimerEvent: {}
+[54.032361] (-) TimerEvent: {}
+[54.133024] (-) TimerEvent: {}
+[54.233849] (-) TimerEvent: {}
+[54.334505] (-) TimerEvent: {}
+[54.435190] (-) TimerEvent: {}
+[54.536160] (-) TimerEvent: {}
+[54.574065] (sllidar_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable sllidar_client\x1b[0m\n'}
+[54.636394] (-) TimerEvent: {}
+[54.737154] (-) TimerEvent: {}
+[54.838249] (-) TimerEvent: {}
+[54.939501] (-) TimerEvent: {}
+[55.040279] (-) TimerEvent: {}
+[55.141075] (-) TimerEvent: {}
+[55.241885] (-) TimerEvent: {}
+[55.342545] (-) TimerEvent: {}
+[55.443233] (-) TimerEvent: {}
+[55.543986] (-) TimerEvent: {}
+[55.644726] (-) TimerEvent: {}
+[55.745425] (-) TimerEvent: {}
+[55.846231] (-) TimerEvent: {}
+[55.946863] (-) TimerEvent: {}
+[56.047649] (-) TimerEvent: {}
+[56.148289] (-) TimerEvent: {}
+[56.248989] (-) TimerEvent: {}
+[56.349706] (-) TimerEvent: {}
+[56.450455] (-) TimerEvent: {}
+[56.473474] (sllidar_ros2) StdoutLine: {'line': b'[100%] Built target sllidar_client\n'}
+[56.552219] (-) TimerEvent: {}
+[56.556596] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[56.655656] (-) TimerEvent: {}
+[56.757081] (-) TimerEvent: {}
+[56.816228] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'install'}
+[56.859893] (-) TimerEvent: {}
+[56.861675] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2'], 'cwd': '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('GTK_CSD', '0'), ('USER', 'puzzlebot'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '4818'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent/lib:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/puzzlebot'), ('OLDPWD', '/home/puzzlebot/ros2_ws'), ('DESKTOP_SESSION', 'LXDE'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'gail:atk-bridge'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ux-LXDE.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install:/home/puzzlebot/ros2_packages_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'puzzlebot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ux-LXDE.default.path'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', 'c1'), ('ROS_LOCALHOST_ONLY', '0'), ('SAL_USE_VCLPLUGIN', 'gtk'), ('PATH', '/opt/ros/humble/bin:/home/puzzlebot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('GDM_LANG', 'en_GB'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session0'), ('XDG_MENU_PREFIX', 'lxde-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0.0'), ('LD_PRELOAD', 'libgtk3-nocsd.so.0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'LXDE'), ('XDG_DATA_HOME', '/home/puzzlebot/.local/share'), ('XDG_CONFIG_HOME', '/home/puzzlebot/.config'), ('XDG_SESSION_DESKTOP', 'ux-LXDE'), ('XAUTHORITY', '/home/puzzlebot/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-QtClxIiSIl2g/agent.4675'), ('XDG_GREETER_DATA_DIR', '/var/lib/lightdm-data/puzzlebot'), ('AMENT_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ux-LXDE'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('_LXSESSION_PID', '4675'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('XDG_VTNR', '7'), ('PWD', '/home/puzzlebot/ros2_ws/src/build/sllidar_ros2'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ux-LXDE:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/usr/share/gdm:/var/lib/menu-xdg:/usr/local/share/:/usr/share/:/usr/share/gdm/:/var/lib/menu-xdg/'), ('PYTHONPATH', '/home/puzzlebot/ros2_ws/build/puzzlebot_ros:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/opt/ros/humble/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/opt/ros/humble:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher')]), 'shell': False}
+[56.906872] (sllidar_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[56.909498] (sllidar_ros2) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[56.915258] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py\n'}
+[56.949439] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m12_launch .py\n'}
+[56.960083] (-) TimerEvent: {}
+[56.984061] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m7_launch.py\n'}
+[57.018255] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m8_launch.py\n'}
+[57.054704] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py\n'}
+[57.060276] (-) TimerEvent: {}
+[57.089637] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py\n'}
+[57.124412] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py\n'}
+[57.159118] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py\n'}
+[57.160720] (-) TimerEvent: {}
+[57.193116] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py\n'}
+[57.227726] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py\n'}
+[57.260895] (-) TimerEvent: {}
+[57.262290] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s3_launch.py\n'}
+[57.296707] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py\n'}
+[57.331437] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py\n'}
+[57.361131] (-) TimerEvent: {}
+[57.365352] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m12_launch.py\n'}
+[57.400414] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m7_launch.py\n'}
+[57.435154] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m8_launch.py\n'}
+[57.461313] (-) TimerEvent: {}
+[57.469392] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py\n'}
+[57.503934] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py\n'}
+[57.539951] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py\n'}
+[57.561541] (-) TimerEvent: {}
+[57.575128] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py\n'}
+[57.609585] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py\n'}
+[57.644023] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py\n'}
+[57.661749] (-) TimerEvent: {}
+[57.678082] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s3_launch.py\n'}
+[57.713364] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py\n'}
+[57.751176] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz\n'}
+[57.761978] (-) TimerEvent: {}
+[57.787790] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node\n'}
+[57.822025] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client\n'}
+[57.860401] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2\n'}
+[57.862088] (-) TimerEvent: {}
+[57.896961] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2\n'}
+[57.940705] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh\n'}
+[57.962274] (-) TimerEvent: {}
+[57.978910] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv\n'}
+[58.015358] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh\n'}
+[58.049456] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv\n'}
+[58.062442] (-) TimerEvent: {}
+[58.082978] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash\n'}
+[58.116940] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh\n'}
+[58.152814] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh\n'}
+[58.162611] (-) TimerEvent: {}
+[58.188277] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv\n'}
+[58.225637] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/package.dsv\n'}
+[58.260119] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2\n'}
+[58.262756] (-) TimerEvent: {}
+[58.295678] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[58.334995] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[58.362938] (-) TimerEvent: {}
+[58.370066] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake\n'}
+[58.404599] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake\n'}
+[58.438479] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/puzzlebot/ros2_ws/src/install/sllidar_ros2/share/sllidar_ros2/package.xml\n'}
+[58.463179] (-) TimerEvent: {}
+[58.480573] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[58.563317] (-) TimerEvent: {}
+[58.664469] (-) TimerEvent: {}
+[58.765123] (-) TimerEvent: {}
+[58.867074] (-) TimerEvent: {}
+[58.967895] (-) TimerEvent: {}
+[59.068763] (-) TimerEvent: {}
+[59.169448] (-) TimerEvent: {}
+[59.271148] (-) TimerEvent: {}
+[59.377161] (-) TimerEvent: {}
+[59.488258] (-) TimerEvent: {}
+[59.589133] (-) TimerEvent: {}
+[59.694216] (-) TimerEvent: {}
+[59.794971] (-) TimerEvent: {}
+[59.895992] (-) TimerEvent: {}
+[59.998616] (-) TimerEvent: {}
+[60.101129] (-) TimerEvent: {}
+[60.203923] (-) TimerEvent: {}
+[60.305462] (-) TimerEvent: {}
+[60.412992] (-) TimerEvent: {}
+[60.515467] (-) TimerEvent: {}
+[60.624568] (-) TimerEvent: {}
+[60.730152] (-) TimerEvent: {}
+[60.835136] (-) TimerEvent: {}
+[60.911422] (sllidar_ros2) JobEnded: {'identifier': 'sllidar_ros2', 'rc': 0}
+[60.934594] (-) EventReactorShutdown: {}

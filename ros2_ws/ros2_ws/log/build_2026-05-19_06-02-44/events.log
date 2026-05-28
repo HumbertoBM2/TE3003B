@@ -1,0 +1,120 @@
+[0.000000] (-) TimerEvent: {}
+[0.000210] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.001638] (puzzlebot_ros) JobQueued: {'identifier': 'puzzlebot_ros', 'dependencies': OrderedDict()}
+[0.001780] (puzzlebot_ros) JobStarted: {'identifier': 'puzzlebot_ros'}
+[0.099315] (-) TimerEvent: {}
+[0.199872] (-) TimerEvent: {}
+[0.301020] (-) TimerEvent: {}
+[0.402187] (-) TimerEvent: {}
+[0.503060] (-) TimerEvent: {}
+[0.606222] (-) TimerEvent: {}
+[0.707304] (-) TimerEvent: {}
+[0.810466] (-) TimerEvent: {}
+[0.911753] (-) TimerEvent: {}
+[1.023468] (-) TimerEvent: {}
+[1.129499] (-) TimerEvent: {}
+[1.233483] (-) TimerEvent: {}
+[1.334554] (-) TimerEvent: {}
+[1.435176] (-) TimerEvent: {}
+[1.535669] (-) TimerEvent: {}
+[1.636071] (-) TimerEvent: {}
+[1.736459] (-) TimerEvent: {}
+[1.836844] (-) TimerEvent: {}
+[1.937232] (-) TimerEvent: {}
+[2.037569] (-) TimerEvent: {}
+[2.137949] (-) TimerEvent: {}
+[2.238340] (-) TimerEvent: {}
+[2.338730] (-) TimerEvent: {}
+[2.439082] (-) TimerEvent: {}
+[2.540176] (-) TimerEvent: {}
+[2.641528] (-) TimerEvent: {}
+[2.741885] (-) TimerEvent: {}
+[2.843298] (-) TimerEvent: {}
+[2.944746] (-) TimerEvent: {}
+[3.047126] (-) TimerEvent: {}
+[3.148043] (-) TimerEvent: {}
+[3.251833] (-) TimerEvent: {}
+[3.352541] (-) TimerEvent: {}
+[3.456333] (-) TimerEvent: {}
+[3.557240] (-) TimerEvent: {}
+[3.657654] (-) TimerEvent: {}
+[3.758038] (-) TimerEvent: {}
+[3.858364] (-) TimerEvent: {}
+[3.958740] (-) TimerEvent: {}
+[4.059115] (-) TimerEvent: {}
+[4.159486] (-) TimerEvent: {}
+[4.259859] (-) TimerEvent: {}
+[4.360235] (-) TimerEvent: {}
+[4.460615] (-) TimerEvent: {}
+[4.561009] (-) TimerEvent: {}
+[4.661433] (-) TimerEvent: {}
+[4.761811] (-) TimerEvent: {}
+[4.862137] (-) TimerEvent: {}
+[4.962508] (-) TimerEvent: {}
+[5.062898] (-) TimerEvent: {}
+[5.163306] (-) TimerEvent: {}
+[5.263679] (-) TimerEvent: {}
+[5.363998] (-) TimerEvent: {}
+[5.464410] (-) TimerEvent: {}
+[5.528949] (puzzlebot_ros) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/home/puzzlebot/ros2_ws/build/puzzlebot_ros/build', '--no-deps', 'install_data'], 'cwd': '/home/puzzlebot/ros2_ws/build/puzzlebot_ros', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/puzzlebot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'AI_AGENT': 'claude-code_2-1-144_agent', 'LANGUAGE': 'en_GB:en', 'USER': 'puzzlebot', 'SSH_CLIENT': '192.168.100.123 46402 22', 'CLAUDE_CODE_ENTRYPOINT': 'claude-vscode', 'LC_TIME': 'es_MX.UTF-8', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/puzzlebot/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'GIT_EDITOR': 'true', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'CLAUDE_AGENT_SDK_VERSION': '0.3.144', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent/lib:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/puzzlebot/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/puzzlebot', 'OLDPWD': '/home/puzzlebot', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-2568023a-a959-462d-8cf7-69f83a2a4521.sock', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'es_MX.UTF-8', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'VSCODE_L10N_BUNDLE_LOCATION': '', 'COLCON_PREFIX_PATH': '/home/puzzlebot/ros2_ws/install:/home/puzzlebot/ros2_packages_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'puzzlebot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '2', 'VSCODE_CLI_REQUIRE_TOKEN': '500ba798-00e5-4ae6-b650-cba01f45a9b9', 'ROS_LOCALHOST_ONLY': '0', 'MCP_CONNECTION_NONBLOCKING': 'true', 'PATH': '/usr/bin:/home/puzzlebot/.local/bin:/home/puzzlebot/.vscode-server/cli/servers/Stable-0958016b2af9f09bb4257e0df4a95e2f90590f9f/server/bin/remote-cli:/home/puzzlebot/.local/bin:/opt/ros/humble/bin:/home/puzzlebot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/home/puzzlebot/fastdds_puzzlebot.xml', 'VSCODE_AGENT_FOLDER': '/home/puzzlebot/.vscode-server', 'COREPACK_ENABLE_AUTO_PIN': '0', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'CLAUDE_EFFORT': 'high', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'en_GB.UTF-8', 'LC_TELEPHONE': 'es_MX.UTF-8', 'LS_COLORS': '', 'COPILOT_OTEL_ENABLED': 'true', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/puzzlebot/ros2_ws/install/sllidar_ros2:/home/puzzlebot/ros2_ws/install/puzzlebot_ros:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'ELECTRON_RUN_AS_NODE': '1', 'CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING': 'true', 'CLAUDE_CODE_SESSION_ID': '071b51e2-ae00-4016-bb3a-facd28ed362c', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CLAUDECODE': '1', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'VIRTUAL_ENV': '/usr', 'PWD': '/home/puzzlebot/ros2_ws/build/puzzlebot_ros', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.100.123 46402 192.168.100.175 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/home/puzzlebot/.vscode-server/extensions/anthropic.claude-code-2.1.144-linux-arm64/resources/native-binary/claude', 'PYTHONPATH': '/home/puzzlebot/ros2_ws/build/puzzlebot_ros/prefix_override:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_ws/build/puzzlebot_ros:/home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs/lib/python3.8/site-packages:/opt/ros/humble/lib/python3.8/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'CLAUDE_CODE_ENABLE_TASKS': '0', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/puzzlebot/ros2_ws/install/sllidar_ros2:/home/puzzlebot/ros2_packages_ws/install/ros_deep_learning:/home/puzzlebot/ros2_packages_ws/install/micro_ros_setup:/home/puzzlebot/ros2_packages_ws/install/micro_ros_agent:/home/puzzlebot/ros2_packages_ws/install/micro_ros_msgs:/home/puzzlebot/ros2_packages_ws/install/camera_info_publisher', 'COPILOT_OTEL_EXPORTER_TYPE': 'file'}, 'shell': False}
+[5.564642] (-) TimerEvent: {}
+[5.665098] (-) TimerEvent: {}
+[5.765428] (-) TimerEvent: {}
+[5.865821] (-) TimerEvent: {}
+[5.966208] (-) TimerEvent: {}
+[6.066531] (-) TimerEvent: {}
+[6.166904] (-) TimerEvent: {}
+[6.267286] (-) TimerEvent: {}
+[6.367668] (-) TimerEvent: {}
+[6.468046] (-) TimerEvent: {}
+[6.568449] (-) TimerEvent: {}
+[6.611695] (puzzlebot_ros) StdoutLine: {'line': b'running develop\n'}
+[6.668647] (-) TimerEvent: {}
+[6.768989] (-) TimerEvent: {}
+[6.869398] (-) TimerEvent: {}
+[6.969777] (-) TimerEvent: {}
+[7.070159] (-) TimerEvent: {}
+[7.170544] (-) TimerEvent: {}
+[7.270921] (-) TimerEvent: {}
+[7.362569] (puzzlebot_ros) StdoutLine: {'line': b'running egg_info\n'}
+[7.363444] (puzzlebot_ros) StdoutLine: {'line': b'writing puzzlebot_ros.egg-info/PKG-INFO\n'}
+[7.364169] (puzzlebot_ros) StdoutLine: {'line': b'writing dependency_links to puzzlebot_ros.egg-info/dependency_links.txt\n'}
+[7.364870] (puzzlebot_ros) StdoutLine: {'line': b'writing entry points to puzzlebot_ros.egg-info/entry_points.txt\n'}
+[7.365877] (puzzlebot_ros) StdoutLine: {'line': b'writing requirements to puzzlebot_ros.egg-info/requires.txt\n'}
+[7.366253] (puzzlebot_ros) StdoutLine: {'line': b'writing top-level names to puzzlebot_ros.egg-info/top_level.txt\n'}
+[7.371054] (-) TimerEvent: {}
+[7.471434] (-) TimerEvent: {}
+[7.513373] (puzzlebot_ros) StdoutLine: {'line': b"reading manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'\n"}
+[7.520555] (puzzlebot_ros) StdoutLine: {'line': b"writing manifest file 'puzzlebot_ros.egg-info/SOURCES.txt'\n"}
+[7.571658] (-) TimerEvent: {}
+[7.672108] (-) TimerEvent: {}
+[7.718344] (puzzlebot_ros) StdoutLine: {'line': b'running build_ext\n'}
+[7.721679] (puzzlebot_ros) StdoutLine: {'line': b'Creating /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/python3.8/site-packages/puzzlebot-ros.egg-link (link to .)\n'}
+[7.725405] (puzzlebot_ros) StdoutLine: {'line': b'Installing camera_compress script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.726589] (puzzlebot_ros) StdoutLine: {'line': b'Installing camera_node script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.727000] (puzzlebot_ros) StdoutLine: {'line': b'Installing distance_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.728927] (puzzlebot_ros) StdoutLine: {'line': b'Installing ekf_slam script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.729829] (puzzlebot_ros) StdoutLine: {'line': b'Installing goto_point script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.730808] (puzzlebot_ros) StdoutLine: {'line': b'Installing kalman script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.731911] (puzzlebot_ros) StdoutLine: {'line': b'Installing kalman_aruco script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.732405] (puzzlebot_ros) StdoutLine: {'line': b'Installing navigator script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.732880] (puzzlebot_ros) StdoutLine: {'line': b'Installing pwm_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.734152] (puzzlebot_ros) StdoutLine: {'line': b'Installing test_imu script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.734558] (puzzlebot_ros) StdoutLine: {'line': b'Installing velocity_control script to /home/puzzlebot/ros2_ws/install/puzzlebot_ros/lib/puzzlebot_ros\n'}
+[7.734914] (puzzlebot_ros) StdoutLine: {'line': b'\n'}
+[7.735360] (puzzlebot_ros) StdoutLine: {'line': b'Installed /home/puzzlebot/ros2_ws/build/puzzlebot_ros\n'}
+[7.735864] (puzzlebot_ros) StdoutLine: {'line': b'running install_data\n'}
+[7.736336] (puzzlebot_ros) StdoutLine: {'line': b'copying launch/mapping.launch.py -> /home/puzzlebot/ros2_ws/install/puzzlebot_ros/share/puzzlebot_ros\n'}
+[7.772366] (-) TimerEvent: {}
+[7.859268] (puzzlebot_ros) CommandEnded: {'returncode': 0}
+[7.877148] (-) TimerEvent: {}
+[7.977743] (-) TimerEvent: {}
+[8.078090] (-) TimerEvent: {}
+[8.180515] (-) TimerEvent: {}
+[8.281565] (-) TimerEvent: {}
+[8.384486] (-) TimerEvent: {}
+[8.485929] (-) TimerEvent: {}
+[8.586240] (-) TimerEvent: {}
+[8.690279] (-) TimerEvent: {}
+[8.746830] (puzzlebot_ros) JobEnded: {'identifier': 'puzzlebot_ros', 'rc': 0}
+[8.748843] (-) EventReactorShutdown: {}

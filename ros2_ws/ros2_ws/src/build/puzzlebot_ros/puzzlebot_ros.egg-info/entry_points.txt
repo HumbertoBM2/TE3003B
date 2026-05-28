@@ -1,0 +1,9 @@
+[console_scripts]
+distance_control = puzzlebot_ros.distance_control:main
+goto_point = puzzlebot_ros.goto_point:main
+kalman = puzzlebot_ros.kalman:main
+kalman_aruco = puzzlebot_ros.kalman_aruco:main
+pwm_control = puzzlebot_ros.pwm_control:main
+test_imu = puzzlebot_ros.test_imu:main
+velocity_control = puzzlebot_ros.velocity_control:main
+
