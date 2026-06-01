@@ -1,0 +1,13 @@
+// Physical Constraints — Tang Nano 20K
+// Proyecto: servo_ctrl (montacargas)
+//
+// PULL_MODE=NONE en pb1/pb2 porque el Jetson maneja los pines activamente.
+// No se necesita pull-up/pull-down externo.
+
+IO_LOC "clk"    4;
+IO_LOC "pb1"   15;
+IO_LOC "pb2"   16;
+IO_LOC "servo" 17;
+
+IO_PORT "pb1"  PULL_MODE=NONE;
+IO_PORT "pb2"  PULL_MODE=NONE;
