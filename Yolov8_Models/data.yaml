@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['logoe', 'logop', 'logow', 'pallet-detector']
+
+roboflow:
+  workspace: team7
+  project: pallet_detector-uhfnc
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/raymundo-tlips/pallet_detector-uhfnc/dataset/3

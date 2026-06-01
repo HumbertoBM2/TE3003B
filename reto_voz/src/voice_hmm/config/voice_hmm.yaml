@@ -1,0 +1,21 @@
+voice_recognition_node:
+  ros__parameters:
+    sample_rate: 16000
+    input_mode: arecord
+    alsa_device: plughw:0,6
+    record_duration: 2.0
+    live_wav_path: /tmp/voice_hmm_live.wav
+    reject_word: ninguna
+    min_score_margin: 12.0
+    min_audio_peak: 0.01
+    words:
+      - avanza
+      - retrocede
+      - derecha
+      - izquierda
+      - alto
+      - empieza
+      - sube
+      - baja
+      - gira
+      - busca
