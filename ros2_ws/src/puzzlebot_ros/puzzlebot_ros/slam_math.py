@@ -1,5 +1,4 @@
 
-
 import math
 
 from geometry_msgs.msg import Quaternion
@@ -26,7 +25,6 @@ def angle_lerp(a0: float, a1: float, ratio: float) -> float:
 
 
 def bresenham(x0: int, y0: int, x1: int, y1: int):
-   
     dx = abs(x1 - x0)
     dy = abs(y1 - y0)
     sx = 1 if x0 < x1 else -1

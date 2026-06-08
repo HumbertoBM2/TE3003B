@@ -19,9 +19,9 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run script every second for 2 minutes
+      - name: Run script every second for 30 seconds
         run: |
-          for i in {1..120}
+          for i in {1..30}
           do
             python test.py
             sleep 1

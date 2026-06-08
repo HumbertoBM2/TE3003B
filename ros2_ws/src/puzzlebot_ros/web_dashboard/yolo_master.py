@@ -12,6 +12,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import CompressedImage
+from std_msgs.msg import String
 
 CLASS_NAMES  = ['logoe', 'logop', 'logow', 'pallet-detector']
 CLASS_COLORS = {
@@ -39,11 +40,13 @@ class YoloMaster(Node):
             CompressedImage, '/video_source/compressed',
             self._img_cb, qos_profile_sensor_data)
 
+        self._det_pub = self.create_publisher(String, '/yolo/detections', 10)
+
         self.create_timer(1.0 / hz, self._detect)
 
         self.get_logger().info(
             f'yolo_master | modelo={model_path} conf={conf} '
-            f'hz={hz} imgsz={imgsz} → {self._dashboard_url}'
+            f'hz={hz} imgsz={imgsz} → {self._dashboard_url} | /yolo/detections'
         )
 
     def _load_model(self, path: str):
@@ -87,7 +90,19 @@ class YoloMaster(Node):
                 cls_name = CLASS_NAMES[cls_id] if cls_id < len(CLASS_NAMES) else str(cls_id)
                 color    = CLASS_COLORS.get(cls_name, (200, 200, 200))
 
-                dets.append({'cls': cls_name, 'score': round(score, 2)})
+                fh, fw = frame.shape[:2]
+                cx_norm = round((x1 + x2) / 2.0 / fw, 4)
+                cy_norm = round((y1 + y2) / 2.0 / fh, 4)
+                w_norm  = round((x2 - x1) / fw, 4)
+                h_norm  = round((y2 - y1) / fh, 4)
+                dets.append({
+                    'cls':     cls_name,
+                    'score':   round(score, 2),
+                    'cx_norm': cx_norm,
+                    'cy_norm': cy_norm,
+                    'w_norm':  w_norm,
+                    'h_norm':  h_norm,
+                })
 
                 cv2.rectangle(annotated, (x1, y1), (x2, y2), color, 2)
                 label = f'{cls_name} {score:.2f}'
@@ -95,6 +110,10 @@ class YoloMaster(Node):
                 cv2.rectangle(annotated, (x1, y1 - lh - 8), (x1 + lw + 4, y1), color, -1)
                 cv2.putText(annotated, label, (x1 + 2, y1 - 4),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
+
+        stamp = self.get_clock().now().nanoseconds / 1e9
+        ros_payload = json.dumps({'stamp': stamp, 'dets': dets})
+        self._det_pub.publish(String(data=ros_payload))
 
 
         ok, buf = cv2.imencode('.jpg', annotated, [cv2.IMWRITE_JPEG_QUALITY, 85])
@@ -107,7 +126,6 @@ class YoloMaster(Node):
             self.get_logger().info(f'[yolo] {names}', throttle_duration_sec=1.0)
 
     def _push(self, img_b64: str, dets: list):
-        """HTTP POST directo al dashboard — no pasa por ROS2."""
         try:
             payload = json.dumps({'img': img_b64, 'dets': dets}).encode()
             req = urllib.request.Request(

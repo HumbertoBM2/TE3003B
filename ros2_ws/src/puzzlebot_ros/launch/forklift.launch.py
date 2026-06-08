@@ -13,7 +13,6 @@ def generate_launch_description():
 
     pkg_sllidar = get_package_share_directory('sllidar_ros2')
 
-    
     micro_ros = Node(
         package='micro_ros_agent',
         executable='micro_ros_agent',
@@ -24,7 +23,6 @@ def generate_launch_description():
         respawn_delay=3.0,
     )
 
-    
     static_tf_camera = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -41,7 +39,7 @@ def generate_launch_description():
         output='screen',
     )
 
-   
+
     core_nodes = TimerAction(
         period=3.0,
         actions=[
@@ -72,7 +70,7 @@ def generate_launch_description():
         ]
     )
 
-    
+  
     vision_nodes = TimerAction(
         period=8.0,
         actions=[

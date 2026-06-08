@@ -4,7 +4,7 @@
 import math
 import rclpy
 from rclpy.node import Node
-from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy  # noqa: F401
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy 
 
 import cv2
 import cv2.aruco as aruco_mod
@@ -17,7 +17,7 @@ from rclpy.qos import qos_profile_sensor_data
 
 
 def _rvec_to_quat(rvec):
-   
+    """Rodrigues rotation vector → (x, y, z, w) quaternion."""
     R, _ = cv2.Rodrigues(rvec)
     trace = R[0, 0] + R[1, 1] + R[2, 2]
     if trace > 0:
@@ -60,7 +60,6 @@ class ArucoDetector(Node):
 
         self.bridge = CvBridge()
 
-       
         self.declare_parameter('fx', 388.44054)
         self.declare_parameter('fy', 518.19597)
         self.declare_parameter('cx', 331.34870)
@@ -75,9 +74,9 @@ class ArucoDetector(Node):
         self.dist_coeffs = np.array([-0.338880, 0.116192, 0.000114, -0.001292, 0.0],
                                      dtype=np.float64)
 
-    
+
         self.aruco_params = aruco_mod.DetectorParameters_create()
-        self.aruco_params.minMarkerPerimeterRate = 0.01  # detecta markers pequeños/lejanos
+        self.aruco_params.minMarkerPerimeterRate = 0.01  
         self._dicts = [
             ('DICT_4X4_50',         aruco_mod.Dictionary_get(aruco_mod.DICT_4X4_50)),
             ('DICT_5X5_50',         aruco_mod.Dictionary_get(aruco_mod.DICT_5X5_50)),
@@ -92,7 +91,7 @@ class ArucoDetector(Node):
         self._active_dict = None
         self._frames_checked = 0
 
-        
+    
         self.create_subscription(Image, '/video_source/raw',
                                  self._image_cb, qos_profile_sensor_data)
         self.create_subscription(CameraInfo, '/video_source/camera_info',
@@ -100,7 +99,6 @@ class ArucoDetector(Node):
 
         self.pub = self.create_publisher(MarkerArray, '/marker_publisher/markers', 10)
 
-       
         self.create_timer(5.0, self._status_log)
 
         self.get_logger().info(
@@ -133,12 +131,10 @@ class ArucoDetector(Node):
 
         gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
 
-     
         if self._active_dict is not None:
             corners, ids, _ = aruco_mod.detectMarkers(
                 gray, self._active_dict, parameters=self.aruco_params)
         else:
-           
             corners, ids = None, None
             for dict_name, aruco_dict in self._dicts:
                 c, i, _ = aruco_mod.detectMarkers(
@@ -167,7 +163,7 @@ class ArucoDetector(Node):
                 m = Marker()
                 m.header = ma.header
                 m.id = int(mid)
-             
+           
                 m.pose.pose.position.x = float(tvec[0][0])
                 m.pose.pose.position.y = float(tvec[0][1])
                 m.pose.pose.position.z = float(tvec[0][2])

@@ -9,7 +9,7 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 
 from geometry_msgs.msg import Twist
-from std_msgs.msg import String
+from std_msgs.msg import Bool, String
 
 
 COMMANDS = {
@@ -18,7 +18,7 @@ COMMANDS = {
     'derecha':   {'v':  0.0,  'w': -0.6,  'dur': 0.5,  'lift': None,   'desc': 'Girar derecha 0.5 s'},
     'izquierda': {'v':  0.0,  'w':  0.6,  'dur': 0.5,  'lift': None,   'desc': 'Girar izquierda 0.5 s'},
     'alto':      {'v':  0.0,  'w':  0.0,  'dur': 0.0,  'lift': None,   'desc': 'Detener'},
-    'empieza':   {'v':  0.08, 'w':  0.0,  'dur': 1.0,  'lift': None,   'desc': 'Avanzar 1.0 s'},
+    'empieza':   {'v':  0.0,  'w':  0.0,  'dur': 0.0,  'lift': None,   'desc': 'Mision autorizada'},
     'sube':      {'v':  0.0,  'w':  0.0,  'dur': 1.5,  'lift': 'UP',   'desc': 'Lift UP 1.5 s'},
     'baja':      {'v':  0.0,  'w':  0.0,  'dur': 1.5,  'lift': 'DOWN', 'desc': 'Lift DOWN 1.5 s'},
     'gira':      {'v':  0.0,  'w':  0.5,  'dur': 1.5,  'lift': None,   'desc': 'Rotar 1.5 s'},
@@ -43,16 +43,14 @@ class VoiceCmdTest(Node):
             depth=5,
         )
 
-        # Publishers
-        self._pub_cmd    = self.create_publisher(Twist,  '/cmd_vel',       qos_be)
-        self._pub_lift   = self.create_publisher(String, '/lift/command',   qos_rel)
-        self._pub_action = self.create_publisher(String, '/voice/action',   qos_rel)
+        self._pub_cmd     = self.create_publisher(Twist,  '/cmd_vel',       qos_be)
+        self._pub_lift    = self.create_publisher(String, '/lift/command',   qos_rel)
+        self._pub_action  = self.create_publisher(String, '/voice/action',   qos_rel)
+        self._pub_mission = self.create_publisher(Bool,   '/mission/go',    qos_rel)
 
-        # Subscriber
         self.create_subscription(
             String, '/voice/recognized_command', self._voice_cb, qos_rel)
 
-     
         self._stop_timer = None
         self._stop_lock  = threading.Lock()
 
@@ -70,33 +68,35 @@ class VoiceCmdTest(Node):
         cmd = COMMANDS[word]
         self.get_logger().info(f'"{word}" → {cmd["desc"]}')
 
-     
+        if word == 'empieza':
+            go_msg = Bool(); go_msg.data = True
+            self._pub_mission.publish(go_msg)
+            action_msg = String(); action_msg.data = cmd['desc']
+            self._pub_action.publish(action_msg)
+            self.get_logger().info('/mission/go publicado — misión autorizada')
+            return
+
         with self._stop_lock:
             if self._stop_timer is not None:
                 self._stop_timer.cancel()
                 self._stop_timer = None
 
-     
         if cmd['v'] != 0.0 or cmd['w'] != 0.0:
             self._send_cmd(cmd['v'], cmd['w'])
 
-    
         if cmd['lift'] is not None:
             self._send_lift(cmd['lift'])
 
-      
         action_msg      = String()
         action_msg.data = cmd['desc']
         self._pub_action.publish(action_msg)
 
-       
         if cmd['dur'] > 0.0:
             with self._stop_lock:
                 self._stop_timer = threading.Timer(cmd['dur'], self._stop_all)
                 self._stop_timer.daemon = True
                 self._stop_timer.start()
         else:
-         
             self._stop_all()
 
     def _stop_all(self):
@@ -123,7 +123,6 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
-     
         if rclpy.ok():
             stop = Twist()
             node._pub_cmd.publish(stop)

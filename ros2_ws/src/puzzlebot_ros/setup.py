@@ -38,6 +38,8 @@ setup(
             # ── Control y hardware ───────────────────────────────────────────
             'cmd_vel_to_wheels = puzzlebot_ros.cmd_vel_to_wheels:main',
             'lift_controller = puzzlebot_ros.lift_controller:main',
+            'qr_reader_node  = puzzlebot_ros.qr_reader_node:main',
+            'mission_node    = puzzlebot_ros.mission_node:main',
             # ── Utilidades heredadas (no se usan en mapping.launch.py) ───────
             'ekf_slam        = puzzlebot_ros.ekf_slam:main',
             'aruco_detector  = puzzlebot_ros.aruco_detector:main',

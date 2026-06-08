@@ -32,9 +32,13 @@ def generate_launch_description():
         'map_path', default_value=os.path.expanduser('~/maps/current'),
         description='Ruta base del mapa sin extensión (se agrega .pgm / .yaml)')
 
+    arg_mission = DeclareLaunchArgument(
+        'mission', default_value='false',
+        description='Habilitar mission_node y qr_reader_node (true para E80)')
+    mission_en = LaunchConfiguration('mission')
+
     unset_fastdds = SetEnvironmentVariable('FASTRTPS_DEFAULT_PROFILES_FILE', '')
 
-   
     micro_ros = Node(
         package='micro_ros_agent',
         executable='micro_ros_agent',
@@ -45,7 +49,6 @@ def generate_launch_description():
         respawn_delay=3.0,
     )
 
-  
     tf_base = Node(
         package='tf2_ros', executable='static_transform_publisher',
         name='tf_base_footprint_link',
@@ -75,7 +78,6 @@ def generate_launch_description():
         condition=IfCondition(camera_en),
     )
 
-   
     cmd_vel_relay = Node(
         package='puzzlebot_ros', executable='cmd_vel_to_wheels',
         name='cmd_vel_relay', output='screen',
@@ -97,11 +99,9 @@ def generate_launch_description():
         name='lift_controller', output='screen',
     )
 
-
     nav_nodes = TimerAction(
         period=3.0,
         actions=[
-          
             Node(
                 package='sllidar_ros2',
                 executable='sllidar_node',
@@ -130,20 +130,17 @@ def generate_launch_description():
                 }],
                 output='screen',
             ),
-      
             Node(
                 package='puzzlebot_ros', executable='map_server_node',
                 name='map_server_node',
                 parameters=[{'map_path': LaunchConfiguration('map_path')}],
                 output='screen',
             ),
-      
             Node(
                 package='puzzlebot_ros', executable='particle_localization',
                 name='particle_localization',
                 output='screen',
             ),
-       
             Node(
                 package='puzzlebot_ros', executable='astar_navigator',
                 name='astar_navigator',
@@ -152,7 +149,40 @@ def generate_launch_description():
         ],
     )
 
-  
+    mission_nodes = TimerAction(
+        period=3.0,
+        actions=[
+            Node(
+                package='puzzlebot_ros', executable='qr_reader_node',
+                name='qr_reader_node',
+                parameters=[{
+                    'detect_hz':     5.0,
+                    'publish_image': True,
+                    'min_qr_area_px': 200,
+                }],
+                output='screen',
+                condition=IfCondition(mission_en),
+            ),
+            Node(
+                package='puzzlebot_ros', executable='mission_node',
+                name='mission_node',
+                parameters=[{
+                    'pickup_x':        1.50,
+                    'pickup_y':        2.00,
+                    'approach_dist_m': 0.30,
+                    'approach_speed':  0.04,
+                    'lift_up_secs':    3.00,
+                    'lift_down_secs':  3.00,
+                    'backup_secs':     1.50,
+                    'qr_timeout_s':    30.0,
+                    'nav_timeout_s':   60.0,
+                }],
+                output='screen',
+                condition=IfCondition(mission_en),
+            ),
+        ],
+    )
+
     vision_nodes = TimerAction(
         period=8.0,
         actions=[
@@ -183,7 +213,6 @@ def generate_launch_description():
                 output='screen',
                 condition=IfCondition(camera_en),
             ),
-   
             Node(
                 package='puzzlebot_ros', executable='aruco_map_odom',
                 name='aruco_map_odom',
@@ -209,11 +238,13 @@ def generate_launch_description():
         unset_fastdds,
         arg_camera,
         arg_map,
+        arg_mission,
         micro_ros,
         tf_base, tf_lidar, tf_laser, tf_camera, tf_cam_optical,
         cmd_vel_relay,
         odometry,
         lifter,
         nav_nodes,
+        mission_nodes,
         vision_nodes,
     ])

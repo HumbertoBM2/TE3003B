@@ -1,6 +1,6 @@
-
 import wave
 import numpy as np
+
 
 def read_wav(path):
     with wave.open(path, "rb") as wf:
@@ -21,3 +21,21 @@ def read_wav(path):
     audio = audio / 32768.0
     return audio, s_rate
 
+
+def read_wav_int16(path):
+    with wave.open(path, "rb") as wf:
+        sample_rate = wf.getframerate()
+        channels = wf.getnchannels()
+        sample_width = wf.getsampwidth()
+        n_frames = wf.getnframes()
+        raw = wf.readframes(n_frames)
+
+    if sample_width != 2:
+        raise ValueError("Use 16-bit PCM WAV files.")
+
+    audio = np.frombuffer(raw, dtype=np.int16)
+
+    if channels == 2:
+        audio = audio.reshape(-1, 2).mean(axis=1).astype(np.int16)
+
+    return audio, sample_rate

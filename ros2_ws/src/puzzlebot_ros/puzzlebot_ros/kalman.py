@@ -143,11 +143,12 @@ class Kalman(Node):
         K = np.array([[self.sigma_squared*abs(self.velocityR),   0                                     ],
                       [0,                                        self.sigma_squared*abs(self.velocityL)]])
                       
-        Q = dH @ K @ dH.T                 
+        Q = dH @ K @ dH.T                  # Q = dH*K*dH'
         
-        self.Sig = H @ self.Sig @ H.T + Q  
+        self.Sig = H @ self.Sig @ H.T + Q  # Sig = H*Sig*H' + Q
         
-      
+        #print(self.Sig)
+
     def kalman_correction(self, markers, cov):
 
         S = [0,0,0]
@@ -177,13 +178,13 @@ class Kalman(Node):
                 diff = marker[1:3] - Z_hat
                 marker[2] = wrap_to_pi(marker[2])
                 
-                Z = G @ self.Sig @ G.T + R              
+                Z = G @ self.Sig @ G.T + R               # Z = G*Sig*G' + R
         
-                K = self.Sig @ G.T @ np.linalg.inv(Z)    
+                K = self.Sig @ G.T @ np.linalg.inv(Z)    # Kalman gain:  K = Sig*G'*inv(Z)
         
-                S = S + K @ diff                        
+                S = S + K @ diff                         # Update pose mean:  s = s + K*(Z-Z_hat)
         
-                self.Sig = (np.eye(3)-K @ G) @ self.Sig  
+                self.Sig = (np.eye(3)-K @ G) @ self.Sig  # Update covariance:  Sig = (I-K*G)*Sig
                 
         self.pose_x = S[0]
         self.pose_y = S[1]

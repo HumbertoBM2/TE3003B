@@ -18,17 +18,16 @@ from sensor_msgs.msg import LaserScan
 
 from .my_math import euler_from_quaternion, wrap_to_pi
 
-
-N_PARTICLES    = 100    
+N_PARTICLES    = 100     
 SCAN_STEP      = 10     
-SIGMA          = 0.20    
+SIGMA          = 0.20   
 INIT_SXY       = 0.10    
 INIT_SYAW      = 0.08   
 REINJECT_FRAC  = 0.30    
-ALPHA_TRANS    = 0.10   
-ALPHA_ROT      = 0.08    
-NOISE_FLOOR_XY = 0.003   
-NOISE_FLOOR_YAW= 0.003   
+ALPHA_TRANS    = 0.10    
+ALPHA_ROT      = 0.08   
+NOISE_FLOOR_XY = 0.003  
+NOISE_FLOOR_YAW= 0.003  
 
 
 class ParticleLocalization(Node):
@@ -49,26 +48,22 @@ class ParticleLocalization(Node):
             history=HistoryPolicy.KEEP_LAST,
             durability=DurabilityPolicy.TRANSIENT_LOCAL, depth=1)
 
-    
         self._pub_mo  = self.create_publisher(TransformStamped, '/pf/map_to_odom',  qos_rel)
         self._pub_pts = self.create_publisher(PoseArray,         '/pf/particles',    qos_rel)
 
-      
         self.create_subscription(OccupancyGrid,    '/map',          self._map_cb,    qos_latched)
         self.create_subscription(Odometry,         '/odom',         self._odom_cb,   qos_be)
         self.create_subscription(LaserScan,        '/scan_stamped', self._scan_cb,   qos_be)
         self.create_subscription(TransformStamped, '/map_to_odom',  self._aruco_cb,  qos_rel)
 
-     
+    
         self._p: np.ndarray     = None
         self._w: np.ndarray     = np.ones(N_PARTICLES) / N_PARTICLES
 
-    
         self._map_info  = None
         self._dist_field: np.ndarray = None   
 
-     
-        self._odom_prev = None    
+        self._odom_prev = None   
 
         self._est_x   = 0.0
         self._est_y   = 0.0
@@ -79,7 +74,6 @@ class ParticleLocalization(Node):
         self.get_logger().info(f'Filtro de particulas MCL listo — N={N_PARTICLES}')
 
 
-
     def _map_cb(self, msg: OccupancyGrid):
         self._map_info = msg.info
         grid = np.array(msg.data, dtype=np.int8).reshape(msg.info.height, msg.info.width)
@@ -88,9 +82,15 @@ class ParticleLocalization(Node):
             f'Campo de distancias precomputado: {msg.info.width}x{msg.info.height}')
 
     def _aruco_cb(self, msg: TransformStamped):
-   
+        """Corrección ArUco: inicializa o reinyecta partículas.
+
+        /map_to_odom es el TF map→odom (origen del frame odom en frame map),
+        NO la pose del robot.  La pose del robot en frame map es:
+            rx = mo_x + cos(mo_yaw)*odom_x - sin(mo_yaw)*odom_y
+            ry = mo_y + sin(mo_yaw)*odom_x + cos(mo_yaw)*odom_y
+        """
         if self._odom_prev is None:
-            return  
+            return 
 
         mo_x   = msg.transform.translation.x
         mo_y   = msg.transform.translation.y
@@ -105,13 +105,12 @@ class ParticleLocalization(Node):
         ryaw = wrap_to_pi(oyaw + mo_yaw)
 
         if not self._ok:
-          
+         
             if sqrt(rx * rx + ry * ry) < 0.3:
                 return
             self._init(rx, ry, ryaw)
             return
 
-     
         err = sqrt((self._est_x - rx) ** 2 + (self._est_y - ry) ** 2)
         if err > 1.5:
             self.get_logger().warn(
@@ -119,7 +118,7 @@ class ParticleLocalization(Node):
             self._init(rx, ry, ryaw)
             return
 
-   
+     
         n = max(1, int(N_PARTICLES * REINJECT_FRAC))
         low = np.argsort(self._w)[:n]
         self._p[low, 0] = rx   + np.random.randn(n) * INIT_SXY   * 0.5
@@ -129,7 +128,6 @@ class ParticleLocalization(Node):
         self._w        /= self._w.sum()
 
     def _odom_cb(self, msg: Odometry):
-       
         ox = msg.pose.pose.position.x
         oy = msg.pose.pose.position.y
         _, _, oyaw = euler_from_quaternion(msg.pose.pose.orientation)
@@ -143,7 +141,6 @@ class ParticleLocalization(Node):
 
         px, py, pyaw = self._odom_prev
 
-        # Delta en el frame del robot (convención diferencial)
         dxr  =  cos(pyaw) * (ox - px) + sin(pyaw) * (oy - py)
         dyr  = -sin(pyaw) * (ox - px) + cos(pyaw) * (oy - py)
         dyaw = wrap_to_pi(oyaw - pyaw)
@@ -156,11 +153,9 @@ class ParticleLocalization(Node):
         self._odom_prev = (ox, oy, oyaw)
 
     def _scan_cb(self, msg: LaserScan):
-     
         if not self._ok or self._dist_field is None:
             return
 
-       
         raw_r = np.array(msg.ranges[::SCAN_STEP], dtype=np.float32)
         n_r   = len(raw_r)
         angs  = (msg.angle_min + np.arange(n_r) * msg.angle_increment * SCAN_STEP
@@ -175,12 +170,10 @@ class ParticleLocalization(Node):
 
         self._obs_update(ranges, angles)
 
-       
         ess = 1.0 / float(np.sum(self._w ** 2) + 1e-12)
         if ess < N_PARTICLES * 0.5:
             self._resample()
 
-       
         self._est_x   = float(np.average(self._p[:, 0], weights=self._w))
         self._est_y   = float(np.average(self._p[:, 1], weights=self._w))
   
@@ -191,15 +184,13 @@ class ParticleLocalization(Node):
         self._publish_mo()
         self._publish_particles()
 
-  
 
     def _motion_update(self, dxr: float, dyr: float, dyaw: float, dist: float):
-      
+        """Rotación delta al frame de cada partícula + ruido gaussiano."""
         N    = N_PARTICLES
         s_xy = dist  * ALPHA_TRANS + NOISE_FLOOR_XY
         s_yw = abs(dyaw) * ALPHA_ROT + NOISE_FLOOR_YAW
 
-       
         c_p = np.cos(self._p[:, 2])
         s_p = np.sin(self._p[:, 2])
 
@@ -210,7 +201,7 @@ class ParticleLocalization(Node):
 
 
     def _obs_update(self, ranges: np.ndarray, angles: np.ndarray):
-
+   
         info  = self._map_info
         res   = info.resolution
         ox    = info.origin.position.x
@@ -221,7 +212,6 @@ class ParticleLocalization(Node):
         log_w = np.zeros(N_PARTICLES, dtype=np.float64)
 
         for r, a in zip(ranges, angles):
-         
             wx = self._p[:, 0] + r * np.cos(self._p[:, 2] + a)
             wy = self._p[:, 1] + r * np.sin(self._p[:, 2] + a)
 
@@ -231,7 +221,6 @@ class ParticleLocalization(Node):
             d    = self._dist_field[rows, cols]  
             log_w += -(d * d) / s2
 
-       
         log_w -= log_w.max()
         w_obs  = np.exp(log_w)
 
@@ -242,7 +231,6 @@ class ParticleLocalization(Node):
         else:
             self._w = np.ones(N_PARTICLES) / N_PARTICLES
 
-  
 
     def _resample(self):
         N   = N_PARTICLES
@@ -252,17 +240,14 @@ class ParticleLocalization(Node):
         self._p  = self._p[idx].copy()
         self._w  = np.ones(N) / N
 
-  
 
     @staticmethod
     def _build_dist_field(grid: np.ndarray, res: float) -> np.ndarray:
-      
         occupied = (grid > 50)
         try:
             from scipy.ndimage import distance_transform_edt
             dist_px = distance_transform_edt(~occupied)
         except ImportError:
-          
             dist_px = ParticleLocalization._bfs_dist(occupied)
         return (dist_px * res).astype(np.float32)
 
@@ -288,7 +273,6 @@ class ParticleLocalization(Node):
                         queue.append((ny, nx))
         return dist
 
-  
 
     def _init(self, x: float, y: float, yaw: float):
         N = N_PARTICLES
@@ -305,14 +289,11 @@ class ParticleLocalization(Node):
             f'Partículas inicializadas: ({x:.2f}, {y:.2f}, {degrees(yaw):.1f}°)')
 
 
-
     def _publish_mo(self):
-       
         if self._odom_prev is None:
             return
         ox, oy, oyaw = self._odom_prev
 
-      
         mo_yaw = wrap_to_pi(self._est_yaw - oyaw)
         c, s   = cos(mo_yaw), sin(mo_yaw)
         mo_x   = self._est_x - (c * ox - s * oy)

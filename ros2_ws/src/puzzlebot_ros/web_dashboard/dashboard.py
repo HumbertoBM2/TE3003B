@@ -14,12 +14,13 @@ from rclpy.node import Node
 from rclpy.qos import (DurabilityPolicy, HistoryPolicy, QoSProfile,
                         ReliabilityPolicy, qos_profile_sensor_data)
 
+import json as _json
+
 from geometry_msgs.msg import PoseStamped, TransformStamped
 from nav_msgs.msg import OccupancyGrid, Odometry, Path
 from sensor_msgs.msg import CompressedImage, LaserScan
 from std_msgs.msg import Bool, String
 from visualization_msgs.msg import MarkerArray
-from vision_msgs.msg import Detection2DArray
 
 try:
     import numpy as np
@@ -38,7 +39,6 @@ _frame_event  = threading.Event()
 
 app      = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins='*', async_mode='threading')
-
 
 
 
@@ -61,36 +61,42 @@ class DashboardBridge(Node):
             depth=10,
         )
 
-    
-        self.create_subscription(Odometry,         '/odom',                    self._odom_cb,       qos_be)
-        self.create_subscription(LaserScan,        '/scan',                    self._scan_cb,       qos_be)
-        self.create_subscription(CompressedImage,  '/video_source/compressed', self._image_cb,      qos_be)
-        self.create_subscription(CompressedImage,  '/yolo/compressed',         self._yolo_img_cb,   qos_be)
-        self.create_subscription(Detection2DArray, '/yolo/detections',         self._yolo_det_cb,   qos_be)
-        self.create_subscription(String,           '/nav/status',              self._nav_status_cb, qos_rel)
-        self.create_subscription(String,           '/slam/status',             self._slam_status_cb,qos_rel)
-        self.create_subscription(MarkerArray,      '/slam/map',                self._landmarks_cb,  qos_rel)
-        self.create_subscription(OccupancyGrid,    '/map',                     self._occ_map_cb,    qos_latched)
-        self.create_subscription(TransformStamped, '/map_to_odom',             self._mo_cb,         qos_rel)
-        self.create_subscription(Path,             '/nav/path',                self._nav_path_cb,   qos_rel)
-
+        self.create_subscription(Odometry,         '/odom',                    self._odom_cb,        qos_be)
+        self.create_subscription(LaserScan,        '/scan',                    self._scan_cb,        qos_be)
+        self.create_subscription(CompressedImage,  '/video_source/compressed', self._image_cb,       qos_be)
+        self.create_subscription(CompressedImage,  '/yolo/compressed',         self._yolo_img_cb,    qos_be)
+        self.create_subscription(String,           '/yolo/detections',         self._yolo_det_cb,    qos_be)
+        self.create_subscription(String,           '/nav/status',              self._nav_status_cb,  qos_rel)
+        self.create_subscription(String,           '/slam/status',             self._slam_status_cb, qos_rel)
+        self.create_subscription(MarkerArray,      '/slam/map',                self._landmarks_cb,   qos_rel)
+        self.create_subscription(OccupancyGrid,    '/map',                     self._occ_map_cb,     qos_latched)
+        self.create_subscription(TransformStamped, '/map_to_odom',             self._mo_cb,          qos_rel)
+        self.create_subscription(Path,             '/nav/path',                self._nav_path_cb,    qos_rel)
         self.create_subscription(String, '/voice/recognized_command', self._voice_cmd_cb,    qos_rel)
         self.create_subscription(String, '/voice/log_likelihoods',    self._voice_scores_cb, qos_rel)
+        self.create_subscription(String, '/mission/robot_state', self._mission_state_cb,  qos_rel)
+        self.create_subscription(String, '/mission/truck_info',  self._truck_info_cb,     qos_rel)
+        self.create_subscription(String, '/mission/truck_map',   self._truck_map_cb,      qos_rel)
+        self.create_subscription(String, '/mission/state',       self._mission_sm_cb,     qos_rel)
+        self.create_subscription(String, '/qr/decoded',          self._qr_decoded_cb,     qos_rel)
+        self.create_subscription(String, '/mission/odoo_status', self._odoo_status_cb,    qos_rel)
 
+        self.goal_pub         = self.create_publisher(PoseStamped, '/nav/goal',            qos_rel)
+        self.lift_pub         = self.create_publisher(String,      '/lift/command',         qos_rel)
+        self.voice_flag_pub   = self.create_publisher(Bool,        '/voice/listen_flag',    qos_rel)
+        self.mission_mode_pub = self.create_publisher(String,      '/mission/mode',         qos_rel)
+        self.mission_wp1_pub  = self.create_publisher(PoseStamped, '/mission/waypoint1',    qos_rel)
+        self.mission_wp2_pub  = self.create_publisher(PoseStamped, '/mission/waypoint2',    qos_rel)
+        self.mission_abort_pub= self.create_publisher(Bool,        '/mission/abort',        qos_rel)
 
-        self.goal_pub       = self.create_publisher(PoseStamped, '/nav/goal',          qos_rel)
-        self.lift_pub       = self.create_publisher(String,      '/lift/command',       qos_rel)
-        self.voice_flag_pub = self.create_publisher(Bool,        '/voice/listen_flag',  qos_rel)
-
-
-        self._last_map_emit = 0.0
+        self._last_map_emit      = 0.0
+        self._last_raw_frame_emit = 0.0 
         self._mo_x   = 0.0
         self._mo_y   = 0.0
         self._mo_yaw = 0.0
 
         self.get_logger().info('Dashboard bridge iniciado')
 
-  
     def _mo_cb(self, msg: TransformStamped):
         self._mo_x = msg.transform.translation.x
         self._mo_y = msg.transform.translation.y
@@ -99,7 +105,6 @@ class DashboardBridge(Node):
             2.0 * (q.w * q.z + q.x * q.y),
             1.0 - 2.0 * (q.y * q.y + q.z * q.z))
 
- 
     def _odom_cb(self, msg: Odometry):
         ox = msg.pose.pose.position.x
         oy = msg.pose.pose.position.y
@@ -113,7 +118,6 @@ class DashboardBridge(Node):
             'yaw': round(math.degrees(yaw_odom + self._mo_yaw), 1),
         })
 
-  
     def _scan_cb(self, msg: LaserScan):
         ranges = msg.ranges[::4]
         a_min  = msg.angle_min
@@ -125,25 +129,55 @@ class DashboardBridge(Node):
                 pts.append([round(r*math.cos(a), 3), round(r*math.sin(a), 3)])
         socketio.emit('scan', {'points': pts, 'max_range': msg.range_max})
 
-
     def _image_cb(self, msg: CompressedImage):
         global _latest_frame
+        data = bytes(msg.data)
         with _frame_lock:
-            _latest_frame = bytes(msg.data)
+            _latest_frame = data
         _frame_event.set()
+        now = time.time()
+        if now - self._last_raw_frame_emit > 0.125:
+            self._last_raw_frame_emit = now
+            socketio.emit('raw_frame', {'img': base64.b64encode(data).decode()})
 
     def _yolo_img_cb(self, msg: CompressedImage):
         socketio.emit('yolo_frame', {'img': base64.b64encode(bytes(msg.data)).decode()})
 
-    def _yolo_det_cb(self, msg: Detection2DArray):
-        dets = []
-        for d in msg.detections:
-            if d.results:
-                h = d.results[0].hypothesis
-                dets.append({'cls': h.class_id, 'score': round(h.score, 2)})
-        socketio.emit('yolo_detections', {'detections': dets})
+    def _yolo_det_cb(self, msg: String):
+        try:
+            data = _json.loads(msg.data)
+            socketio.emit('yolo_detections', {'detections': data.get('dets', [])})
+        except Exception:
+            pass
 
- 
+    def _mission_state_cb(self, msg: String):
+        socketio.emit('mission_robot_state', {'state': msg.data})
+
+    def _truck_info_cb(self, msg: String):
+        socketio.emit('truck_info', {'truck': msg.data})
+
+    def _truck_map_cb(self, msg: String):
+        try:
+            socketio.emit('truck_map', {'map': _json.loads(msg.data)})
+        except Exception:
+            pass
+
+    def _mission_sm_cb(self, msg: String):
+        socketio.emit('mission_sm_state', {'state': msg.data})
+
+    def _qr_decoded_cb(self, msg: String):
+        try:
+            socketio.emit('qr_decoded', _json.loads(msg.data))
+        except Exception:
+            pass
+
+    def _odoo_status_cb(self, msg: String):
+        raw = msg.data.strip()
+        parts = raw.split(':', 1)
+        kind  = parts[0] if parts else raw
+        value = parts[1] if len(parts) > 1 else ''
+        socketio.emit('odoo_status', {'raw': raw, 'kind': kind, 'value': value})
+
     def _nav_status_cb(self, msg: String):
         socketio.emit('status', {'text': msg.data})
 
@@ -187,12 +221,10 @@ class DashboardBridge(Node):
             'w':   w, 'h': h,
         })
 
-
     def _nav_path_cb(self, msg: Path):
         wps = [[round(ps.pose.position.x, 3), round(ps.pose.position.y, 3)]
                for ps in msg.poses]
         socketio.emit('nav_path', {'waypoints': wps})
-
 
     def _voice_cmd_cb(self, msg: String):
         socketio.emit('voice_command', {'word': msg.data})
@@ -242,8 +274,7 @@ def map_image():
                 list(struct.unpack(f'>{w*h}H', raw)) if magic == 'P5'
                 else list(map(int, raw.decode().split())))
         arr = np.array(pixels, dtype=np.uint8).reshape(h, w)
-        # El PGM ya fue guardado con np.flipud() en amigo_slam_node (fila 0 = norte),
-        # así que NO hay que volver a voltear: la imagen ya está lista para pantalla.
+
         _, buf = cv2.imencode('.jpg', arr, [cv2.IMWRITE_JPEG_QUALITY, 85])
         return Response(buf.tobytes(), mimetype='image/jpeg')
     except Exception as e:
@@ -252,7 +283,6 @@ def map_image():
 
 @app.route('/map_meta')
 def map_meta():
-    """Devuelve metadata del mapa guardado: resolution, origin, width, height."""
     yaml_path = os.path.expanduser('~/maps/current.yaml')
     pgm_path  = os.path.expanduser('~/maps/current.pgm')
     if not os.path.exists(yaml_path) or not os.path.exists(pgm_path):
@@ -284,7 +314,6 @@ def yolo_push():
     return {'ok': True}
 
 
-# ── SocketIO events ───────────────────────────────────────────────────────────
 
 @socketio.on('send_goal')
 def handle_goal(data):
@@ -313,13 +342,46 @@ def handle_lift(data):
 
 @socketio.on('voice_record')
 def handle_voice_record(data):
-    """Dispara grabación de voz publicando Bool(True) en /voice/listen_flag."""
     msg = Bool(); msg.data = True
     bridge_node.voice_flag_pub.publish(msg)
     return {'ok': True}
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+
+@socketio.on('mission_mode')
+def handle_mission_mode(data):
+    mode = str(data.get('mode', 'IDLE')).upper()
+    msg = String(); msg.data = mode
+    bridge_node.mission_mode_pub.publish(msg)
+    return {'ok': True}
+
+
+@socketio.on('mission_waypoint')
+def handle_mission_waypoint(data):
+    which = int(data.get('which', 1))   # 1 o 2
+    try:
+        msg = PoseStamped()
+        msg.header.frame_id    = 'map'
+        msg.header.stamp       = bridge_node.get_clock().now().to_msg()
+        msg.pose.position.x    = float(data['x'])
+        msg.pose.position.y    = float(data['y'])
+        msg.pose.orientation.w = 1.0
+        if which == 1:
+            bridge_node.mission_wp1_pub.publish(msg)
+        else:
+            bridge_node.mission_wp2_pub.publish(msg)
+        return {'ok': True}
+    except Exception as e:
+        return {'ok': False, 'error': str(e)}
+
+
+@socketio.on('mission_abort')
+def handle_mission_abort(data):
+    msg = Bool(); msg.data = True
+    bridge_node.mission_abort_pub.publish(msg)
+    return {'ok': True}
+
+
 
 def ros_spin():
     rclpy.spin(bridge_node)

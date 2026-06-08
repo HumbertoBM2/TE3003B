@@ -16,25 +16,21 @@ from nav_msgs.msg import OccupancyGrid, Odometry
 
 from .my_math import wrap_to_pi, quaternion_from_euler
 
-
-WARMUP_SCANS = 15        
-
+WARMUP_SCANS = 15     
 
 COARSE_HALF  = math.radians(8.0)
 COARSE_STEP  = math.radians(2.0)
 FINE_HALF    = math.radians(1.5)
 FINE_STEP    = math.radians(0.5)
 
+TRANS_HALF   = 0.12   
+TRANS_STEP   = 0.04     
 
-TRANS_HALF   = 0.12      # m
-TRANS_STEP   = 0.04      # m
-
-
-RAY_STRIDE         = 4    
-MAX_SCORING_RANGE  = 5.5    
-MIN_SCORE          = 5.0    
+RAY_STRIDE         = 4     
+MAX_SCORING_RANGE  = 5.5   
+MIN_SCORE          = 5.0   
 MIN_SCORE_TRANS    = 4.0    
-MAX_CORR_XY        = 0.18   
+MAX_CORR_XY        = 0.18  
 MAX_CORR_TH        = math.radians(10.0)
 MIN_MAP_CELLS      = 200   
 
@@ -44,27 +40,23 @@ class ScanMatcher(Node):
     def __init__(self):
         super().__init__('scan_matcher')
 
-       
         self._ekf_x  = 0.0
         self._ekf_y  = 0.0
         self._ekf_th = 0.0
         self._ekf_ok = False
 
-       
         self._grid      = None   
-        self._map_ox    = 0.0    
+        self._map_ox    = 0.0   
         self._map_oy    = 0.0    
-        self._map_res   = 0.05  
+        self._map_res   = 0.05   
         self._map_w     = 0
         self._map_h     = 0
         self._map_cells = 0      
 
-       
         self._scan_count  = 0
         self._ok          = 0
         self._fail        = 0
         self._last_score  = 0.0
-
 
 
         qos_map = QoSProfile(
@@ -87,7 +79,6 @@ class ScanMatcher(Node):
         self.get_logger().info('scan_matcher (scan-to-map grid scoring) iniciado')
 
 
-
     def _ekf_cb(self, msg: Odometry):
         self._ekf_x = msg.pose.pose.position.x
         self._ekf_y = msg.pose.pose.position.y
@@ -100,7 +91,6 @@ class ScanMatcher(Node):
     def _map_cb(self, msg: OccupancyGrid):
         data = np.array(msg.data, dtype=np.int16).reshape(
             msg.info.height, msg.info.width)
-        # Grid de scoring: celdas ocupadas (>50) contribuyen positivamente
         self._grid = np.where(data > 50, data.astype(np.float32), 0.0)
         self._map_ox  = msg.info.origin.position.x
         self._map_oy  = msg.info.origin.position.y
@@ -109,28 +99,22 @@ class ScanMatcher(Node):
         self._map_h   = msg.info.height
         self._map_cells = int(np.sum(data != -1))
 
-  
 
     def _scan_cb(self, msg: LaserScan):
         self._scan_count += 1
 
-    
         if self._grid is None or not self._ekf_ok:
             return
 
-       
         if self._scan_count <= WARMUP_SCANS or self._map_cells < MIN_MAP_CELLS:
             return
 
-        
         ranges, rel_angles = self._valid_rays(msg)
         if len(ranges) < 20:
             return
 
-       
         ix, iy, ith = self._ekf_x, self._ekf_y, self._ekf_th
 
-       
         best_yaw   = ith
         best_score = -1.0
 
@@ -151,7 +135,6 @@ class ScanMatcher(Node):
         mx, my, mth = ix, iy, best_yaw
         rot_score   = best_score
 
-       
         if rot_score >= MIN_SCORE_TRANS:
             offsets = np.arange(-TRANS_HALF, TRANS_HALF + 1e-9, TRANS_STEP)
             for dx in offsets:
@@ -164,12 +147,10 @@ class ScanMatcher(Node):
 
         self._last_score = best_score
 
-      
         if best_score < MIN_SCORE:
             self._fail += 1
             return
 
-       
         corr_xy = math.hypot(mx - ix, my - iy)
         corr_th = abs(wrap_to_pi(mth - ith))
         if corr_xy > MAX_CORR_XY or corr_th > MAX_CORR_TH:
@@ -182,7 +163,6 @@ class ScanMatcher(Node):
 
         self._ok += 1
 
-        
         dx_map = mx - ix
         dy_map = my - iy
         dth    = wrap_to_pi(mth - ith)
@@ -193,7 +173,6 @@ class ScanMatcher(Node):
 
         now = msg.header.stamp
 
-   
         delta = Odometry()
         delta.header.stamp    = now
         delta.header.frame_id = 'base_link'
@@ -206,7 +185,6 @@ class ScanMatcher(Node):
         delta.pose.covariance[35] = max(5e-5, 0.005 * corr_th)
         self.pub_delta.publish(delta)
 
-    
         pose_msg = Odometry()
         pose_msg.header.stamp    = now
         pose_msg.header.frame_id = 'map'
@@ -216,12 +194,10 @@ class ScanMatcher(Node):
         pose_msg.pose.pose.orientation = quaternion_from_euler(0.0, 0.0, mth)
         self.pub_pose.publish(pose_msg)
 
-    
 
     def _valid_rays(self, msg: LaserScan):
         n      = len(msg.ranges)
         r_all  = np.asarray(msg.ranges, dtype=np.float32)
-
         a_all  = msg.angle_min + np.arange(n, dtype=np.float32) * msg.angle_increment
         rmin   = max(float(msg.range_min), 0.15)
         rmax   = min(float(msg.range_max) * 0.95, MAX_SCORING_RANGE)

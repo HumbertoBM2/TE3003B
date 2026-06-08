@@ -10,7 +10,8 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from geometry_msgs.msg import Twist
 
-WHEEL_BIAS = 0.80   
+
+WHEEL_BIAS = 0.80  
 
 KEY_MOVE = {
     'i': ( 1.0,  0.0),

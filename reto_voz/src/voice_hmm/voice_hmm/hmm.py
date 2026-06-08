@@ -1,11 +1,6 @@
-# hmm.py
 import numpy as np
 
 def train_hmm_counts(sequences, n_states=5, n_symbols=256, epsilon=1e-6):
-    """
-    sequences: list of arrays, each array contains VQ indices 0..255.
-    """
-
     pi = np.zeros(n_states)
     pi[0] = 1.0
 
@@ -26,11 +21,9 @@ def train_hmm_counts(sequences, n_states=5, n_symbols=256, epsilon=1e-6):
             for symbol in segment:
                 B_counts[s, symbol] += 1
 
-    # Emissions B with smoothing
     B = B_counts + epsilon
     B = B / B.sum(axis=1, keepdims=True)
 
-    # Transitions A
     A = np.zeros((n_states, n_states))
 
     for s in range(n_states):
@@ -53,10 +46,21 @@ def train_hmm_counts(sequences, n_states=5, n_symbols=256, epsilon=1e-6):
         "n_symbols": n_symbols
     }
 
-    # hmm.py continued
+
 def logsumexp(values):
     m = np.max(values)
+
+    if np.isneginf(m):
+        return -np.inf
+
     return m + np.log(np.sum(np.exp(values - m)))
+
+
+def safe_log(probabilities):
+    result = np.full_like(probabilities, -np.inf, dtype=np.float64)
+    positive = probabilities > 0
+    result[positive] = np.log(probabilities[positive])
+    return result
 
 
 def forward_log(O, hmm):
@@ -66,22 +70,18 @@ def forward_log(O, hmm):
     N = hmm["n_states"]
     T = len(O)
 
-    log_A = np.log(A + 1e-300)
-    log_B = np.log(B + 1e-300)
-    log_pi = np.log(pi + 1e-300)
+    log_A = safe_log(A)
+    log_B = safe_log(B)
+    log_pi = safe_log(pi)
 
     log_alpha = np.full((T, N), -np.inf)
 
-    # Initialization
     log_alpha[0] = log_pi + log_B[:, O[0]]
 
-    # Recursion
     for t in range(1, T):
         for j in range(N):
             log_alpha[t, j] = log_B[j, O[t]] + logsumexp(
                 log_alpha[t - 1] + log_A[:, j]
             )
 
-    # Termination
     return logsumexp(log_alpha[-1])
-

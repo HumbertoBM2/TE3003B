@@ -1,4 +1,4 @@
-
+"""Occupancy grid log-odds + integración de rayos lidar (de puzzlebot_sim)."""
 
 import math
 from typing import Optional

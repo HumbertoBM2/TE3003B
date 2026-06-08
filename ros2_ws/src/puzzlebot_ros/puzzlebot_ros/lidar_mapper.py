@@ -15,7 +15,6 @@ from std_srvs.srv import Trigger
 
 
 def _bresenham(x0, y0, x1, y1):
-  
     dx, dy = abs(x1 - x0), abs(y1 - y0)
     sx = 1 if x0 < x1 else -1
     sy = 1 if y0 < y1 else -1
@@ -38,6 +37,7 @@ class LidarMapper(Node):
     def __init__(self):
         super().__init__('lidar_mapper')
 
+   
         self._res      = float(self.declare_parameter('resolution', 0.05).value)
         self._width_m  = float(self.declare_parameter('width_meters',  4.26).value)
         self._height_m = float(self.declare_parameter('height_meters', 5.36).value)
@@ -47,18 +47,15 @@ class LidarMapper(Node):
         self._cells_x = int(math.ceil(self._width_m  / self._res))   # ~86
         self._cells_y = int(math.ceil(self._height_m / self._res))   # ~108
 
-     
         self._max_range = float(self.declare_parameter('max_mapping_range', 6.0).value)
 
-    
+  
 
-    
         self._lo = np.zeros((self._cells_y, self._cells_x), dtype=np.float32)
 
-  
-        self._l_occ   =  math.log(0.80 / 0.20)   
-        self._l_free  =  math.log(0.45 / 0.55)   
-        self._l_clamp =  5.0                     
+        self._l_occ   =  math.log(0.80 / 0.20)  
+        self._l_free  =  math.log(0.45 / 0.55)  
+        self._l_clamp =  5.0                       
 
    
         self._rx = self._ry = self._ryaw = 0.0
@@ -67,18 +64,16 @@ class LidarMapper(Node):
         self._odom_received = 0
         self._last_valid_ranges = 0
 
-       
+   
         self._kf_x   = None  
         self._kf_y   = None
         self._kf_yaw = None
         self._KF_MIN_DIST = 0.10    # m
         self._KF_MIN_ROT  = math.radians(5.0)  # rad
 
-      
         self.create_subscription(Odometry,  '/slam/odom', self._odom_cb, qos_profile_sensor_data)
         self.create_subscription(LaserScan, '/scan_corrected', self._scan_cb, qos_profile_sensor_data)
 
-        
         qos_map = QoSProfile(
             reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_LAST,
@@ -87,14 +82,12 @@ class LidarMapper(Node):
         )
         self._pub = self.create_publisher(OccupancyGrid, '/map', qos_map)
 
-      
+        
         self.create_service(Trigger, '/map/save',  self._svc_save)
         self.create_service(Trigger, '/map/clear', self._svc_clear)
 
-    
         self.create_timer(0.5, self._publish)
 
-        
         self.create_timer(5.0, self._diag_log)
 
         self.get_logger().info(
@@ -103,7 +96,6 @@ class LidarMapper(Node):
             f'origen=({self._origin_x:.2f},{self._origin_y:.2f})'
         )
 
-   
 
     def _diag_log(self):
         cells_known = int(np.sum(np.abs(self._lo) > 0.5))
@@ -131,10 +123,8 @@ class LidarMapper(Node):
         self._ryaw = math.atan2(siny, cosy)
         self._pose_ok = True
 
-  
 
     def _w2g(self, wx, wy):
-        """Convierte coordenadas mundo (m) a índice de celda (entero)."""
         return (
             int((wx - self._origin_x) / self._res),
             int((wy - self._origin_y) / self._res),
@@ -153,7 +143,6 @@ class LidarMapper(Node):
     def _process_scan(self, msg: LaserScan):
         rx, ry, rth = self._rx, self._ry, self._ryaw
 
-     
         if self._kf_x is None:
             self._kf_x, self._kf_y, self._kf_yaw = rx, ry, rth
         else:
@@ -161,7 +150,7 @@ class LidarMapper(Node):
             drot = abs(math.atan2(math.sin(rth - self._kf_yaw),
                                   math.cos(rth - self._kf_yaw)))
             if dist < self._KF_MIN_DIST and drot < self._KF_MIN_ROT:
-                return  
+                return   # muy cerca del último keyframe, skip
             self._kf_x, self._kf_y, self._kf_yaw = rx, ry, rth
 
         rx_g, ry_g = self._w2g(rx, ry)
@@ -180,7 +169,7 @@ class LidarMapper(Node):
         valid   = 0
 
         for r in msg.ranges:
-            a = rth + angle  
+            a = rth + angle   
             angle += msg.angle_increment
 
             if not (msg.range_min <= r <= msg.range_max):
@@ -194,7 +183,6 @@ class LidarMapper(Node):
                 ry + r * math.sin(a),
             )
 
-            
             for cx, cy in _bresenham(rx_g, ry_g, hx_g, hy_g):
                 if not self._in_bounds(cx, cy):
                     break
@@ -203,7 +191,6 @@ class LidarMapper(Node):
                 v = lo[cy, cx] + l_free
                 lo[cy, cx] = v if v > -clamp else -clamp
 
-           
             if self._in_bounds(hx_g, hy_g):
                 v = lo[hy_g, hx_g] + l_occ
                 lo[hy_g, hx_g] = v if v < clamp else clamp
@@ -215,7 +202,6 @@ class LidarMapper(Node):
                 f' robot=({rx:.2f},{ry:.2f})'
             )
 
-  
 
     def _publish(self):
         msg = OccupancyGrid()
@@ -229,7 +215,6 @@ class LidarMapper(Node):
         msg.info.origin.position.z = 0.0
         msg.info.origin.orientation.w = 1.0
 
-  
         abs_lo = np.abs(self._lo)
         data = np.full((self._cells_y, self._cells_x), -1, dtype=np.int8)
         known = abs_lo > 0.5
@@ -238,7 +223,6 @@ class LidarMapper(Node):
 
         self._pub.publish(msg)
 
-  
 
     def _svc_save(self, _req, resp):
         try:
@@ -262,14 +246,12 @@ class LidarMapper(Node):
         pgm_path  = base + '.pgm'
         yaml_path = base + '.yaml'
 
-     
         img = np.full((self._cells_y, self._cells_x), 205, dtype=np.uint8)
         abs_lo = np.abs(self._lo)
         known  = abs_lo > 0.5
         img[known & (self._lo < 0)] = 254   # libre → blanco
         img[known & (self._lo > 0)] = 0     # ocupado → negro
 
- 
         img = np.flipud(img)
 
         h, w = img.shape
@@ -287,11 +269,10 @@ class LidarMapper(Node):
                 f'free_thresh: 0.196\n'
             )
 
- 
 
     def _svc_clear(self, _req, resp):
         self._lo.fill(0.0)
-     
+  
         self._kf_x = self._kf_y = self._kf_yaw = None
         resp.success = True
         resp.message = 'Mapa reiniciado (todo unknown)'

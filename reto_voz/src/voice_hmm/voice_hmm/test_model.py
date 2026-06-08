@@ -1,4 +1,3 @@
-import argparse
 import glob
 import os
 import time
@@ -7,18 +6,30 @@ import numpy as np
 
 from .read_audio import read_wav
 from .record_audio import (
-    DEFAULT_ALSA_DEVICE,
-    SAMPLE_RATE,
+    DEVICE,
+    SAMP_RATE,
     print_audio_level_from_file,
-    record_audio_arecord,
+    record_audio,
 )
 from .recognizer_core import HMMVoiceRecognizer
 from .train import WORDS
 
 
+MODELS_DIR = "models"
+
+# Cambiar entre wav, data o live
+TEST_MODE = "data"
+
+WAV_PATH = "data/test/baja/baja_m_007.wav"
+DATA_DIR = "data/test"
+LIVE_WAV_PATH = "tmp/live_test.wav"
+LIVE_DURATION = 2.0
+ALSA_DEVICE = DEVICE
+
+
 def predict_file(recognizer, path):
-    audio, sample_rate = read_wav(path)
-    best_word, scores = recognizer.predict(audio, sample_rate)
+    audio, samp_rate = read_wav(path)
+    best_word, scores = recognizer.predict(audio, samp_rate)
 
     sorted_scores = sorted(scores.items(), key=lambda item: item[1], reverse=True)
     scores_text = ", ".join(f"{word}:{score:.3f}" for word, score in sorted_scores)
@@ -78,65 +89,32 @@ def predict_live(recognizer, path, duration, alsa_device):
         print(f"Grabando en {i}...")
         time.sleep(1)
 
-    record_audio_arecord(
+    record_audio(
         path=path,
-        duration_seconds=duration,
-        sample_rate=SAMPLE_RATE,
+        duration=duration,
+        samp_rate=SAMP_RATE,
         alsa_device=alsa_device,
     )
     print_audio_level_from_file(path)
     return predict_file(recognizer, path)
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description="Test trained HMM + VQ voice models on one WAV or a dataset directory."
-    )
-    parser.add_argument(
-        "--models-dir",
-        default="models",
-        help="Directory with codebook.npy and *_hmm.npz files.",
-    )
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--wav", help="Path to one WAV file to recognize.")
-    group.add_argument(
-        "--data-dir",
-        help="Dataset directory with one subdirectory per word, for example data/test.",
-    )
-    group.add_argument(
-        "--live",
-        action="store_true",
-        help="Record one live sample with arecord and recognize it.",
-    )
-    parser.add_argument(
-        "--duration",
-        type=float,
-        default=2.0,
-        help="Duration in seconds for --live recording.",
-    )
-    parser.add_argument(
-        "--alsa-device",
-        default=DEFAULT_ALSA_DEVICE,
-        help="ALSA input device for --live, for example plughw:0,6.",
-    )
-    parser.add_argument(
-        "--live-wav",
-        default="tmp/live_test.wav",
-        help="Where to save the temporary live WAV.",
-    )
-    return parser.parse_args()
-
-
 def main():
-    args = parse_args()
-    recognizer = HMMVoiceRecognizer(args.models_dir, WORDS)
+    recognizer = HMMVoiceRecognizer(MODELS_DIR, WORDS)
 
-    if args.wav:
-        predict_file(recognizer, args.wav)
-    elif args.data_dir:
-        evaluate_directory(recognizer, args.data_dir)
+    if TEST_MODE == "wav":
+        predict_file(recognizer, WAV_PATH)
+    elif TEST_MODE == "data":
+        evaluate_directory(recognizer, DATA_DIR)
+    elif TEST_MODE == "live":
+        predict_live(
+            recognizer,
+            LIVE_WAV_PATH,
+            LIVE_DURATION,
+            ALSA_DEVICE,
+        )
     else:
-        predict_live(recognizer, args.live_wav, args.duration, args.alsa_device)
+        raise ValueError("TEST_MODE debe ser 'wav', 'data' o 'live'")
 
 
 if __name__ == "__main__":

@@ -5,28 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puzzlebot Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 
   <style>
     /* ── Variables ─────────────────────────────────────────────────────────── */
     :root {
-      --bg:        #080808;
-      --surface:   #101010;
-      --surface2:  #161616;
-      --border:    #222222;
-      --border2:   #2e2e2e;
+      --bg:        #131313;
+      --surface:   #1c1c1c;
+      --surface2:  #242424;
+      --border:    #2a2a2a;
+      --border2:   #363636;
       --accent:    #E8B400;
       --accent-dk: #B88E00;
       --accent-bg: rgba(232,180,0,0.07);
-      --text:      #D8D8D8;
-      --text2:     #707070;
-      --text3:     #383838;
+      --text:      #E0E0E0;
+      --text2:     #808080;
+      --text3:     #454545;
       --ok:        #4FAD65;
       --err:       #B03030;
       --warn:      #E8B400;
-      --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
-      --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+      --font-sans: 'JetBrains Mono', 'Consolas', monospace;
+      --font-mono: 'JetBrains Mono', 'Consolas', monospace;
     }
 
     /* ── Reset ──────────────────────────────────────────────────────────────── */
@@ -362,7 +362,7 @@
     }
 
     /* ── SLAM tab grid ──────────────────────────────────────────────────────── */
-    #tab-slam .grid-quad {
+    .grid-quad {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
@@ -781,28 +781,77 @@
       text-align: right;
     }
 
-    /* ── E80 tab ─────────────────────────────────────────────────────────────── */
-    #tab-e80 .placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      gap: 12px;
-      color: var(--text3);
+    /* ── E80 tab — reutiliza grid-quad del SLAM tab ──────────────────────────── */
+    /* Cámara: idéntica a #cam-ph / #cam-img del SLAM tab */
+    .e80-cam-body { padding: 0 !important; }
+    #e80-cam-ph {
+      position: absolute; inset: 0; display: flex;
+      align-items: center; justify-content: center;
+      color: var(--text3); font-size: 0.72rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    #e80-yolo-img { width: 100%; height: 100%; object-fit: contain; background: #000; display: none; }
+
+    /* Mapa */
+    #e80-nav-canvas { display: block; width: 100%; height: 100%; cursor: crosshair; }
+    .e80-map-wrap   { position: relative; height: 100%; }
+    #e80-map-msg    { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+                      font-size: 0.62rem; color: var(--text3); pointer-events: none; }
+
+    /* Status panel — cards estilo telem */
+    .e80-status-body { display: flex; flex-direction: column; gap: 8px; padding: 10px; }
+    .e80-state-main  { flex: 0 0 auto; }
+    .e80-cards-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1 1 auto; }
+    .e80-state-card  {
+      background: var(--surface2); border-radius: 6px; padding: 10px 12px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .e80-card-label  { font-size: 0.58rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text2); }
+    .e80-card-val    { font-size: 0.90rem; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* Badge grande de estado */
+    #e80-robot-badge.state-badge {
+      font-size: 1.4rem; font-weight: 700; letter-spacing: 0.12em;
+      padding: 8px 16px; border-radius: 8px; display: inline-block;
     }
 
-    #tab-e80 .placeholder .label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+    /* State badge */
+    .state-badge {
+      display: inline-block; padding: 2px 8px; border-radius: 10px;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     }
+    .state-idle      { background: #1e2a1e; color: #4caf50; }
+    .state-blocked   { background: #2a1e1e; color: #f44336; }
+    .state-busy      { background: #1e2333; color: #42a5f5; }
+    .state-loading   { background: #2a2a1e; color: #ffc107; }
+    .state-unloading { background: #1e2a2a; color: #26c6da; }
 
-    #tab-e80 .placeholder .sub {
-      font-size: 0.64rem;
-      letter-spacing: 0.08em;
+    /* Segmented mission control */
+    .e80-seg { display: flex; border: 1px solid var(--border2); border-radius: 6px; overflow: hidden; margin-bottom: 10px; }
+    .e80-seg-btn {
+      flex: 1; padding: 10px 4px; background: var(--surface); border: none;
+      border-right: 1px solid var(--border2); cursor: pointer;
+      font-size: 0.70rem; font-weight: 500; color: var(--text2); text-align: center;
+      line-height: 1.2; transition: background 0.12s, color 0.12s;
+      font-family: inherit;
     }
+    .e80-seg-btn:last-child { border-right: none; }
+    .e80-seg-btn:hover:not(.seg-active) { background: var(--surface2); color: var(--text); }
+    .e80-seg-btn.seg-active { background: var(--accent); color: #000; font-weight: 700; }
+    .e80-seg-btn .seg-sub { font-size: 0.60rem; color: inherit; opacity: 0.80; display: block; margin-top: 2px; }
+
+    /* Task description */
+    #e80-task-desc { font-size: 0.72rem; color: var(--text); margin: 4px 0 10px; font-weight: 500; }
+
+    /* WP panel */
+    #e80-wp-panel { display: none; flex-direction: column; gap: 6px; margin-top: 6px; }
+    #e80-wp-panel .wp-hint { font-size: 0.60rem; color: var(--text3); }
+    .wp-btn-active { background: var(--accent) !important; color: #000 !important; }
+
+    /* Truck map mini-list */
+    #e80-truck-list { font-size: 0.62rem; color: var(--text2); }
+    #e80-truck-list .truck-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid var(--border); }
+    #e80-truck-list .truck-name { color: var(--accent); font-weight: 600; }
+    #e80-truck-list .truck-pos  { color: var(--text3); }
 
     /* ── Scrollbar ───────────────────────────────────────────────────────────── */
     ::-webkit-scrollbar { width: 4px; }
@@ -828,7 +877,7 @@
     <button class="tab active" data-tab="slam">SLAM &amp; Lift Control</button>
     <button class="tab"        data-tab="astar">A* y Bug0</button>
     <button class="tab"        data-tab="voice">Voice Control HMM</button>
-    <button class="tab disabled" data-tab="e80">E80</button>
+    <button class="tab" data-tab="e80">E80</button>
   </nav>
 
   <!-- ── Content ───────────────────────────────────────────────────────────── -->
@@ -1043,11 +1092,97 @@
 
     <!-- ════════════════════════════════ TAB 4: E80 ══════════════════════════ -->
     <div class="tab-pane" id="tab-e80">
-      <div class="placeholder">
-        <div class="label">E80</div>
-        <div class="sub">No disponible — pendiente de implementacion</div>
-      </div>
-    </div>
+      <div class="grid-quad">
+
+        <!-- Top-left: Cámara -->
+        <div class="panel">
+          <div class="panel-head">Cámara + YOLO</div>
+          <div class="panel-body e80-cam-body">
+            <div id="e80-cam-ph">Sin señal de cámara</div>
+            <img id="e80-yolo-img" src="" alt="">
+          </div>
+        </div>
+
+        <!-- Top-right: Estado del sistema -->
+        <div class="panel">
+          <div class="panel-head">Estado del sistema</div>
+          <div class="panel-body e80-status-body">
+            <!-- Badge de estado grande -->
+            <div class="e80-state-card e80-state-main">
+              <div class="e80-card-label">Estado Robot</div>
+              <div id="e80-robot-badge" class="e80-state-val state-badge state-idle">IDLE</div>
+            </div>
+            <!-- Cards secundarios 2x2 -->
+            <div class="e80-cards-grid">
+              <div class="e80-state-card">
+                <div class="e80-card-label">SM State</div>
+                <div class="e80-card-val" id="e80-sm-state">—</div>
+              </div>
+              <div class="e80-state-card">
+                <div class="e80-card-label">QR Destino</div>
+                <div class="e80-card-val" id="e80-qr-val">—</div>
+              </div>
+              <div class="e80-state-card">
+                <div class="e80-card-label">Truck</div>
+                <div class="e80-card-val" id="e80-truck-val">—</div>
+              </div>
+              <div class="e80-state-card">
+                <div class="e80-card-label">Task</div>
+                <div class="e80-card-val" id="e80-task-val">—</div>
+              </div>
+            </div>
+            <!-- Odoo ERP status -->
+            <div class="e80-state-card" style="margin-top:8px;width:100%;">
+              <div class="e80-card-label" style="display:flex;align-items:center;gap:6px;">
+                <span>Odoo ERP</span>
+                <span id="odoo-dot" style="width:7px;height:7px;border-radius:50%;background:var(--text3);display:inline-block;"></span>
+              </div>
+              <div class="e80-card-val" id="odoo-status-val" style="font-size:0.68rem;">Sin orden</div>
+              <div style="font-size:0.60rem;color:var(--text3);margin-top:2px;" id="odoo-order-val"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom-left: Mapa clickeable -->
+        <div class="panel">
+          <div class="panel-head">Mapa — click para waypoint</div>
+          <div class="panel-body e80-map-wrap" style="padding:0;">
+            <canvas id="e80-nav-canvas"></canvas>
+            <div id="e80-map-msg">Cargando mapa...</div>
+          </div>
+        </div>
+
+        <!-- Bottom-right: Control de misión -->
+        <div class="panel">
+          <div class="panel-head">Modo de misión</div>
+          <div class="panel-body">
+            <div class="e80-seg" id="e80-seg-ctrl">
+              <button class="e80-seg-btn seg-active" data-mode="IDLE">IDLE</button>
+              <button class="e80-seg-btn" data-mode="M1">Misión 1<span class="seg-sub">Conveyor→Rack</span></button>
+              <button class="e80-seg-btn" data-mode="M2">Misión 2<span class="seg-sub">Rack→Truck</span></button>
+              <button class="e80-seg-btn" data-mode="MAPPING">Mapeo<span class="seg-sub">Camiones</span></button>
+            </div>
+            <div id="e80-task-desc" style="margin:6px 0 8px;">—</div>
+
+            <div id="e80-wp-panel">
+              <div class="wp-hint" id="e80-wp-status">Haz click en el mapa para fijar un waypoint</div>
+              <button class="btn" id="e80-wp1-btn" style="margin-top:4px;">Fijar Waypoint 1 (carga)</button>
+              <button class="btn" id="e80-wp2-btn" style="display:none;margin-top:4px;">Fijar Waypoint 2 (descarga)</button>
+              <button class="btn" id="e80-abort-btn"
+                      style="background:var(--surface2);color:#f44336;margin-top:6px;">Abortar misión</button>
+            </div>
+
+            <div id="e80-mapping-panel" style="display:none;margin-top:8px;">
+              <div style="font-size:0.62rem;color:var(--text3);line-height:1.5;">
+                Modo MAPEO — mueve el robot con teleop apuntando<br>a cada camión. YOLO guardará su posición.
+              </div>
+              <div id="e80-truck-list" style="margin-top:6px;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .grid-quad -->
+    </div><!-- #tab-e80 -->
 
   </main><!-- .content -->
 
@@ -1089,6 +1224,7 @@
         btn.classList.add('active');
         document.getElementById('tab-' + id).classList.add('active');
         if (id === 'astar') onAstarTabActivated();
+        if (id === 'e80')   onE80TabActivated();
       });
     });
 
@@ -1260,12 +1396,18 @@
       const img = new Image();
       img.onload = () => {
         slamMap = { img, ox: d.ox, oy: d.oy, res: d.res, w: d.w, h: d.h };
-        // También actualiza el mapa de navegación
+        // También actualiza el mapa de navegación A*
         navMapMeta = { ox: d.ox, oy: d.oy, res: d.res, w: d.w, h: d.h };
         navMapImg  = img;
         document.getElementById('nav-map-msg').style.display = 'none';
         drawSlam();
         drawNav();
+        // También actualiza el mapa del tab E80
+        e80MapImg  = img;
+        e80MapMeta = { resolution: d.res, origin: [d.ox, d.oy], width: d.w, height: d.h };
+        if (e80MapMsg) e80MapMsg.style.display = 'none';
+        e80Resize();
+        e80Draw();
       };
       img.src = 'data:image/jpeg;base64,' + d.img;
     });
@@ -1594,6 +1736,7 @@
     }
 
     // ── Lift ──────────────────────────────────────────────────────────────────
+    // Servo continuo: click = arranca y se queda girando, Stop = para.
     const liftEl = document.getElementById('lift-status');
     function sendLift(cmd) {
       socket.emit('lift', { cmd }, () => { liftEl.textContent = 'Lift: ' + cmd; });
@@ -1723,6 +1866,322 @@
       // Keep max 10 entries
       while (list.children.length > 10) list.removeChild(list.lastChild);
     }
+
+    // ════════════════════════════════════════════════════════════════════════
+    // E80 TAB
+    // ════════════════════════════════════════════════════════════════════════
+
+    // ── Cámara E80 — misma lógica que SLAM tab ────────────────────────────────
+    const e80YoloImg = document.getElementById('e80-yolo-img');
+    const e80CamPh   = document.getElementById('e80-cam-ph');
+    let e80YoloActive = false;
+    let e80YoloTimer  = null;
+
+    function e80ShowFrame(b64) {
+      if (!e80YoloImg) return;
+      e80YoloImg.src = 'data:image/jpeg;base64,' + b64;
+      e80YoloImg.style.display = 'block';
+      if (e80CamPh) e80CamPh.style.display = 'none';
+    }
+    function e80HideCam() {
+      if (e80YoloImg) { e80YoloImg.style.display = 'none'; e80YoloImg.src = ''; }
+      if (e80CamPh)   e80CamPh.style.display = 'flex';
+    }
+
+    // YOLO frames tienen prioridad
+    socket.on('yolo_frame', d => {
+      e80YoloActive = true;
+      e80ShowFrame(d.img);
+      clearTimeout(e80YoloTimer);
+      e80YoloTimer = setTimeout(() => { e80YoloActive = false; }, 2000);
+    });
+
+    // Raw camera cuando no hay YOLO activo
+    socket.on('raw_frame', d => {
+      if (!e80YoloActive) e80ShowFrame(d.img);
+    });
+
+    // ── Estado del robot ──────────────────────────────────────────────────────
+    const E80_STATE_CLASSES = {
+      IDLE:      'state-idle',
+      BLOCKED:   'state-blocked',
+      BUSY:      'state-busy',
+      LOADING:   'state-loading',
+      UNLOADING: 'state-unloading',
+    };
+    const e80Badge   = document.getElementById('e80-robot-badge');
+    const e80SmState = document.getElementById('e80-sm-state');
+    const e80TruckVal= document.getElementById('e80-truck-val');
+    const e80QrVal   = document.getElementById('e80-qr-val');
+    const e80TaskVal = document.getElementById('e80-task-val');
+
+    socket.on('mission_robot_state', d => {
+      const s = (d.state || 'IDLE').toUpperCase();
+      if (!e80Badge) return;
+      e80Badge.textContent = s;
+      Object.values(E80_STATE_CLASSES).forEach(c => e80Badge.classList.remove(c));
+      e80Badge.classList.add(E80_STATE_CLASSES[s] || 'state-idle');
+    });
+    socket.on('mission_sm_state', d => {
+      if (e80SmState) e80SmState.textContent = d.state || '—';
+    });
+    socket.on('truck_info', d => {
+      if (e80TruckVal) e80TruckVal.textContent = d.truck || '—';
+    });
+    socket.on('qr_decoded', d => {
+      if (e80QrVal) e80QrVal.textContent = d.dest || '—';
+    });
+    socket.on('truck_map', d => {
+      updateTruckList(d.map || {});
+      updateE80TruckDots(d.map || {});
+    });
+
+    socket.on('odoo_status', d => {
+      const dot = document.getElementById('odoo-dot');
+      const val = document.getElementById('odoo-status-val');
+      const ord = document.getElementById('odoo-order-val');
+      if (!val) return;
+      const kind  = d.kind  || '';
+      const value = d.value || '';
+      if (kind === 'CREATED') {
+        val.textContent = 'Orden creada';
+        if (ord) ord.textContent = `Picking #${value}`;
+        if (dot) dot.style.background = 'var(--warn)';
+      } else if (kind === 'DONE') {
+        val.textContent = 'Entregado ✓';
+        if (ord) ord.textContent = `Picking #${value}`;
+        if (dot) dot.style.background = 'var(--ok)';
+      } else if (kind === 'ERROR') {
+        val.textContent = 'Error Odoo';
+        if (ord) ord.textContent = value;
+        if (dot) dot.style.background = 'var(--err)';
+      }
+    });
+
+    function updateTruckList(map) {
+      const el = document.getElementById('e80-truck-list');
+      if (!el) return;
+      el.innerHTML = Object.entries(map).map(([k,v]) =>
+        `<div class="truck-row"><span class="truck-name">${k}</span><span class="truck-pos">(${Number(v[0]).toFixed(2)}, ${Number(v[1]).toFixed(2)})</span></div>`
+      ).join('') || '<div style="color:var(--text3);font-size:0.60rem">Sin camiones mapeados</div>';
+    }
+
+    // ── Slider de modo ────────────────────────────────────────────────────────
+    const TASK_DESCS = {
+      IDLE: '—', M1: 'Conveyor belt to rack',
+      M2: 'Rack to truck', MAPPING: 'Apunta el robot hacia los camiones',
+    };
+
+    const e80TaskDesc  = document.getElementById('e80-task-desc');
+    const e80WpPanel   = document.getElementById('e80-wp-panel');
+    const e80MapPanel  = document.getElementById('e80-mapping-panel');
+    const e80Wp2Btn    = document.getElementById('e80-wp2-btn');
+
+    let e80CurrentMode = 'IDLE';
+    let e80WpNext      = 1;
+
+    // Segmented control
+    document.querySelectorAll('.e80-seg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        document.querySelectorAll('.e80-seg-btn').forEach(b => b.classList.remove('seg-active'));
+        btn.classList.add('seg-active');
+
+        e80CurrentMode = mode;
+        e80TaskDesc.textContent = TASK_DESCS[mode] || '—';
+        if (e80TaskVal) e80TaskVal.textContent = TASK_DESCS[mode] || '—';
+
+        e80WpPanel.style.display  = (mode === 'M1' || mode === 'M2') ? 'flex' : 'none';
+        e80MapPanel.style.display = (mode === 'MAPPING') ? 'block' : 'none';
+        e80Wp2Btn.style.display   = (mode === 'M1')      ? 'block' : 'none';
+
+        socket.emit('mission_mode', { mode });
+        e80WpNext = 1;
+        const wpStatus = document.getElementById('e80-wp-status');
+        if (wpStatus) wpStatus.textContent = 'Haz click en el mapa para fijar Waypoint 1';
+        e80Wp = { wp1: null, wp2: null };
+        e80Draw();
+      });
+    });
+
+    // Botón Fijar WP1/WP2
+    document.getElementById('e80-wp1-btn').addEventListener('click', () => {
+      e80WpNext = 1;
+      document.getElementById('e80-wp-status').textContent = 'Click en el mapa → Waypoint 1';
+      document.getElementById('e80-wp1-btn').classList.add('wp-btn-active');
+    });
+    e80Wp2Btn.addEventListener('click', () => {
+      e80WpNext = 2;
+      document.getElementById('e80-wp-status').textContent = 'Click en el mapa → Waypoint 2';
+      e80Wp2Btn.classList.add('wp-btn-active');
+    });
+    document.getElementById('e80-abort-btn').addEventListener('click', () => {
+      socket.emit('mission_abort', {});
+    });
+
+    // ── Mini-mapa E80 ─────────────────────────────────────────────────────────
+    const e80Canvas  = document.getElementById('e80-nav-canvas');
+    const e80MapMsg  = document.getElementById('e80-map-msg');
+    const e80Ctx     = e80Canvas ? e80Canvas.getContext('2d') : null;
+    let e80MapImg    = null;
+    let e80MapMeta   = null;
+    let e80RobotPose = { x: 0, y: 0, yaw: 0 };
+    let e80Wp        = { wp1: null, wp2: null };
+    let e80TruckDots = {};
+
+    function e80Resize() {
+      if (!e80Canvas) return;
+      const wrap = e80Canvas.parentElement;
+      const w = wrap.clientWidth  || 300;
+      const h = wrap.clientHeight || 300;
+      if (w > 0 && h > 0) {
+        e80Canvas.width  = w;
+        e80Canvas.height = h;
+      }
+      e80Draw();
+    }
+
+    // Mismo sistema de coordenadas que SLAM tab: world → canvas
+    function e80TF() {
+      const W = e80Canvas ? e80Canvas.width  : 300;
+      const H = e80Canvas ? e80Canvas.height : 300;
+      if (!e80MapMeta) return { sc: 40, ox: W/2, oy: H/2 };
+      const [ox, oy] = e80MapMeta.origin;
+      const res = e80MapMeta.resolution;
+      const mw  = e80MapMeta.width, mh = e80MapMeta.height;
+      const wx0 = ox, wx1 = ox + mw * res;
+      const wy0 = oy, wy1 = oy + mh * res;
+      const sc  = Math.min(W / (wx1 - wx0), H / (wy1 - wy0)) * 0.93;
+      return { sc, ox: W/2 - (wx0+wx1)/2 * sc, oy: H/2 + (wy0+wy1)/2 * sc };
+    }
+
+    function mapToCanvasE80(mx, my) {
+      const tf = e80TF();
+      return [mx * tf.sc + tf.ox, -my * tf.sc + tf.oy];
+    }
+
+    function canvasToMapE80(cx, cy) {
+      const tf = e80TF();
+      return [(cx - tf.ox) / tf.sc, -(cy - tf.oy) / tf.sc];
+    }
+
+    function e80Draw() {
+      if (!e80Ctx || !e80Canvas) return;
+      const W = e80Canvas.width, H = e80Canvas.height;
+      e80Ctx.fillStyle = '#131313';
+      e80Ctx.fillRect(0, 0, W, H);
+
+      if (e80MapImg && e80MapMeta) {
+        const tf  = e80TF();
+        const [ox, oy] = e80MapMeta.origin;
+        const res = e80MapMeta.resolution;
+        const mw  = e80MapMeta.width, mh = e80MapMeta.height;
+        e80Ctx.drawImage(e80MapImg,
+          ox * tf.sc + tf.ox,
+          -(oy + mh * res) * tf.sc + tf.oy,
+          mw * res * tf.sc,
+          mh * res * tf.sc
+        );
+      }
+
+      // Waypoints
+      if (e80Wp.wp1) {
+        const [cx, cy] = mapToCanvasE80(e80Wp.wp1[0], e80Wp.wp1[1]);
+        e80Ctx.fillStyle = '#42a5f5'; e80Ctx.strokeStyle = '#fff';
+        e80Ctx.beginPath(); e80Ctx.arc(cx, cy, 6, 0, Math.PI*2);
+        e80Ctx.fill(); e80Ctx.lineWidth=1.5; e80Ctx.stroke();
+        e80Ctx.fillStyle='#fff'; e80Ctx.font='bold 9px sans-serif';
+        e80Ctx.fillText('WP1', cx+7, cy+4);
+      }
+      if (e80Wp.wp2) {
+        const [cx, cy] = mapToCanvasE80(e80Wp.wp2[0], e80Wp.wp2[1]);
+        e80Ctx.fillStyle = '#ffc107'; e80Ctx.strokeStyle = '#fff';
+        e80Ctx.beginPath(); e80Ctx.arc(cx, cy, 6, 0, Math.PI*2);
+        e80Ctx.fill(); e80Ctx.lineWidth=1.5; e80Ctx.stroke();
+        e80Ctx.fillStyle='#fff'; e80Ctx.font='bold 9px sans-serif';
+        e80Ctx.fillText('WP2', cx+7, cy+4);
+      }
+
+      // Trucks
+      const TRUCK_COLORS = { logoe: '#ff9800', logop: '#e040fb', logow: '#69f0ae' };
+      Object.entries(e80TruckDots).forEach(([k, v]) => {
+        const [cx, cy] = mapToCanvasE80(v[0], v[1]);
+        e80Ctx.fillStyle = TRUCK_COLORS[k] || '#fff';
+        e80Ctx.beginPath(); e80Ctx.arc(cx, cy, 5, 0, Math.PI*2); e80Ctx.fill();
+        e80Ctx.fillStyle = '#fff'; e80Ctx.font = '8px sans-serif';
+        e80Ctx.fillText(k, cx+6, cy+3);
+      });
+
+      // Robot
+      const [rx, ry] = mapToCanvasE80(e80RobotPose.x, e80RobotPose.y);
+      const ya = -e80RobotPose.yaw;
+      const sz = 7;
+      e80Ctx.save();
+      e80Ctx.translate(rx, ry);
+      e80Ctx.rotate(ya);
+      e80Ctx.fillStyle = '#4caf50';
+      e80Ctx.beginPath();
+      e80Ctx.moveTo(sz, 0); e80Ctx.lineTo(-sz, sz*0.6); e80Ctx.lineTo(-sz, -sz*0.6);
+      e80Ctx.closePath(); e80Ctx.fill();
+      e80Ctx.restore();
+    }
+
+    function updateE80TruckDots(map) {
+      e80TruckDots = map;
+      e80Draw();
+    }
+
+    // El mapa llega por socket 'map_grid' (mismo que A* tab) — no hay fetch local
+
+    // Click en el mini-mapa → waypoint
+    if (e80Canvas) {
+      e80Canvas.addEventListener('click', e => {
+        if (e80CurrentMode !== 'M1' && e80CurrentMode !== 'M2') return;
+        const rect = e80Canvas.getBoundingClientRect();
+        const cx = (e.clientX - rect.left) * (e80Canvas.width  / rect.width);
+        const cy = (e.clientY - rect.top)  * (e80Canvas.height / rect.height);
+        const [mx, my] = canvasToMapE80(cx, cy);
+        const mx2 = Math.round(mx * 100) / 100;
+        const my2 = Math.round(my * 100) / 100;
+
+        socket.emit('mission_waypoint', { which: e80WpNext, x: mx2, y: my2 }, () => {
+          if (e80WpNext === 1) {
+            e80Wp.wp1 = [mx2, my2];
+            document.getElementById('e80-wp-status').textContent =
+              `WP1 fijado: (${mx2}, ${my2})`;
+            document.getElementById('e80-wp1-btn').classList.remove('wp-btn-active');
+            if (e80CurrentMode === 'M1') {
+              e80WpNext = 2;
+              document.getElementById('e80-wp-status').textContent +=
+                ' — ahora fija WP2';
+            }
+          } else {
+            e80Wp.wp2 = [mx2, my2];
+            document.getElementById('e80-wp-status').textContent =
+              `WP2 fijado: (${mx2}, ${my2}) — misión en curso`;
+            e80Wp2Btn.classList.remove('wp-btn-active');
+          }
+          e80Draw();
+        });
+      });
+    }
+
+    // Robot pose en E80 mapa
+    socket.on('odom', d => {
+      e80RobotPose = { x: d.x, y: d.y, yaw: (d.yaw || 0) * Math.PI / 180 };
+      e80Draw();
+    });
+
+    function onE80TabActivated() {
+      // El canvas tenía 0px mientras el tab estaba oculto — re-calcular y redibujar
+      setTimeout(() => {
+        e80Resize();
+        e80Draw();
+      }, 50);
+    }
+
+    window.addEventListener('resize', e80Resize);
+    e80Resize();
 
   </script>
 </body>

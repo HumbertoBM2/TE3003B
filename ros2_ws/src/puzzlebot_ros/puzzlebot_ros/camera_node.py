@@ -23,7 +23,7 @@ ROTATE_180   = False
 
 
 TIMER_HZ    = 15
-RAW_EVERY   = 1   
+RAW_EVERY   = 1    
 
 
 COMPRESSED_W = 320
@@ -80,7 +80,6 @@ class CameraNode(Node):
 
         stamp = self.get_clock().now().to_msg()
 
- 
         small = cv2.resize(frame, (COMPRESSED_W, COMPRESSED_H),
                            interpolation=cv2.INTER_LINEAR)
         ok, buf = cv2.imencode('.jpg', small, [cv2.IMWRITE_JPEG_QUALITY, JPEG_QUALITY])
@@ -92,7 +91,6 @@ class CameraNode(Node):
             msg.data = buf.tobytes()
             self.pub_compressed.publish(msg)
 
-      
         self._frame_count += 1
         if self._frame_count >= RAW_EVERY:
             self._frame_count = 0

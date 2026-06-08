@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+
+
 import numpy as np
 
 from sensor_msgs.msg import LaserScan
@@ -10,8 +11,8 @@ _WARMUP_SCANS = 12
 
 _COARSE_HALF_RAD = 0.262    
 _COARSE_STEP_RAD = 0.0349  
-_FINE_HALF_RAD   = 0.0262   
-_FINE_STEP_RAD   = 0.00873  
+_FINE_HALF_RAD   = 0.0262  
+_FINE_STEP_RAD   = 0.00873 
 
 _TRANS_HALF_M  = 0.20       
 _TRANS_STEP_M  = 0.05
