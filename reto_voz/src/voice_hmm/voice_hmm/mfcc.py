@@ -1,6 +1,4 @@
-# mfcc.py
 import numpy as np
-
 
 def trim_silence_by_energy(
     x,
@@ -10,11 +8,7 @@ def trim_silence_by_energy(
     threshold_ratio=0.08,
     min_threshold=1e-5,
     padding_ms=80,
-):
-    """
-    Keep the region whose short-time energy is above a relative threshold.
-    Returns the original signal if no active region is found.
-    """
+):  
     frame_len = int(sr * frame_ms / 1000)
     hop_len = int(sr * hop_ms / 1000)
 
@@ -155,8 +149,6 @@ def extract_mfcc(
     log_mel = np.log(mel_energy)
 
     mfcc = dct_manual(log_mel, n_mfcc)
-
-    # Cepstral mean normalization
     mfcc = mfcc - np.mean(mfcc, axis=0)
 
     return mfcc

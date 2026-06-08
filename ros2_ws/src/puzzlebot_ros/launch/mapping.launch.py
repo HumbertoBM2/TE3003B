@@ -24,13 +24,11 @@ def generate_launch_description():
     aruco_yaml   = os.path.join(cfg_dir, 'aruco_map.yaml')
     slam_yaml    = os.path.join(cfg_dir, 'slam_params.yaml')
 
-
     arg_camera = DeclareLaunchArgument('camera', default_value='true',
                     description='Habilitar cámara y ArUco (false = solo lidar+odom)')
     camera_en  = LaunchConfiguration('camera')
 
     unset_fastdds = SetEnvironmentVariable('FASTRTPS_DEFAULT_PROFILES_FILE', '')
-
 
     micro_ros = Node(
         package='micro_ros_agent',
@@ -71,7 +69,6 @@ def generate_launch_description():
         output='screen',
     )
 
-
     tf_camera = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -82,7 +79,6 @@ def generate_launch_description():
         condition=IfCondition(camera_en),
     )
 
-    
     tf_cam_optical = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -101,20 +97,18 @@ def generate_launch_description():
         output='screen',
     )
 
-   
     odometry = Node(
         package='puzzlebot_ros',
         executable='odometry_node',
         name='odometry_node',
         parameters=[{
             'wheel_radius':     0.05,
-        
+      
             'wheel_separation': 0.174,
             'enc_deadband':     0.10,
         }],
         output='screen',
     )
-
 
     lidar_nodes = TimerAction(
         period=3.0,
@@ -125,7 +119,7 @@ def generate_launch_description():
                 ),
                 launch_arguments={'serial_port': '/dev/lidar'}.items(),
             ),
-    
+        
             Node(
                 package='puzzlebot_ros',
                 executable='scan_restamper',
@@ -138,7 +132,6 @@ def generate_launch_description():
                 }],
                 output='screen',
             ),
-          
             Node(
                 package='puzzlebot_ros',
                 executable='amigo_slam_node',
@@ -149,7 +142,6 @@ def generate_launch_description():
         ],
     )
 
-  
     vision_nodes = TimerAction(
         period=8.0,
         actions=[
@@ -160,47 +152,43 @@ def generate_launch_description():
                 output='screen',
                 condition=IfCondition(camera_en),
             ),
-          
             Node(
                 package='puzzlebot_ros',
                 executable='aruco_node',
                 name='aruco_node',
                 parameters=[{
-                 
                     'image_topic':            '/video_source/raw',
                     'camera_info_file':       calib_yaml,
                     'extrinsics_file':        extr_yaml,
                     'marker_map_file':        aruco_yaml,
                     'marker_length':          0.10,
-              
+             
                     'min_marker_area_px':     40.0,
-                
+
                     'max_detection_distance': 2.0,
              
                     'max_incidence_angle_deg': 65.0,
-                 
+           
                     'max_processing_hz':      10.0,
-                
+    
                     'max_position_jump':      0.20,
                     'last_pose_timeout':      3.0,
-               
+     
                     'camera_yaw_correction_deg': 0.0,
-               
                     'far_marker_position_std': 0.25,
                     'far_marker_yaw_std':      0.30,
                 }],
                 output='screen',
                 condition=IfCondition(camera_en),
             ),
-          
             Node(
                 package='puzzlebot_ros',
                 executable='aruco_map_odom',
                 name='aruco_map_odom',
                 parameters=[{
-             
+                
                     'correction_alpha': 0.25,
-            
+             
                     'yaw_alpha': 0.01,
                     'max_correction_step_m':   0.8,
                     'max_correction_step_yaw': 0.50,
@@ -217,7 +205,6 @@ def generate_launch_description():
         ],
     )
 
-   
     lifter = Node(
         package='puzzlebot_ros',
         executable='lift_controller',
@@ -228,7 +215,7 @@ def generate_launch_description():
     return LaunchDescription([
         unset_fastdds,
         arg_camera,
-    
+        # Infraestructura base
         micro_ros,
         tf_base,
         tf_lidar,
@@ -238,8 +225,8 @@ def generate_launch_description():
         cmd_vel_relay,
         odometry,
         lifter,
-      
+        # t=3s: lidar + slam
         lidar_nodes,
-       
+        # t=8s: cámara + aruco
         vision_nodes,
     ])

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import math
 import rclpy
 from rclpy.node import Node
@@ -44,7 +45,7 @@ class ScanRestamper(Node):
         return SetParametersResult(successful=True)
 
     def _cb(self, msg: LaserScan):
-       
+ 
         msg.header.stamp    = self.get_clock().now().to_msg()
         msg.header.frame_id = self.frame
 

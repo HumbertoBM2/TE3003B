@@ -1,5 +1,3 @@
-# voice_hmm/voice_recognition_node.py
-
 import os
 import threading
 import numpy as np

@@ -1,4 +1,3 @@
-# train.py
 import os
 import glob
 import numpy as np
@@ -20,6 +19,12 @@ WORDS = [
     "gira",
     "busca"
 ]
+
+CODEBOOK_SIZE = 256
+N_STATES = 5
+N_SYMBOLS = 256
+SMOOTHING = 1e-6
+
 
 def collect_training_mfcc(data_dir):
     all_mfcc = []
@@ -53,7 +58,7 @@ def train_system(data_dir="data/train"):
     X, mfcc_by_word = collect_training_mfcc(data_dir)
 
     print("Training codebook...")
-    codebook = train_lbg(X, target_size=256)
+    codebook = train_lbg(X, target_size=CODEBOOK_SIZE)
 
     np.save("models/codebook.npy", codebook)
 
@@ -66,9 +71,9 @@ def train_system(data_dir="data/train"):
 
         hmm = train_hmm_counts(
             sequences,
-            n_states=5,
-            n_symbols=256,
-            epsilon=1e-6
+            n_states=N_STATES,
+            n_symbols=N_SYMBOLS,
+            epsilon=SMOOTHING
         )
 
         np.savez(

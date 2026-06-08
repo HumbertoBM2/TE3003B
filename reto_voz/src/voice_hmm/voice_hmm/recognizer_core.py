@@ -1,5 +1,3 @@
-# voice_hmm/recognizer_core.py
-
 import os
 import numpy as np
 
@@ -17,6 +15,7 @@ class HMMVoiceRecognizer:
         self.codebook = np.load(codebook_path)
 
         self.hmms = {}
+        self.last_num_frames = 0
 
         for word in words:
             hmm_path = os.path.join(models_dir, f"{word}_hmm.npz")
@@ -37,14 +36,17 @@ class HMMVoiceRecognizer:
         """
 
         if len(audio) == 0:
+            self.last_num_frames = 0
             return None, {}
 
         mfcc = extract_mfcc(audio, sample_rate)
 
         if len(mfcc) == 0:
+            self.last_num_frames = 0
             return None, {}
 
         observations = quantize_mfcc(mfcc, self.codebook)
+        self.last_num_frames = len(observations)
 
         scores = {}
 

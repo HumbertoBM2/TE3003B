@@ -26,32 +26,32 @@ LANDMARKS_FILE = os.path.expanduser('~/maps/landmarks.json')
 
 
 
-WHEEL_RADIUS   = 0.05    
+WHEEL_RADIUS   = 0.05      
 ROBOT_WIDTH    = 0.18       
 
 
-SIGMA_ENC      = 0.012      
-SIGMA_TH_MAX   = 0.0015     
-ZUPT_THRESHOLD = 0.02       
+SIGMA_ENC      = 0.012    
+SIGMA_TH_MAX   = 0.0015    
+ZUPT_THRESHOLD = 0.02     
 ENC_DEADBAND   = 0.10      
-                           
-P_MAX_XY       = 1.0        
+
+P_MAX_XY       = 1.0      
 P_MAX_TH       = 1.2       
 
 
-R_RANGE        = 0.05      
-R_BEARING      = 0.05     
+R_RANGE        = 0.05   
+R_BEARING      = 0.05       
 
 
 KNOWN_ARUCO_MAP = {
     0: (0.00, 3.90),   
     1: (1.88, 4.86),   
-    2: (3.76, 3.90),  
-    3: (3.76, 1.04),   
+    2: (3.76, 3.90),   
+    3: (3.76, 1.04), 
     4: (0.00, 1.04),   
 }
 KNOWN_LM_COV   = 1e-6  
-KNOWN_R_FACTOR = 1.0    
+KNOWN_R_FACTOR = 1.0   
 
 
 TRACK_X_MIN    = -0.6
@@ -60,23 +60,21 @@ TRACK_Y_MIN    = -0.6
 TRACK_Y_MAX    =  5.5
 
 
-LOOP_CLOSURE_JUMP = 0.35    # m
+LOOP_CLOSURE_JUMP = 0.35  
 
 
-MAX_CORR_STEP  = 0.35  
+MAX_CORR_STEP  = 0.35      
 MAX_CORR_YAW   = math.radians(15.0)  
 
 
-DMIN_WP        = 0.08       # metros
+DMIN_WP        = 0.08     
 
 
 class EkfSlam(Node):
 
-
     def __init__(self):
         super().__init__('ekf_slam')
 
-  
         self.wheel_radius = float(self.declare_parameter('wheel_radius', WHEEL_RADIUS).value)
         self.robot_width = float(self.declare_parameter('robot_width', ROBOT_WIDTH).value)
         self.sigma_enc = float(self.declare_parameter('sigma_enc', SIGMA_ENC).value)
@@ -85,7 +83,6 @@ class EkfSlam(Node):
         self.landmark_id_min = int(self.declare_parameter('landmark_id_min', 0).value)
         self.landmark_id_max = int(self.declare_parameter('landmark_id_max', 9).value)
 
-  
         self.pub_odom      = self.create_publisher(Odometry, '/slam/odom', 10)
         self.pub_map       = self.create_publisher(VizMarkerArray, '/slam/map', 10)
         self.pub_status    = self.create_publisher(String, '/slam/status', 10)
@@ -93,11 +90,9 @@ class EkfSlam(Node):
             PoseWithCovarianceStamped, '/slam/pose_cov', 10)
         self.tf_broadcaster = TransformBroadcaster(self)
 
-
         self._odom_x   = 0.0
         self._odom_y   = 0.0
         self._odom_th  = 0.0
-
 
         qos_s = qos.qos_profile_sensor_data
         self.create_subscription(Float32, 'VelocityEncR', self._enc_r_cb, qos_s)
@@ -107,38 +102,34 @@ class EkfSlam(Node):
         self.create_subscription(Odometry, '/scan_match/delta',
                                  self._scan_match_cb, qos_s)
 
-
         self.create_service(Trigger, '/slam/save_landmarks', self._svc_save_landmarks)
         self.create_service(Trigger, '/slam/clear_landmarks', self._svc_clear_landmarks)
 
-        self.mu    = np.zeros(3)            
-        self.Sigma = np.diag([0.02, 0.02, 0.02])
 
+        self.mu    = np.zeros(3)           
+
+        self.Sigma = np.diag([0.02, 0.02, 0.02])
 
         self.landmark_id_to_idx: Dict[int, int] = {}
 
-     
-        self.vel_r = 0.0 
-        self.vel_l = 0.0  
+        self.vel_r = 0.0  
+        self.vel_l = 0.0 
 
 
         self._sm_ref_x  = 0.0
         self._sm_ref_y  = 0.0
         self._sm_ref_th = 0.0
-        self._sm_first  = True  
+        self._sm_first  = True   
 
-  
         self.last_aruco_count = 0
         self.last_v = 0.0
         self.last_w = 0.0
 
-
-        self.dt = 0.02     # 50 Hz
+        self.dt = 0.02   
         self._last_t = timer()
         self.create_timer(self.dt, self._predict_loop)
         self.create_timer(1.0, self._publish_status)
 
-   
         self._load_landmarks()
 
         self.get_logger().info(
@@ -148,8 +139,8 @@ class EkfSlam(Node):
         )
 
 
-    def _enc_r_cb(self, msg: Float32):
 
+    def _enc_r_cb(self, msg: Float32):
         self.vel_r = msg.data if abs(msg.data) >= ENC_DEADBAND else 0.0
 
     def _enc_l_cb(self, msg: Float32):
@@ -164,7 +155,6 @@ class EkfSlam(Node):
         cosy = 1.0 - 2.0 * (q.y * q.y + q.z * q.z)
         dth = math.atan2(siny, cosy)
 
-  
         if self._sm_first:
             self._sm_ref_x  = self.mu[0]
             self._sm_ref_y  = self.mu[1]
@@ -172,14 +162,12 @@ class EkfSlam(Node):
             self._sm_first  = False
             return
 
-   
         th_ref = self._sm_ref_th
         c, s   = math.cos(th_ref), math.sin(th_ref)
         x_pred = self._sm_ref_x + dx * c - dy * s
         y_pred = self._sm_ref_y + dx * s + dy * c
         th_pred = wrap_to_pi(th_ref + dth)
 
-  
         n = len(self.mu)
         inn = np.array([
             x_pred  - self.mu[0],
@@ -200,7 +188,6 @@ class EkfSlam(Node):
         self.mu[2] = wrap_to_pi(self.mu[2])
         self.Sigma = (np.eye(n) - K @ H) @ self.Sigma
 
-
         self._sm_ref_x  = self.mu[0]
         self._sm_ref_y  = self.mu[1]
         self._sm_ref_th = self.mu[2]
@@ -210,27 +197,26 @@ class EkfSlam(Node):
     def _aruco_cb(self, msg: MarkerArray):
         self.last_aruco_count = len(msg.markers)
         for aruco in msg.markers:
-         
-            dx =  aruco.pose.pose.position.z  
+   
+            dx =  aruco.pose.pose.position.z 
             dy = -aruco.pose.pose.position.x   
 
             obs_range   = math.sqrt(dx**2 + dy**2)
-            obs_bearing = math.atan2(dy, dx)   
+            obs_bearing = math.atan2(dy, dx)   #
 
             if obs_range < 0.05 or obs_range > 3.5:
-                continue   
+                continue  
 
             aruco_id = aruco.id
             if aruco_id < self.landmark_id_min or aruco_id > self.landmark_id_max:
                 continue
 
-       
+ 
             if aruco_id in KNOWN_ARUCO_MAP:
                 lx, ly = KNOWN_ARUCO_MAP[aruco_id]
                 x_impl = lx - obs_range * math.cos(self.mu[2] + obs_bearing)
                 y_impl = ly - obs_range * math.sin(self.mu[2] + obs_bearing)
 
-              
                 if not (TRACK_X_MIN - 1.0 <= x_impl <= TRACK_X_MAX + 1.0 and
                         TRACK_Y_MIN - 1.0 <= y_impl <= TRACK_Y_MAX + 1.0):
                     self.get_logger().warn(
@@ -239,7 +225,7 @@ class EkfSlam(Node):
                         throttle_duration_sec=2.0)
                     continue
 
-           
+ 
                 jump = math.hypot(x_impl - self.mu[0], y_impl - self.mu[1])
                 if jump > LOOP_CLOSURE_JUMP:
                     self.Sigma[0, 0] = max(self.Sigma[0, 0], 0.25)
@@ -249,14 +235,12 @@ class EkfSlam(Node):
                         f'ArUco {aruco_id} loop closure: salto={jump:.2f}m → corrección gradual',
                         throttle_duration_sec=1.0)
 
-      
             if aruco_id not in self.landmark_id_to_idx:
                 self._add_landmark(aruco_id, obs_range, obs_bearing)
 
-       
             self._ekf_update(aruco_id, obs_range, obs_bearing)
 
-
+  
 
     def _predict_loop(self):
         now = timer()
@@ -266,9 +250,7 @@ class EkfSlam(Node):
         if dt <= 0.0 or dt > 1.0:
             return
 
-
         self._ekf_predict(dt)
-
 
         R = self.wheel_radius
         vr = self.vel_r * R
@@ -287,11 +269,9 @@ class EkfSlam(Node):
         R  = self.wheel_radius
         L  = self.robot_width
 
-     
         vr = self.vel_r * R
         vl = self.vel_l * R
 
-      
         v  = (vr + vl) / 2.0
         w  = (vr - vl) / L
         self.last_v = v
@@ -300,7 +280,6 @@ class EkfSlam(Node):
         x, y, th = self.mu[0], self.mu[1], self.mu[2]
         n = len(self.mu)   # tamaño total del estado
 
-  
         th_new = wrap_to_pi(th + w * dt)
         x_new  = x + v * dt * math.cos(th + w * dt / 2.0)
         y_new  = y + v * dt * math.sin(th + w * dt / 2.0)
@@ -309,12 +288,10 @@ class EkfSlam(Node):
         self.mu[1] = y_new
         self.mu[2] = th_new
 
-
         F_x = np.eye(n)
         F_x[0, 2] = -v * dt * math.sin(th + w * dt / 2.0)
         F_x[1, 2] =  v * dt * math.cos(th + w * dt / 2.0)
 
-  
         dH = np.zeros((n, 2))
         dH[0, 0] =  0.5 * dt * R * math.cos(th)
         dH[0, 1] =  0.5 * dt * R * math.cos(th)
@@ -323,50 +300,42 @@ class EkfSlam(Node):
         dH[2, 0] =  dt * R / L
         dH[2, 1] = -dt * R / L
 
-    
         speed = abs(v) + abs(w) * self.robot_width / 2.0
         zupt  = min(1.0, speed / ZUPT_THRESHOLD)
 
-   
         K_noise = np.array([
             [self.sigma_enc * abs(self.vel_r), 0.0],
             [0.0, self.sigma_enc * abs(self.vel_l)]
         ])
 
         Q = dH @ K_noise @ dH.T * zupt
-
         Q[2, 2] = min(Q[2, 2], SIGMA_TH_MAX * zupt)
 
         self.Sigma = F_x @ self.Sigma @ F_x.T + Q
 
-    
         ns = len(self.Sigma)
         for i in range(min(2, ns)):
             self.Sigma[i, i] = min(self.Sigma[i, i], P_MAX_XY)
         if ns > 2:
             self.Sigma[2, 2] = min(self.Sigma[2, 2], P_MAX_TH)
 
-  
 
     def _ekf_predict_scanmatch(self, dx: float, dy: float, dth: float):
-  
+
         x, y, th = self.mu[0], self.mu[1], self.mu[2]
         n = len(self.mu)
 
         cos_th = math.cos(th)
         sin_th = math.sin(th)
 
-
         self.mu[0] = x + dx * cos_th - dy * sin_th
         self.mu[1] = y + dx * sin_th + dy * cos_th
         self.mu[2] = wrap_to_pi(th + dth)
 
-   
         F_x = np.eye(n)
         F_x[0, 2] = -dx * sin_th - dy * cos_th
         F_x[1, 2] =  dx * cos_th - dy * sin_th
 
-   
         dist = math.sqrt(dx * dx + dy * dy)
         Q = np.zeros((n, n))
         Q[0, 0] = max(1e-5, 0.005 * dist)
@@ -381,7 +350,6 @@ class EkfSlam(Node):
         self.landmark_id_to_idx[aruco_id] = k
 
         if aruco_id in KNOWN_ARUCO_MAP:
-           
             x_L, y_L = KNOWN_ARUCO_MAP[aruco_id]
             init_cov = KNOWN_LM_COV
             self.get_logger().info(
@@ -389,7 +357,6 @@ class EkfSlam(Node):
                 f'en ({x_L:.2f}, {y_L:.2f}) [mapa físico]'
             )
         else:
-          
             x_L = self.mu[0] + obs_range * math.cos(self.mu[2] + obs_bearing)
             y_L = self.mu[1] + obs_range * math.sin(self.mu[2] + obs_bearing)
             init_cov = 1.0
@@ -413,7 +380,6 @@ class EkfSlam(Node):
         k  = self.landmark_id_to_idx[aruco_id]
         n  = len(self.mu)
 
-    
         lx_idx = 3 + 2 * k
         ly_idx = 3 + 2 * k + 1
 
@@ -427,11 +393,9 @@ class EkfSlam(Node):
         if dist < 1e-6:
             return
 
-   
         z_hat_range   = dist
         z_hat_bearing = wrap_to_pi(math.atan2(dy, dx) - th)
 
-     
         inn = np.array([
             obs_range   - z_hat_range,
             wrap_to_pi(obs_bearing - z_hat_bearing)
@@ -440,7 +404,6 @@ class EkfSlam(Node):
 
         H = np.zeros((2, n))
 
-  
         H[0, 0] = -dx / dist
         H[0, 1] = -dy / dist
         H[0, 2] =  0.0
@@ -449,19 +412,18 @@ class EkfSlam(Node):
         H[1, 1] = -dx / (dist**2)
         H[1, 2] = -1.0
 
-
         H[0, lx_idx] =  dx / dist
         H[0, ly_idx] =  dy / dist
 
         H[1, lx_idx] = -dy / (dist**2)
         H[1, ly_idx] =  dx / (dist**2)
 
-
+  
         dist_factor = max(0.3, dist / 1.0) 
         r_range_dyn = max(self.r_range, 0.003 * dist_factor**2)
 
         if aruco_id in KNOWN_ARUCO_MAP:
-          
+         
             r_range_dyn   *= KNOWN_R_FACTOR
             r_bearing_dyn  = self.r_bearing * KNOWN_R_FACTOR
         else:
@@ -469,17 +431,16 @@ class EkfSlam(Node):
 
         R_obs = np.diag([r_range_dyn, r_bearing_dyn])
 
-      
         S = H @ self.Sigma @ H.T + R_obs          # S = H*Sigma*H' + R
         K = self.Sigma @ H.T @ np.linalg.inv(S)   # K = Sigma*H'*S^-1
 
+      
         delta = K @ inn
         step_xy = math.hypot(delta[0], delta[1])
         if step_xy > MAX_CORR_STEP:
             scale = MAX_CORR_STEP / step_xy
             delta[0] *= scale
             delta[1] *= scale
-
         if abs(delta[2]) > MAX_CORR_YAW:
             delta[2] = math.copysign(MAX_CORR_YAW, delta[2])
 
@@ -506,7 +467,6 @@ class EkfSlam(Node):
         now = self.get_clock().now().to_msg()
         x, y, th = self.mu[0], self.mu[1], self.mu[2]
 
-     
         odom = Odometry()
         odom.header.stamp    = now
         odom.header.frame_id = 'map'
@@ -516,7 +476,6 @@ class EkfSlam(Node):
         odom.pose.pose.position.z = 0.0
         odom.pose.pose.orientation = quaternion_from_euler(0.0, 0.0, th)
 
-      
         n = min(3, self.Sigma.shape[0])
         idxs = [(0, 0), (0, 1), (1, 0), (1, 1), (0, 2), (2, 0), (2, 2)]
         ros_idx = [0, 1, 6, 7, 5, 30, 35]
@@ -526,7 +485,6 @@ class EkfSlam(Node):
 
         self.pub_odom.publish(odom)
 
-    
         t = TransformStamped()
         t.header.stamp    = now
         t.header.frame_id = 'map'
@@ -537,7 +495,6 @@ class EkfSlam(Node):
         t.transform.rotation = odom.pose.pose.orientation
         self.tf_broadcaster.sendTransform(t)
 
-
         t_odom = TransformStamped()
         t_odom.header.stamp    = now
         t_odom.header.frame_id = 'odom'
@@ -547,7 +504,6 @@ class EkfSlam(Node):
         t_odom.transform.rotation = quaternion_from_euler(0.0, 0.0, self._odom_th)
         self.tf_broadcaster.sendTransform(t_odom)
 
-    
         pcov = PoseWithCovarianceStamped()
         pcov.header.stamp    = now
         pcov.header.frame_id = 'map'
@@ -556,7 +512,6 @@ class EkfSlam(Node):
         pcov.pose.pose.orientation = odom.pose.pose.orientation
         pcov.pose.covariance = list(odom.pose.covariance)
         self.pub_pose_cov.publish(pcov)
-
 
         viz_markers = VizMarkerArray()
         for aruco_id, k in self.landmark_id_to_idx.items():
@@ -576,7 +531,6 @@ class EkfSlam(Node):
             m.scale.x = 0.15
             m.scale.y = 0.15
             m.scale.z = 0.2
-    
             if aruco_id in KNOWN_ARUCO_MAP:
                 m.color.r = 0.9
                 m.color.g = 0.55
@@ -588,7 +542,6 @@ class EkfSlam(Node):
             m.color.a = 0.9
 
             viz_markers.markers.append(m)
-
 
             t_m = Marker()
             t_m.header  = m.header
@@ -608,7 +561,6 @@ class EkfSlam(Node):
             viz_markers.markers.append(t_m)
 
         self.pub_map.publish(viz_markers)
-
 
 
 
@@ -646,7 +598,7 @@ class EkfSlam(Node):
                 self.landmark_id_to_idx[aruco_id] = k
 
                 if aruco_id in KNOWN_ARUCO_MAP:
-               
+                    # Ignorar posición guardada (puede tener drift) — usar mapa físico
                     x_L, y_L = KNOWN_ARUCO_MAP[aruco_id]
                     init_cov = KNOWN_LM_COV
                 else:

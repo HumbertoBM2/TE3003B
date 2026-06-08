@@ -15,7 +15,7 @@ def generate_launch_description():
            
     gazebo_sim = ExecuteProcess(cmd=['gz', 'sim', 'world_aruco_mip.sdf'], name='gazebo_sim', output='screen')
     
-
+    # Bridge
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
@@ -31,7 +31,6 @@ def generate_launch_description():
         output='screen'
     )
     
-  
     static_transform_camera = Node(
         package='tf2_ros',
         executable='static_transform_publisher',

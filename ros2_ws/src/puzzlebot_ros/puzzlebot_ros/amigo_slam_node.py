@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import math
 import os
 import time
@@ -27,13 +26,11 @@ class AmigoSlamNode(Node):
     def __init__(self):
         super().__init__('amigo_slam_node')
 
-       
         self.declare_parameter('map_resolution',   0.05)
-        self.declare_parameter('map_width_meters', 4.26)   
-        self.declare_parameter('map_height_meters', 5.36)  
+        self.declare_parameter('map_width_meters', 4.26)   # 3.76 + 0.25/lado
+        self.declare_parameter('map_height_meters', 5.36)  # 4.86 + 0.25/lado
         self.declare_parameter('map_origin_x', -0.25)
         self.declare_parameter('map_origin_y', -0.25)
-
         self.declare_parameter('p_occ',  0.80)
         self.declare_parameter('p_free', 0.45)
         self.declare_parameter('l_clamp', 5.0)
@@ -44,14 +41,11 @@ class AmigoSlamNode(Node):
         self.declare_parameter('lidar_x', 0.0)
         self.declare_parameter('lidar_y', 0.0)
         self.declare_parameter('lidar_yaw', 0.0)
-   
         self.declare_parameter('pose_buffer_sec', 3.0)
         self.declare_parameter('max_scan_pose_age', 0.30)
-  
         self.declare_parameter('use_keyframes', True)
-        self.declare_parameter('keyframe_min_translation', 0.12)  
-        self.declare_parameter('keyframe_min_rotation', math.radians(7.0))  
-    
+        self.declare_parameter('keyframe_min_translation', 0.12)   # 12cm (antes 10cm)
+        self.declare_parameter('keyframe_min_rotation', math.radians(7.0))  # 7° (antes 5°)
         self.declare_parameter('scan_matching_enabled', True)
         self.declare_parameter('pose_topic', '/odom')
         self.declare_parameter('scan_topic', '/scan_stamped')
@@ -103,15 +97,14 @@ class AmigoSlamNode(Node):
         )
         self._pub_map = self.create_publisher(OccupancyGrid, '/map', map_qos)
 
-      
+   
         self._mo_x   = 0.0
         self._mo_y   = 0.0
         self._mo_yaw = 0.0
 
-      
-        self._freeze_until = 0.0  
 
-       
+        self._freeze_until = 0.0   # monotonic time
+
         self._v_lin = 0.0
         self._v_ang = 0.0
 
@@ -146,7 +139,7 @@ class AmigoSlamNode(Node):
         new_yaw = math.atan2(2.0 * (q.w * q.z + q.x * q.y),
                              1.0 - 2.0 * (q.y * q.y + q.z * q.z))
 
-     
+
         import time as _time
         delta = math.hypot(new_x - self._mo_x, new_y - self._mo_y)
         delta_yaw = abs(math.atan2(math.sin(new_yaw - self._mo_yaw),
@@ -165,14 +158,14 @@ class AmigoSlamNode(Node):
         self._mo_yaw = new_yaw
 
     def _odom_cb(self, msg: Odometry):
-     
+    
         self._v_lin = abs(msg.twist.twist.linear.x)
         self._v_ang = abs(msg.twist.twist.angular.z)
-   
+
         self._odom_buffer.add(msg)
 
     def _odom_to_map(self, odom_pose: Pose2D) -> Pose2D:
-       
+        """Convierte Pose2D en frame odom → frame map usando corrección actual."""
         c = math.cos(self._mo_yaw)
         s = math.sin(self._mo_yaw)
         x   = self._mo_x + c * odom_pose.x - s * odom_pose.y
@@ -184,36 +177,31 @@ class AmigoSlamNode(Node):
     def _scan_cb(self, scan: LaserScan):
         self._scans += 1
 
-    
         import time as _time
         if _time.monotonic() < self._freeze_until:
             return
 
-      
         if self._v_ang > 0.25 and self._v_lin < 0.06:
             return
 
-       
         odom_pose = self._odom_buffer.lookup(scan.header.stamp)
         if odom_pose is None:
             odom_pose = self._odom_buffer.latest_pose
         if odom_pose is None:
             return
 
-      
+    
         pose = self._odom_to_map(odom_pose)
 
-     
         refined = self._matcher.match(scan, pose, self._grid)
 
-       
         corr_d = math.hypot(refined.x - pose.x, refined.y - pose.y)
         corr_y = abs(math.atan2(math.sin(refined.yaw - pose.yaw),
                                 math.cos(refined.yaw - pose.yaw)))
         if corr_d > 0.20 or corr_y > math.radians(14.0):
             refined = pose
 
-
+    
         _SCORE_QUALITY_FRACTION = 0.45
         _MAP_ESTABLISHED_AT     = 50
         score = self._matcher.last_score
@@ -245,7 +233,6 @@ class AmigoSlamNode(Node):
             f'score={self._matcher.last_score:.0f} '
             f'peak={self._peak_score:.0f} umbral={threshold:.0f} '
             f'buf={"si" if self._odom_buffer.has_pose else "no"}')
-
 
 
     def _svc_clear(self, _req, resp):

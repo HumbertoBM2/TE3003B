@@ -17,3 +17,4 @@ COLCON_IGNORE
 *.bag
 *.db3
 *.mcap
+*.env

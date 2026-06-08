@@ -59,16 +59,15 @@ class MapServerNode(Node):
         if pixels is None:
             return False
 
-      
+  
         rows = [pixels[i * w : (i + 1) * w] for i in range(h)]
-        rows.reverse()                    
+        rows.reverse()                        # ahora rows[0] = fila sur (Y mínima)
         pixels_ros = [p for row in rows for p in row]
 
         data = []
         for pix in pixels_ros:
             if negate:
                 pix = maxval - pix
-          
             prob_occ = 1.0 - pix / maxval
             if prob_occ > occupied_thresh:
                 data.append(100)
@@ -111,7 +110,6 @@ class MapServerNode(Node):
                     self.get_logger().error(f'PGM magic desconocido: {magic}')
                     return 0, 0, 0, None
 
-                # Saltar comentarios
                 line = f.readline().decode('ascii').strip()
                 while line.startswith('#') or line == '':
                     line = f.readline().decode('ascii').strip()

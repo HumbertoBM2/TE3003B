@@ -31,6 +31,7 @@ setup(
             "record_audio = voice_hmm.record_audio:main",
             "train_voice_hmm = voice_hmm.train:train_system",
             "test_voice_hmm = voice_hmm.test_model:main",
+            "plot_hmm_heatmaps = voice_hmm.plot_hmm_heatmaps:main",
         ],
     },
 )

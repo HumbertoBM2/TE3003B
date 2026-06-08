@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import math
 import rclpy
 from rclpy.node import Node
@@ -11,8 +12,8 @@ from geometry_msgs.msg import TransformStamped
 import tf2_ros
 
 WHEEL_RADIUS    = 0.05   
-WHEEL_SEP       = 0.18  
-ENC_DEADBAND    = 0.15 
+WHEEL_SEP       = 0.18   
+ENC_DEADBAND    = 0.15   
 
 _QOS_ODOM = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,
@@ -85,7 +86,6 @@ class OdometryNode(Node):
         v   = (v_r + v_l) / 2.0
         w   = (v_r - v_l) / self._L
 
-  
         th_mid = self._th + w * dt / 2.0
         self._x  += v * math.cos(th_mid) * dt
         self._y  += v * math.sin(th_mid) * dt
@@ -98,7 +98,6 @@ class OdometryNode(Node):
         stamp = now.to_msg()
         th = self._th
 
-       
         tf = TransformStamped()
         tf.header.stamp    = stamp
         tf.header.frame_id = self._odom_frame
@@ -110,7 +109,6 @@ class OdometryNode(Node):
         tf.transform.rotation.w = math.cos(th / 2.0)
         self._tf.sendTransform(tf)
 
-      
         msg = Odometry()
         msg.header.stamp    = stamp
         msg.header.frame_id = self._odom_frame

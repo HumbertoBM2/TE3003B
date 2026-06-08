@@ -3,30 +3,48 @@ slam_node:
 
     map_resolution:     0.05
     map_width_meters:   4.26    
-    map_height_meters:  5.36    
+    map_height_meters:  5.36   
     map_origin_x:      -0.25
     map_origin_y:      -0.25
+
     map_size_pixels:   500
     map_size_meters:   25.0
+
     p_occ:             0.80
-    p_free:            0.40    
-    l_clamp:           3.5     
+    p_free:            0.40   
+    l_clamp:           3.5    
+
+
     scan_step:         1      
-    max_range_factor:  0.95    
-    min_useful_range:  0.20    
-    max_mapping_range: 5.5     
+    max_range_factor:  0.95   
+    min_useful_range:  0.20   
+    max_mapping_range: 5.5   
+
+
     map_frame:        'map'
     odom_frame:       'odom'
     publish_map_odom_tf: true
+
+
     lidar_x:   0.0
     lidar_y:   0.0
     lidar_yaw: 0.0
+
+
     pose_buffer_sec:   3.0
     max_scan_pose_age: 0.20
+
+
     use_keyframes:             true
-    keyframe_min_translation:  0.10    
+    keyframe_min_translation:  0.10   
     keyframe_min_rotation:     0.0873  
+
+
     scan_matching_enabled:     true
+
+
     scan_match_min_score:      15.0
+
+
     scan_match_cov_xy:         0.04
     scan_match_cov_theta:      0.03

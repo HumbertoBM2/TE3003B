@@ -16,7 +16,7 @@ def generate_launch_description():
            
     pkg_puzzlebot_ros = get_package_share_directory('puzzlebot_ros')
     
-
+    # GoTo
     go_to = Node(
         package='puzzlebot_ros',
         executable='goto_point',

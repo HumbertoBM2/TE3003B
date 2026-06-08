@@ -13,7 +13,6 @@ def generate_launch_description():
 
     pkg_sllidar = get_package_share_directory('sllidar_ros2')
 
-  
     micro_ros = Node(
         package='micro_ros_agent',
         executable='micro_ros_agent',
@@ -22,7 +21,6 @@ def generate_launch_description():
         output='screen',
     )
 
-  
     static_tf_laser = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -31,7 +29,6 @@ def generate_launch_description():
         output='screen',
     )
 
-   
     lidar = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_sllidar, 'launch', 'sllidar_a2m8_launch.py')

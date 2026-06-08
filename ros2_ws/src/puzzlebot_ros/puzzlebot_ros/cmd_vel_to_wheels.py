@@ -9,7 +9,7 @@ from geometry_msgs.msg import Twist
 
 MAX_LINEAR  = 0.25
 MAX_ANGULAR = 1.5
-CMD_TIMEOUT = 0.30   
+CMD_TIMEOUT = 0.30  
 
 
 class CmdVelRelay(Node):

@@ -24,11 +24,7 @@ def wrap_to_pi(input_angle):
     return output_angle
     
 def euler_from_quaternion(quaternion):
-    """
-    Converts quaternion (w in last place) to euler roll, pitch, yaw
-    quaternion = [x, y, z, w]
-    Bellow should be replaced when porting for ROS 2 Python tf_conversions is done.
-    """
+ 
     x = quaternion.x
     y = quaternion.y
     z = quaternion.z
@@ -48,11 +44,7 @@ def euler_from_quaternion(quaternion):
     return roll, pitch, yaw
 
 def quaternion_from_euler(roll, pitch, yaw):
-    """
-    Converts euler roll, pitch, yaw to quaternion (w in last place)
-    quat = [x, y, z, w]
-    Bellow should be replaced when porting for ROS 2 Python tf_conversions is done.
-    """
+
     cy = math.cos(yaw * 0.5)
     sy = math.sin(yaw * 0.5)
     cp = math.cos(pitch * 0.5)

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import math
 import os
 import yaml
@@ -33,7 +32,6 @@ def _make_transform(x, y, z, roll, pitch, yaw):
     T[:3, :3] = _euler_to_rot(roll, pitch, yaw)
     T[:3,  3] = [x, y, z]
     return T
-
 
 
 _T_CAMERA_LINK_OPTICAL = _make_transform(
@@ -112,7 +110,7 @@ class ArucoNode(Node):
         self._odom_pose_now  = None
         self._odom_pose_det  = None
         self._obj_pts = _marker_obj_points(self.marker_length)
-   
+ 
         self._solvepnp_flag = cv2.SOLVEPNP_ITERATIVE
         from cv_bridge import CvBridge
         self._bridge = CvBridge()
@@ -157,7 +155,7 @@ class ArucoNode(Node):
         self.declare_parameter('map_min_y', 0.0)
         self.declare_parameter('map_max_y', 4.86)
         self.declare_parameter('map_bounds_margin', 0.25)
-
+   
         self.declare_parameter('camera_yaw_correction_deg', 0.0)
 
     def _read_parameters(self):
@@ -255,7 +253,7 @@ class ArucoNode(Node):
     def _setup_comms(self):
         self.pub_pose    = self.create_publisher(PoseWithCovarianceStamped, '/aruco/pose', 10)
         self.pub_ids     = self.create_publisher(Int32MultiArray, '/aruco/detected_ids', 10)
-    
+     
         self.pub_markers = self.create_publisher(MarkerArray, '/slam/map', 10)
 
         if 'compressed' in self.image_topic.lower():
@@ -269,7 +267,6 @@ class ArucoNode(Node):
 
         self.create_subscription(Odometry, '/odom', self._odom_cb, 10)
 
-       
         self._recently_detected: set = set()
         self._last_detected_time = None
         self.create_timer(1.0, self._publish_marker_viz)
@@ -282,7 +279,7 @@ class ArucoNode(Node):
                                msg.pose.pose.position.y, yaw)
 
     def _publish_marker_viz(self):
-
+  
         now = self.get_clock().now().to_msg()
         recently: set = set()
         if self._last_detected_time is not None:
@@ -296,7 +293,6 @@ class ArucoNode(Node):
             y = float(T[1, 3])
             detected = mid in recently
 
-         
             cyl = Marker()
             cyl.header.stamp    = now
             cyl.header.frame_id = self.map_frame
@@ -319,7 +315,6 @@ class ArucoNode(Node):
             cyl.lifetime.sec = 2
             ma.markers.append(cyl)
 
-   
             txt = Marker()
             txt.header = cyl.header
             txt.ns = 'aruco_markers'
@@ -353,7 +348,6 @@ class ArucoNode(Node):
             return
         self._last_proc_time = now_sec
 
-     
         actual_h, actual_w = frame.shape[:2]
         if actual_w != self.calib_w or actual_h != self.calib_h:
             sx = actual_w / self.calib_w
@@ -397,7 +391,6 @@ class ArucoNode(Node):
         self._last_pose_time = self.get_clock().now()
         self._odom_pose_det  = self._odom_pose_now
 
-      
         self._recently_detected = {c['id'] for c in valid}
         self._last_detected_time = self.get_clock().now()
 
@@ -426,7 +419,7 @@ class ArucoNode(Node):
         T_map_base   = T_map_cam_opt @ np.linalg.inv(self.T_base_camera_optical)
         x   = float(T_map_base[0, 3])
         y   = float(T_map_base[1, 3])
-    
+   
         yaw = float(_yaw_from_rot(T_map_base[:3, :3])) + self._yaw_corr_rad
         yaw = math.atan2(math.sin(yaw), math.cos(yaw))   # normalizar
         marker_yaw = float(_yaw_from_rot(T_map_marker[:3, :3]))

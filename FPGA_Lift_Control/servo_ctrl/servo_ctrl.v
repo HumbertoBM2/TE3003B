@@ -1,12 +1,21 @@
-// Tang Nano 20K — Servo PWM controller para montacargas
+// Tang Nano 20K — Servo DS04-NFC continuo — Lifter montacargas
 // Jetson GPIO → pb1 / pb2 (activo alto, PULL_MODE=NONE)
 //
-// pb1=1 pb2=0 → SUBIR  (pulso ~2.48ms = 67000 cuentas a 27MHz)
-// pb1=0 pb2=1 → BAJAR  (pulso ~0.56ms = 15000 cuentas a 27MHz)
-// pb1=0 pb2=0 → NEUTRO (pulso  1.50ms = 40500 cuentas a 27MHz)
-// pb1=1 pb2=1 → NEUTRO (seguro, no debería ocurrir)
+// Servo DS04-NFC continuo: el ancho de pulso controla VELOCIDAD y DIRECCIÓN.
+//   1.5ms → STOP  (motor detenido)
+//   > 1.5ms → gira sentido A
+//   < 1.5ms → gira sentido B
 //
-// Periodo PWM: 20ms = 540000 cuentas a 27MHz
+// NOTA: pb1/pb2 asignados físicamente de forma que:
+//   pb1=1, pb2=0 → PULSE_SUBIR (1.2ms) → fork SUBE   — medido: 5cm en 3.00s
+//   pb1=0, pb2=1 → PULSE_BAJAR (1.8ms) → fork BAJA   — medido: 5cm en 2.92s
+//   pb1=0, pb2=0 → PULSE_STP   (1.5ms) → STOP
+//   pb1=1, pb2=1 → PULSE_STP   (1.5ms) → STOP (seguro)
+//
+// El sentido de 1.2ms sube el lifter por la disposición mecánica del eje.
+// Si se invierte la mecánica: intercambiar PULSE_SUBIR y PULSE_BAJAR.
+//
+// Periodo PWM: 20ms = 540_000 cuentas a 27MHz
 
 module servo_ctrl (
     input  clk,     // 27 MHz — FPGA pin 4
@@ -15,25 +24,23 @@ module servo_ctrl (
     output servo    // Señal PWM al servo — FPGA pin 17
 );
 
-    localparam PERIOD   = 540_000;  // 20ms @ 27MHz
-    localparam NEUTRAL  =  40_500;  // 1.50ms
-    localparam PULSE_UP =  67_000;  // 2.48ms  (subir)
-    localparam PULSE_DN =  15_000;  // 0.56ms  (bajar)
+    localparam PERIOD      = 540_000;  // 20ms @ 27MHz
+    localparam PULSE_SUBIR =  32_400;  // 1.20ms → fork SUBE  (5cm en 3.00s)
+    localparam PULSE_BAJAR =  48_600;  // 1.80ms → fork BAJA  (5cm en 2.92s)
+    localparam PULSE_STP   =  40_500;  // 1.50ms → STOP
 
     reg [19:0] cnt = 0;
-    reg [16:0] pw  = NEUTRAL;
+    reg [16:0] pw  = PULSE_STP;
 
     always @(posedge clk) begin
-        // Contador de periodo
         cnt <= (cnt == PERIOD - 1) ? 20'd0 : cnt + 20'd1;
 
-        // Selección de ancho de pulso
         if (pb1 && !pb2)
-            pw <= PULSE_UP;
+            pw <= PULSE_SUBIR;
         else if (!pb1 && pb2)
-            pw <= PULSE_DN;
+            pw <= PULSE_BAJAR;
         else
-            pw <= NEUTRAL;
+            pw <= PULSE_STP;
     end
 
     assign servo = (cnt < pw) ? 1'b1 : 1'b0;

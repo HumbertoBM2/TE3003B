@@ -30,7 +30,7 @@ class Kalman(Node):
         
         self.sub_aruco = self.create_subscription(MarkerArray,'/marker_publisher/markers',self.aruco_callback,qos.qos_profile_sensor_data)
                                                 
-        self.run_dt = 0.02  # seconds
+        self.run_dt = 0.02  
         self.timer_run = self.create_timer(self.run_dt, self.run_loop)
         
         self.pose_x = 0.0
@@ -129,10 +129,10 @@ class Kalman(Node):
         
         self.Sig = H @ self.Sig @ H.T + Q  # Sig = H*Sig*H' + Q
         
-    
+        #print(self.Sig)
 
     def kalman_correction(self, marker, cov):
-  
+
         S = [0,0,0]
         
         S[0] = self.pose_x
@@ -158,13 +158,13 @@ class Kalman(Node):
             diff = marker[1:4] - Z_hat
             marker[3] = wrap_to_pi(marker[3])
                       
-            Z = G @ self.Sig @ G.T + R            
+            Z = G @ self.Sig @ G.T + R              
         
-            K = self.Sig @ G.T @ np.linalg.inv(Z)    
+            K = self.Sig @ G.T @ np.linalg.inv(Z)   
         
-            S = S + K @ diff                       
+            S = S + K @ diff                        
         
-            self.Sig = (np.eye(3)-K @ G) @ self.Sig 
+            self.Sig = (np.eye(3)-K @ G) @ self.Sig  
             
         self.pose_x = S[0]
         self.pose_y = S[1]

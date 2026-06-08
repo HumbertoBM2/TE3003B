@@ -46,17 +46,15 @@ class CameraCompress(Node):
             elif enc == 'mono8':
                 bgr = arr
             else:
-         
                 bgr = cv2.cvtColor(arr, cv2.COLOR_RGB2BGR)
 
-          
             bgr = cv2.rotate(bgr, cv2.ROTATE_180)
 
             _, buf = cv2.imencode('.jpg', bgr, [cv2.IMWRITE_JPEG_QUALITY, 75])
 
             out = CompressedImage()
             out.header = msg.header
-            out.header.frame_id = 'camera'   
+            out.header.frame_id = 'camera'  
             out.format = 'jpeg'
             out.data = buf.tobytes()
             self.pub.publish(out)

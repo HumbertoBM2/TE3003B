@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 import math
 
 import cv2
@@ -21,9 +22,8 @@ from cv_bridge import CvBridge
 MODEL_PATH   = '/home/puzzlebot/best.pt'
 CLASS_NAMES  = ['logoe', 'logop', 'logow', 'pallet-detector']
 CONF_THRESH  = 0.45
-DETECT_HZ    = 5.0   # Hz — Jetson Nano 2GB: no más rápido
+DETECT_HZ    = 5.0   
 
-# Colores BGR por clase
 CLASS_COLORS = {
     'logoe':            (0,   200, 255),   # amarillo
     'logop':            (255, 100,   0),   # azul
@@ -40,7 +40,7 @@ class YoloDetector(Node):
         self.declare_parameter('model_path',     MODEL_PATH)
         self.declare_parameter('conf_thresh',    CONF_THRESH)
         self.declare_parameter('detect_hz',      DETECT_HZ)
-        self.declare_parameter('imgsz',          320)   # resolución de inferencia — 320 para Jetson Nano
+        self.declare_parameter('imgsz',          320)  
 
         model_path  = self.get_parameter('model_path').value
         conf_thresh = float(self.get_parameter('conf_thresh').value)
@@ -66,7 +66,6 @@ class YoloDetector(Node):
             f'conf={conf_thresh} hz={detect_hz}'
         )
 
-    # ── Carga del modelo ─────────────────────────────────────────────────────
 
     def _load_model(self, path: str, conf: float):
         try:
@@ -77,7 +76,6 @@ class YoloDetector(Node):
         except Exception as exc:
             self.get_logger().error(f'No se pudo cargar el modelo YOLO: {exc}')
 
-    # ── Callbacks ────────────────────────────────────────────────────────────
 
     def _img_cb(self, msg: Image):
         self._pending = msg
@@ -119,7 +117,6 @@ class YoloDetector(Node):
                 cls_name = CLASS_NAMES[cls_id] if cls_id < len(CLASS_NAMES) else str(cls_id)
                 color    = CLASS_COLORS.get(cls_name, (200, 200, 200))
 
-                # Detection2D
                 det = Detection2D()
                 det.header = msg.header
                 det.bbox = BoundingBox2D()
@@ -143,7 +140,6 @@ class YoloDetector(Node):
 
         self.pub_det.publish(det_array)
 
-        # Publicar imagen anotada como CompressedImage (JPEG) para el dashboard
         try:
             ok, buf = cv2.imencode('.jpg', annotated, [cv2.IMWRITE_JPEG_QUALITY, 80])
             if ok:

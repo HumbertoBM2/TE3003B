@@ -45,7 +45,6 @@ def generate_launch_description():
         'Leave it empty and the pose will be published wrt param parent_name. '
     )
 
-
     ld = LaunchDescription()
 
     ld.add_action(marker_size_arg)

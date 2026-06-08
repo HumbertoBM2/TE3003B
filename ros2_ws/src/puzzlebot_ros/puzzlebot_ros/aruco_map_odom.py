@@ -33,7 +33,7 @@ class ArucoMapOdom(Node):
         self.declare_parameter('odom_frame',        'odom')
         self.declare_parameter('publish_rate_hz',   20.0)
         self.declare_parameter('correction_alpha',  0.35)
-   
+
         self.declare_parameter('yaw_alpha',         0.07)
         self.declare_parameter('max_correction_step_m',   0.35)
         self.declare_parameter('max_correction_step_yaw', 0.70)
@@ -112,13 +112,11 @@ class ArucoMapOdom(Node):
 
         odom_base = self._odom_pose
 
-  
         aruco_yaw = _norm_angle(map_base[2] - odom_base[2])
 
-  
+
         yaw_accepted = False
         if not self._initialized:
-     
             yaw = aruco_yaw
             yaw_accepted = True
         elif self._correct_yaw:
@@ -152,16 +150,16 @@ class ArucoMapOdom(Node):
 
         step = math.hypot(x - self._x, y - self._y)
 
- 
+    
         _MAX_MEDIUM = self._max_step_m * 3.0  
-        _MAX_LARGE  = 7.0                      
+        _MAX_LARGE  = 7.0                     
         if step > _MAX_LARGE:
             self.get_logger().warn(
                 f'Correccion rechazada (imposible): {step:.2f}m > {_MAX_LARGE:.2f}m',
                 throttle_duration_sec=2.0)
             return
         if step > _MAX_MEDIUM:
-            a_pos = 0.04   
+            a_pos = 0.04  
             self.get_logger().warn(
                 f'Correccion GRANDE aceptada: {step:.2f}m > {_MAX_MEDIUM:.2f}m '
                 f'(alpha={a_pos:.2f}, drift multi-vuelta)',

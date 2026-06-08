@@ -1,11 +1,6 @@
 import numpy as np
 
 def nearest_codewords(X, codebook):
-    """
-    X: (T, D)
-    codebook: (K, D)
-    returns indices: (T,)
-    """
     distances = np.sum((X[:, None, :] - codebook[None, :, :]) ** 2, axis=2)
     return np.argmin(distances, axis=1)
 
@@ -13,7 +8,7 @@ def nearest_codewords(X, codebook):
 def kmeans_refine(X, codebook, max_iter=50, tol=1e-4):
     prev_distortion = None
 
-    for _ in range(max_iter):
+    for i in range(max_iter):
         labels = nearest_codewords(X, codebook)
 
         new_codebook = np.copy(codebook)
